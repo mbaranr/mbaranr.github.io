@@ -1,18 +1,16 @@
 {
   "basics": {
-    "name": "Albert Einstein",
-    "label": "Scientist",
+    "name": "Matias Barandiaran",
+    "label": "Computer Scientist",
     "image": "",
-    "email": "albert@einstein.de",
-    "phone": "(912) 123-4567",
-    "url": "https://alshedivat.github.io/al-folio/",
-    "summary": "A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time",
+    "email": "mbaranr@gmail.com",
+    "phone": "+49 15231626943",
+    "url": "https://mbaranr.github.io",
+    "summary": "A Computer Science graduate from Lancaster University with over a year of research experience and a strong interest in software development and data engineering.",
     "location": {
-      "address": "2712 Broadway St",
-      "postalCode": "CA 94115",
-      "city": "San Francisco",
-      "countryCode": "US",
-      "region": "California"
+      "city": "Leipzig",
+      "countryCode": "Germany",
+      "region": "Saxony"
     },
     "profiles": [
       {

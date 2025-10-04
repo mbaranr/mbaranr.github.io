@@ -1,8 +1,8 @@
 ---
 layout: page
-title: project 9
-description: another project with an image 🎉
-img: assets/img/6.jpg
+title: Automatic Waste Sorting
+description: Image classification and object detection for automatic waste sorting.
+img: assets/img/project_preview/waste_sorting.png
 importance: 4
 category: fun
 ---

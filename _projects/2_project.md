@@ -1,8 +1,8 @@
 ---
 layout: page
-title: project 2
-description: a project with a background image and giscus comments
-img: assets/img/3.jpg
+title: gladGAN
+description: Generative Adversarial Networks for graph level anomaly detection.
+img: assets/img/project_preview/gladgan.png
 importance: 2
 category: work
 giscus_comments: true

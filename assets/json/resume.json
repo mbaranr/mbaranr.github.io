@@ -3,7 +3,7 @@
     "name": "Matias Barandiaran",
     "label": "Computer Scientist",
     "image": "",
-    "email": "mbaranr@gmail.com",
+    "email": "mbarandiaranr@gmail.com",
     "phone": "+49 15231626943",
     "url": "https://mbaranr.github.io",
     "summary": "A Computer Science graduate from Lancaster University with over a year of research experience and a strong interest in software development and data engineering.",
@@ -14,185 +14,191 @@
     },
     "profiles": [
       {
-        "network": "Twitter",
-        "username": "AlbertEinstein",
-        "url": "https://twitter.com/AlbertEinstein"
+        "network": "GitHub",
+        "username": "mbaranr",
+        "url": "https://github.com/mbaranr"
       }
     ]
   },
   "work": [
     {
-      "name": "Institute for Advanced Study, Princeton University",
-      "position": "Professor of Theoretical Physics",
-      "url": "https://example.com",
-      "startDate": "1933-01-01",
-      "endDate": "1955-01-01",
-      "summary": "Teaching at Palmer Physical Laboratory (now 302 Frist Campus Center). While not a professor at Princeton, I associated with the physics professors and continued to give lectures on campus.",
-      "highlights": ["Relativity"]
+      "name": "Technical University of Munich",
+      "location": "Munich, Germany",
+      "position": "Research Assistant",
+      "startDate": "2024-07",
+      "endDate": "2025-08",
+      "summary": "Hosted by the Gagneur Lab (Computational Molecular Medicine) in affiliation with Helmholtz Munich.",
+      "highlights": ["Worked on rare variant association testing using deep learning and data-driven burden scores (DeepRVAT), utilizing Python, R, PyTorch and Snakemake", "First-hand exposure to HPC cluster management, Linux, and Git version control"]
+    },
+    {
+      "name": "Martin Luther University of Halle-Wittenberg",
+      "location": "Halle, Germany",
+      "position": "Research Intern",
+      "startDate": "2024-07",
+      "endDate": "2024-09",
+      "summary": "Hosted by the Faculty of Medicine.",
+      "highlights": ["Worked on novel graph-level anomaly detection via latent space searching and generative adversarial networks (gladGAN) on molecular datasets, utilizing Python and PyTorch, and scikit-learn."]
+    },
+    {
+      "name": "Lancaster University Leipzig",
+      "location": "Leipzig, Germany",
+      "position": "Teaching Assistant",
+      "startDate": "2023-10",
+      "endDate": "2024-06",
+      "summary": "Laboratory assistant and demonstrator for the Digital Systems module.",
+      "highlights": ["Delivered engaging and informative instructional sessions to facilitate student understanding on low-level programming with MIPS assembly."]
+    },
+    {
+      "name": "Charles University",
+      "location": "Prague, Czechia",
+      "position": "Research Intern",
+      "startDate": "2023-08",
+      "endDate": "2023-09",
+      "summary": "Hosted by the Faculty of Mathematics and Physics.",
+      "highlights": ["Designed production of Alethe verifiable proofs for the GOLEM Constrained Horn Clauses solver, utilizing C++.", "Contributed to the paper: Unsatisfiability Proofs for Horn Solving (2025) *won ETAPS best paper award*.", "First-hand exposure to Linux, the software development life cycle, continuous integration, object-oriented programming, and software verification."]
     }
   ],
   "volunteer": [
     {
-      "organization": "People's Climate March",
-      "location": "Zurich, Switzerland",
+      "organization": "Global Advancement Fund",
+      "location": "Lancaster, UK",
+      "position": "Organizer",
+      "startDate": "2024-08",
+      "endDate": "2024-10",
+      "summary": "Co-Initiated and championed the approval process of Lancaster University’s Global Advancement Fund (≈€20k) to facilitate international collaboration between campuses worldwide",
+      "highlights": ["Took 7 members of the Leipzig campus to the UK for a 4-day trip to work on an industrial waste sorting arm."]
+    },
+    {
+      "organization": "Qiskit Fall Fest",
+      "location": "Leipzig, Germany",
       "position": "Lead Organizer",
-      "url": "https://example.com",
-      "startDate": "2014-04-01",
-      "endDate": "2015-07-01",
-      "summary": "Lead organizer for the New York City branch of the People's Climate March, the largest climate march in history.",
-      "highlights": ["Awarded 'Climate Hero' award by Greenpeace for my efforts organizing the march.", "Men of the year 2014 by Time magazine"]
+      "startDate": "2023-08",
+      "endDate": "2023-08",
+      "summary": "Organized and hosted a Quantum Computing (QC) event powered by IBM.",
+      "highlights": ["Gave an introductory talk on QC and held workshops with Qiskit material.", "Assembled a series of seminars with special guests like Enrique Solano (Co-CEO of Kipu Quantum)."]
+    },
+    {
+      "organization": "Computer Science Society",
+      "location": "Leipzig, Germany",
+      "position": "Founder",
+      "startDate": "2023-08",
+      "endDate": "2023-08",
+      "summary": "Founded the computer science society at my institution.",
+      "highlights": ["Dedicated to fostering a culture of innovation, diversity and problem-solving with a focus on robotics.", "Secured university funding for the purchase of robotics supplies (e.g. 3D printer, Arduinos, etc.)."]
     }
   ],
   "education": [
     {
-      "institution": "University of Zurich, Zurich, Switzerland",
-      "location": "Zurich, Switzerland",
-      "url": "https://www.uzh.ch/",
-      "area": "Software Development",
-      "studyType": "PhD",
-      "startDate": "1905-01-01",
-      "endDate": "1905-01-01",
-      "score": "10",
-      "courses": ["Theory of Relativity"]
+      "institution": "Lancaster University",
+      "location": "Leipzig, Germany",
+      "area": "Computer Science",
+      "studyType": "Bachelor of Science",
+      "startDate": "2022-10",
+      "endDate": "2025-07",
+      "score": "4.00/4.00",
+      "courses": ["University ranked #132 worldwide for Computer Science (QS by subject) in 2025.", "First Class Honours (UK: 91.2% ~ GPA: 4.00/4.00).", "Valedictorian *won Chancellor’s Medal*."]
     }
   ],
   "awards": [
     {
-      "title": "Nobel Prize in Physics",
-      "date": "1921-11-01",
-      "awarder": "Royal Swedish Academy of Sciences",
-      "url": "https://www.nobelprize.org/prizes/physics/1921/einstein/biographical/",
-      "summary": "The Nobel Prizes are five separate prizes that, according to Alfred Nobel's will of 1895, are awarded to 'those who, during the preceding year, have conferred the greatest benefit to humankind.'"
+      "title": "Chancellor’s Medal",
+      "date": "2025-10",
+      "awarder": "Lancaster University",
+      "summary": "The university’s most prestigious award, presented annually to graduating students who demonstrate exceptional merit in their field. Achieved the cohort’s highest average grade across all three years of the BSc Computer Science program."
+    },
+    {
+      "title": "EASST Best Paper Award",
+      "date": "2025-06",
+      "awarder": "International Joint Conferences On Theory and Practice of Software (ETAPS)",
+      "summary": "For the best ETAPS 2025 paper related to the systematic and rigorous engineering of software and systems."
     }
   ],
   "certificates": [
     {
-      "name": "Machine Learning",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-location-dot"
-    },
-    {
-      "name": "Quantum Computing",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-tag"
-    },
-    {
-      "name": "Quantum Information",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-envelope"
-    },
-    {
-      "name": "Quantum Cryptography",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-hashtag"
-    },
-    {
-      "name": "Quantum Communication",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
+      "name": "Hardware of a Quantum Computer",
+      "date": "2023",
+      "issuer": "Delft University of Technology (edX)",
+      "url": "https://courses.edx.org/certificates/4b018b8ccaa74736b095c92516e55a15",
       "icon": "fa-solid fa-calendar"
     },
     {
-      "name": "Quantum Teleportation",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-clipboard-check"
-    }
-  ],
-  "publications": [
-    {
-      "name": "Zur Elektrody/namik bewegter Körper",
-      "publisher": "Annalen der Physik",
-      "releaseDate": "1905-06-30",
-      "url": "https://en.wikisource.org/wiki/Translation:On_the_Electrodynamics_of_Moving_Bodies",
-      "summary": "It concerned an interpretation of the Michelson–Morley experiment and the properties of light and time. Special relativity incorporates the principle that the speed of light is the same for all inertial observers regardless of the state of motion of the source."
+      "name": "Artificial Intelligence and Machine Learning: Theory and Practice",
+      "date": "2023",
+      "issuer": "University of Oxford",
+      "url": "https://drive.google.com/drive/folders/1tMs_4lUwQE5C-mUlHvNPEMIe-wrwYJ4p?usp=sharing",
+      "icon": "fa-solid fa-calendar"
     },
     {
-      "name": "Über einen die Erzeugung und Verwandlung des Lichtes betreffenden heuristischen Gesichtspunkt",
-      "publisher": "Annalen der Physik",
-      "releaseDate": "1905-03-18",
-      "url": "https://de.wikisource.org/wiki/Über_einen_die_Erzeugung_und_Verwandlung_des_Lichtes_betreffenden_heuristischen_Gesichtspunkt",
-      "summary": "In the second paper, he applied the quantum theory to light to explain the photoelectric effect. In particular, he used the idea of light quanta (photons) to explain experimental results, but stressed the importance of the experimental results. The importance of his work on the photoelectric effect earned him the Nobel Prize in Physics in 1921."
-    },
-    {
-      "name": "Die Grundlage der allgemeinen Relativitätstheorie",
-      "publisher": "Annalen der Physik",
-      "releaseDate": "1916-03-20",
-      "url": "https://de.wikisource.org/wiki/Die_Grundlage_der_allgemeinen_Relativitätstheorie",
-      "summary": "The publication of the theory of general relativity made him internationally famous. He was professor of physics at the universities of Zurich (1909–1911) and Prague (1911–1912), before he returned to ETH Zurich (1912–1914)."
+      "name": "Advanced Applications of Neural Networks and Deep Learning",
+      "date": "2023",
+      "issuer": "University of Oxford",
+      "url": "https://drive.google.com/drive/folders/1tMs_4lUwQE5C-mUlHvNPEMIe-wrwYJ4p?usp=sharing",
+      "icon": "fa-solid fa-calendar"
     }
   ],
   "skills": [
     {
-      "name": "Physics",
+      "name": "Tools",
       "level": "Master",
       "icon": "fa-solid fa-hashtag",
       "keywords": [
-        "Quantum Mechanics",
-        "Quantum Computing",
-        "Quantum Information",
-        "Quantum Cryptography",
-        "Quantum Communication",
-        "Quantum Teleportation"
+        "Python",
+        "R",
+        "Java",
+        "C",
+        "C++",
+        "Git",
+        "Linux",
+        "SQL",
+        "Docker",
+        "PyTorch"
+      ]
+    },
+    {
+      "name": "Concepts",
+      "level": "Master",
+      "icon": "fa-solid fa-hashtag",
+      "keywords": [
+        "Rare Variant Association Testing",
+        "Data Engineering",
+        "Computer Vision",
+        "Network Protocols",
+        "Generative Modelling",
+        "Supervised Learning",
+        "Reinforcement Learning",
+        "Graph Anomaly Detection",
+        "Reservoir Computing",
+        "Distributed Systems"
+      ]
+    },
+    {
+      "name": "Hobbies",
+      "level": "Master",
+      "icon": "fa-solid fa-hashtag",
+      "keywords": [
+        "Game Development",
+        "Scuba Diving",
+        "Badminton",
+        "Videography",
+        "Saxophone"
       ]
     }
   ],
   "languages": [
     {
-      "language": "German",
+      "language": "Spanish",
       "fluency": "Native speaker",
       "icon": ""
     },
     {
       "language": "English",
-      "fluency": "Fluent",
+      "fluency": "Fluent (C2)",
       "icon": ""
-    }
-  ],
-  "interests": [
-    {
-      "name": "Physics",
-      "icon": "fa-solid fa-tag",
-      "keywords": [
-        "Quantum Mechanics",
-        "Quantum Computing",
-        "Quantum Information",
-        "Quantum Cryptography",
-        "Quantum Communication",
-        "Quantum Teleportation"
-      ]
-    }
-  ],
-  "references": [
-    {
-      "name": "Professor John Doe",
-      "icon": "fa-solid fa-laptop",
-      "reference": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit. D"
     },
     {
-      "name": "Professor John Doe",
-      "icon": "fa-solid fa-thumbtack",
-      "reference": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit. D"
-    }
-  ],
-  "projects": [
-    {
-      "name": "Quantum Computing",
-      "summary": "Quantum computing is the use of quantum-mechanical phenomena such as superposition and entanglement to perform computation. Computers that perform quantum computations are known as quantum computers.",
-      "highlights": ["Quantum Teleportation", "Quantum Cryptography"],
-      "startDate": "2018-01-01",
-      "endDate": "2018-01-01",
-      "url": "https://example.com"
+      "language": "German",
+      "fluency": "Beginner (A1)",
+      "icon": ""
     }
   ]
 }

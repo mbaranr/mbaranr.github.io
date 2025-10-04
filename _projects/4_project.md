@@ -1,8 +1,8 @@
 ---
 layout: page
-title: project 4
-description: another without an image
-img:
+title: Simpson Generation
+description: Generative Adversarial Networks for Simpson face generation.
+img: assets/gif/homer.gif
 importance: 3
 category: fun
 ---

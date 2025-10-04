@@ -83,8 +83,8 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: al-folio # blog_name will be displayed in your blog page
-blog_description: a simple whitespace theme for academics
+blog_name: posts # blog_name will be displayed in your blog page
+blog_description: An archive of my writings and updates.
 permalink: /blog/:year/:title/
 lsi: false # produce an index for related posts
 
@@ -124,20 +124,26 @@ external_sources:
     posts:
       - url: https://www.linkedin.com/feed/update/urn:li:activity:7358190936280973312/
         title: "EASST award at ETAPS 2025"
-        summary: ""
+        summary: "Excited to share that I have been awarded the EASST award at ETAPS 2025 for my paper on verifiable Horn solving!"
         published_date: 2025-08-15
   - name: LinkedIn
     posts:
       - url: https://www.linkedin.com/posts/luleipzig-computer-science-society_last-week-seven-members-from-lu-leipzig-ugcPost-7249193132456652800-0BvU/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADGUewUBtH9c6wYZnkoE54AfWCBHPw8cK28
         title: "LUComp travels to Bailrigg"
-        summary: ""
+        summary: "Seven members from LUComp traveled to Bailrigg to work on automatic waste sorting."
         published_date: 2024-10-14
   - name: LinkedIn
     posts:
       - url: https://www.linkedin.com/feed/update/urn:li:activity:7188847518623916033/
         title: "CompSoc travels to Leipzig"
-        summary: ""
+        summary: "CompSoc visited the Leipzig campus to lay the foundation for upcoming collaborative projects."
         published_date: 2024-09-10
+  - name: LinkedIn
+    posts:
+      - url: https://www.linkedin.com/posts/matias-barandiaran_i-am-honored-to-share-that-i-recently-had-activity-7129392395892273152-sqBS?utm_source=share&utm_medium=member_desktop&rcm=ACoAADGUewUBtH9c6wYZnkoE54AfWCBHPw8cK28
+        title: "Qiskit Fall Fest 2023"
+        summary: "I am honored to share that I recently had the opportunity to organize and present at Qiskit Fall Fest 2023 in LU Leipzig."
+        published_date: 2023-11-10
   
 
 # -----------------------------------------------------------------------------

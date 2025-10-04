@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
+subtitle: Computer Scientist
 
 profile:
   align: right
@@ -25,8 +25,8 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+Born and raised in Lima, Peru. I recently completed my Bachelor’s degree in Computer Science at `Lancaster University`, where I developed a strong interest in software development, data engineering, and machine learning. With over a year of research experience, I’m now motivated to build on that foundation through practical industry work.
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+Lately, I've been particularly interested in the intersection of computer science and the natural sciences. In particular, I’ve been working in genomics, applying deep learning techniques for rare variant association testing. I’ve also explored Reservoir Computing, a branch of morphological computing, where I’ve used Developmental Graph Cellular Automata to lay the foundation for plastic reservoirs.
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+Outside of coding, I enjoy scientific reading, scuba diving, hiking, and badminton. Feel free to explore my website, and if you’d like to connect, you can find my socials and contact info at the bottom of the page!

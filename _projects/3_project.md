@@ -1,10 +1,10 @@
 ---
 layout: page
-title: project 3 with very long name
-description: a project that redirects to another website
-img: assets/img/7.jpg
-redirect: https://unsplash.com
+title: DeepRVAT 2.0
+description: DeepRVAT gene scores can be approximated as a sum of variant level effects.
+img: assets/img/project_preview/deeprvat.png
 importance: 3
+redirect:
 category: work
 ---
 

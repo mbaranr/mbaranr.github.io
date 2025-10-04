@@ -1,8 +1,8 @@
 ---
 layout: page
-title: project 5
-description: a project with a background image
-img: assets/img/1.jpg
+title: Mind Weaver
+description: A puzzle dungeon-crawling adventure.
+img: assets/img/project_preview/game_dev.png
 importance: 3
 category: fun
 ---

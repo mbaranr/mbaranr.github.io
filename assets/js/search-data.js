@@ -111,7 +111,7 @@ ninja.data = [{
               window.location.href = "/projects/1_project/";
             },},{id: "projects-gladgan",
           title: 'gladGAN',
-          description: "Generative Adversarial Networks for graph level anomaly detection.",
+          description: "Generative Adversarial Networks can be used to detect graph level anomalies.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/2_project/";
             },},{id: "projects-deeprvat-2-0",
@@ -126,7 +126,7 @@ ninja.data = [{
               window.location.href = "/projects/4_project/";
             },},{id: "projects-mind-weaver",
           title: 'Mind Weaver',
-          description: "A puzzle dungeon-crawling adventure.",
+          description: "A puzzle-solving, dungeon-crawling 2D adventure.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/5_project/";
             },},{id: "projects-automatic-waste-sorting",

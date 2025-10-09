@@ -8,74 +8,121 @@ redirect:
 category: work
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+### DeepRVAT
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
-
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+Integration of variant annotations using deep set networks boosts rare variant association testing. 
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+        <div style="max-width: 600px; margin: 0 auto;">
+            {% include figure.liquid loading="eager" path="assets/img/project_content/deeprvat_motivation.png" title="echo state network" class="img-fluid rounded z-depth-1" %}
+        </div>
     </div>
 </div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
+
+The pre-trained DeepRVAT model can be used to compute gene impairment scores for new genes and samples.
+
+My work consisted on revisiting DeepRVAT by focusing on 4 dimensions:
+
+### Robustness and Performance
+
+Max Permutation Invariant function (PIF) can’t model interactions or compound effects. One variant might suppress or mask the effect of another. Two moderate-impact variants together might have a stronger effect than either alone.
+
+<div class="row g-0">
+    <div class="col-sm mt-3 mt-md-0">
+        <div style="max-width: 200px; margin: 0 auto;">
+            {% include figure.liquid loading="eager" path="assets/img/project_content/pif.png" title="PIF" class="img-fluid rounded z-depth-1" %}
+        </div>
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        <div style="max-width: 400px; margin: 0 auto;">
+            {% include figure.liquid loading="eager" path="assets/img/project_content/sumvsmax.png" title="sum vs max" class="img-fluid rounded z-depth-1" %}
+        </div>
+    </div>
 </div>
+
+Removing final sigmoid layer solves problems with burden distribution and yields scores that align with `biological expectations`.
+
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+        <div style="max-width: 700px; margin: 0 auto;">
+            {% include figure.liquid loading="eager" path="assets/img/project_content/additivity.png" title="additivity" class="img-fluid rounded z-depth-1" %}
+        </div>
     </div>
 </div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
 
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
+A default value does not indicate absence of information; NAs should be handled separately. This was achieved by the introduction of a dummy variable.
 
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <div style="max-width: 400px; margin: 0 auto;">
+            {% include figure.liquid loading="eager" path="assets/img/project_content/na_handling.png" title="na_handling" class="img-fluid rounded z-depth-1" %}
+        </div>
     </div>
 </div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
+
+Insertions/deletions can disrupt splicing and regulatory regions (framshift and in-frame risks), but scores are often unavailable. In non-coding regions this is harder to predict, but the impact is still there.
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <div style="max-width: 700px; margin: 0 auto;">
+            {% include figure.liquid loading="eager" path="assets/img/project_content/indels.png" title="indels" class="img-fluid rounded z-depth-1" %}
+        </div>
+    </div>
 </div>
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
+Some indels may be imputed by approximating them as single-nucleotide variants at the affected loci.
 
-{% raw %}
-
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <div style="max-width: 400px; margin: 0 auto;">
+            {% include figure.liquid loading="eager" path="assets/img/project_content/indel_imputation.png" title="indel_imputation" class="img-fluid rounded z-depth-1" %}
+        </div>
+    </div>
 </div>
-```
 
-{% endraw %}
+### Interpretability
+
+Genes with LoF variants can be used as markers for burden rescaling.
+
+We compute rescaling factors:
+
+`X0`: median of gene burdens of individuals with no variants
+
+`X1`: median of gene burdens of individuals with exactly one loftee_hc=1 variant
+
+Rescaling factors (for each model):
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <div style="max-width: 100px; margin: 0 auto;">
+            {% include figure.liquid loading="eager" path="assets/img/project_content/rescaling_factors.png" title="factors" class="img-fluid rounded z-depth-1" %}
+        </div>
+    </div>
+</div>
+
+Rescaling burdens increases `interpretability` and improves `downstream usage`. From a technical point of view, unscaled burdens are hard to compare with other tools, as there is no point of reference.
+
+### Usability
+
+In most samples, DeepRVAT sees a single variant and not a set. This means that the DeepRVAT variant score is actually the gene impairment score.
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <div style="max-width: 600px; margin: 0 auto;">
+            {% include figure.liquid loading="eager" path="assets/img/project_content/deeprvat_vep.png" title="VEP approach" class="img-fluid rounded z-depth-1" %}
+        </div>
+    </div>
+</div>
+
+For those few cases where there are actually >1 variant, adding the variant level scores instead of running them through the end-to-end model showed quite good performance
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <div style="max-width: 400px; margin: 0 auto;">
+            {% include figure.liquid loading="eager" path="assets/img/project_content/vep_performance.png" title="VEP performance" class="img-fluid rounded z-depth-1" %}
+        </div>
+    </div>
+</div>
+
+The advantage that we can pre-compute these variant level scores, which highlights the possibility for an ensemble method for variant prediction complementary to CADD.

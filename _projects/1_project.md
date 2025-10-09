@@ -5,77 +5,82 @@ description: Developmental Graph Cellular Automata can grow reservoir computers.
 img: assets/img/project_preview/dgca.png
 importance: 1
 category: work
-related_publications: true
+related_publications: false
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+### What distinguishes living matter from non-living matter?
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
-
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+Until the late 19th century, scientists believed that life possessed a special vital force. A property not just of living beings, but of their chemical constituents themselves.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+        <div style="max-width: 400px; margin: 0 auto;">
+            {% include figure.liquid loading="eager" path="assets/img/project_content/vital_force.png" title="vital force" class="img-fluid rounded z-depth-1" %}
+        </div>
     </div>
 </div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
+
+By the mid-20th century, the discovery of DNA and RNA structures and the successful synthesis of polynucleotides revealed that life’s chemistry follows the same physical laws as everything else. The atoms that make up our bodies are the same as those found all around the universe.
+
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+        <div style="max-width: 400px; margin: 0 auto;">
+            {% include figure.liquid loading="eager" path="assets/img/project_content/carbon_space.png" title="carbon in space" class="img-fluid rounded z-depth-1" %}
+        </div>
     </div>
 </div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
 
-You can also put regular text between your rows of images, even citations {% cite einstein1950meaning %}.
-Say you wanted to write a bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
+Yet, there remains something unique about living systems beyond chemistry alone.
 
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+In recent years, researchers have turned to `function` as the defining feature of life. 
+
+### Morphogenesis
+
+Morphogenesis orchestrates how cells collectively form complex structures like eyes, limbs, and hearts.
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <div style="max-width: 400px; margin: 0 auto;">
+            {% include figure.liquid loading="eager" path="assets/img/project_content/retina_structure.png" title="human eye" class="img-fluid rounded z-depth-1" %}
+        </div>
     </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+</div>
+
+In 2020, Mordvintsev et al. introduced Neural Cellular Automata (NCA) as a model of morphogenesis. By using neural networks as transition rules, NCAs can grow predefined two-dimensional shapes from a single-cell seed.
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <div style="max-width: 400px; margin: 0 auto;">
+            {% include figure.liquid loading="eager" path="assets/gif/gecko.gif" title="gecko" class="img-fluid rounded z-depth-1" %}
+        </div>
     </div>
 </div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
+
+However, biological morphogenesis is not just about form, it is about function. In nature, structures emerge to do something. What better function to explore than computation itself?
+
+Developmental Graph Cellular Automata (DGCA) (Waldegrave et al., 2023) build upon NCAs by allowing the growth of directed graphs guided by fitness functions. 
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <div style="max-width: 700px; margin: 0 auto;">
+            {% include figure.liquid loading="eager" path="assets/img/project_content/dgca_pipeline.png" title="DGCA update pipeline" class="img-fluid rounded z-depth-1" %}
+        </div>
+    </div>
 </div>
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
+Since recurrent neural networks (RNNs) are directed graphs, and reservoirs (at their simplest form) are RNNs, DGCAs bring us closer to systems that compute in ways reminiscent of nature.
 
-{% raw %}
-
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <div style="max-width: 400px; margin: 0 auto;">
+            {% include figure.liquid loading="eager" path="assets/img/project_content/esn.png" title="echo state network" class="img-fluid rounded z-depth-1" %}
+        </div>
+    </div>
 </div>
-```
 
-{% endraw %}
+This raises a compelling question:
+`Why not grow our own reservoirs?`
+
+Such an approach represents a crucial step toward modeling functional and adaptive morphogenesis.
+
+If this intrigues you, read the [paper](https://arxiv.org/abs/2508.08091). You’ll find that many of the resulting reservoirs exhibit sparse “life-like” structures rather than small-world reservoirs. This suggests that form may play a deeper role in computation within dynamical systems than previously imagined.

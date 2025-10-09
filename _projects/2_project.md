@@ -1,7 +1,7 @@
 ---
 layout: page
 title: gladGAN
-description: Generative Adversarial Networks for graph level anomaly detection.
+description: Generative Adversarial Networks can be used to detect graph level anomalies.
 img: assets/img/project_preview/gladgan.png
 importance: 2
 category: work

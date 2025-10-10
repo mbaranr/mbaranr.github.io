@@ -108,32 +108,32 @@ ninja.data = [{
           title: 'Reservoir DGCAs',
           description: "Developmental Graph Cellular Automata can grow reservoir computers.",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/1_project/";
-            },},{id: "projects-gladgan",
-          title: 'gladGAN',
-          description: "Generative Adversarial Networks can be used to detect graph level anomalies.",
+              window.location.href = "/projects/alife2025/";
+            },},{id: "projects-computer-vision",
+          title: 'Computer Vision',
+          description: "Computer vision playground (GANs, Diffusion Models, Autoencoder, CNNs, etc.).",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/2_project/";
+              window.location.href = "/projects/computer_vision/";
             },},{id: "projects-deeprvat-2-0",
           title: 'DeepRVAT 2.0',
           description: "DeepRVAT gene scores can be approximated as a sum of variant level effects.",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/3_project/";
-            },},{id: "projects-simpson-generation",
-          title: 'Simpson Generation',
-          description: "Generative Adversarial Networks for Simpson face generation.",
+              window.location.href = "/projects/deeprvat2/";
+            },},{id: "projects-gladgan",
+          title: 'gladGAN',
+          description: "Generative Adversarial Networks can be used to detect graph level anomalies.",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/4_project/";
+              window.location.href = "/projects/gladgan/";
             },},{id: "projects-mind-weaver",
           title: 'Mind Weaver',
           description: "A puzzle-solving, dungeon-crawling 2D adventure.",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/5_project/";
-            },},{id: "projects-automatic-waste-sorting",
-          title: 'Automatic Waste Sorting',
-          description: "Image classification and object detection for automatic waste sorting.",
+              window.location.href = "/projects/mind_weaver/";
+            },},{id: "projects-automated-waste-sorting",
+          title: 'Automated Waste Sorting',
+          description: "Image classification and object detection for automated waste sorting.",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/9_project/";
+              window.location.href = "/projects/waste_sorting/";
             },},{
         id: 'social-email',
         title: 'email',

@@ -44,11 +44,22 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-easst-award-at-etaps-2025",
+        },{id: "post-alife-2025",
+        
+          title: 'ALIFE 2025 <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
+        
+        description: "I am excited to share that I was accepted for presentation at ALIFE 2025 in Kyoto, Japan.",
+        section: "Posts",
+        handler: () => {
+          
+            window.open("https://www.linkedin.com/posts/matias-barandiaran_im-excited-to-share-that-i-was-accepted-activity-7382305907155685377-aRYS?utm_source=share&utm_medium=member_desktop&rcm=ACoAADGUewUBtH9c6wYZnkoE54AfWCBHPw8cK28", "_blank");
+          
+        },
+      },{id: "post-easst-award-at-etaps-2025",
         
           title: 'EASST award at ETAPS 2025 <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
         
-        description: "Excited to share that I have been awarded the EASST award at ETAPS 2025 for my paper on verifiable Horn solving!",
+        description: "I am excited to share that I have been awarded the EASST award at ETAPS 2025 for my paper on verifiable Horn solving!",
         section: "Posts",
         handler: () => {
           
@@ -111,7 +122,7 @@ ninja.data = [{
               window.location.href = "/projects/alife2025/";
             },},{id: "projects-computer-vision",
           title: 'Computer Vision',
-          description: "Computer vision playground (GANs, Diffusion Models, Autoencoder, CNNs, etc.).",
+          description: "Computer vision playground (GANs, Diffusion Models, Autoencoders, CNNs, etc.).",
           section: "Projects",handler: () => {
               window.location.href = "/projects/computer_vision/";
             },},{id: "projects-deeprvat-2-0",
@@ -126,7 +137,7 @@ ninja.data = [{
               window.location.href = "/projects/gladgan/";
             },},{id: "projects-mind-weaver",
           title: 'Mind Weaver',
-          description: "A puzzle-solving, dungeon-crawling 2D adventure.",
+          description: "A puzzle, dungeon-crawling 2D platformer.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/mind_weaver/";
             },},{id: "projects-automated-waste-sorting",

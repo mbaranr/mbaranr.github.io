@@ -1,11 +1,10 @@
 ---
 layout: page
-title: gladGAN
-description: Generative Adversarial Networks can be used to detect graph level anomalies.
-img: assets/img/project_preview/gladgan.png
-importance: 2
-category: work
-giscus_comments: true
+title: Automated Waste Sorting
+description: Image classification and object detection for automated waste sorting.
+img: assets/img/project_preview/waste_sorting.png
+importance: 4
+category: fun
 ---
 
 Every project has a beautiful feature showcase page.

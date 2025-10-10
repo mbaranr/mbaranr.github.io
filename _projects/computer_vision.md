@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Simpson Generation
-description: Generative Adversarial Networks for Simpson face generation.
+title: Computer Vision
+description: Computer vision playground (GANs, Diffusion Models, Autoencoder, CNNs, etc.).
 img: assets/gif/homer.gif
 importance: 3
 category: fun

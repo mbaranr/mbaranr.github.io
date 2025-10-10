@@ -15,7 +15,7 @@ Until the late 19th century, scientists believed that life possessed a special v
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
         <div style="max-width: 400px; margin: 0 auto;">
-            {% include figure.liquid loading="eager" path="assets/img/project_content/vital_force.png" title="vital force" class="img-fluid rounded z-depth-1" %}
+            {% include figure.liquid loading="eager" path="assets/img/project_content/alife2025/vital_force.png" title="vital force" class="img-fluid rounded z-depth-1" %}
         </div>
     </div>
 </div>
@@ -25,7 +25,7 @@ By the mid-20th century, the discovery of DNA and RNA structures and the success
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
         <div style="max-width: 400px; margin: 0 auto;">
-            {% include figure.liquid loading="eager" path="assets/img/project_content/carbon_space.png" title="carbon in space" class="img-fluid rounded z-depth-1" %}
+            {% include figure.liquid loading="eager" path="assets/img/project_content/alife2025/carbon_space.png" title="carbon in space" class="img-fluid rounded z-depth-1" %}
         </div>
     </div>
 </div>
@@ -41,7 +41,7 @@ Morphogenesis orchestrates how cells collectively form complex structures like e
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
         <div style="max-width: 400px; margin: 0 auto;">
-            {% include figure.liquid loading="eager" path="assets/img/project_content/retina_structure.png" title="human eye" class="img-fluid rounded z-depth-1" %}
+            {% include figure.liquid loading="eager" path="assets/img/project_content/alife2025/retina_structure.png" title="human eye" class="img-fluid rounded z-depth-1" %}
         </div>
     </div>
 </div>
@@ -63,7 +63,7 @@ Developmental Graph Cellular Automata (DGCA) (Waldegrave et al., 2023) build upo
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
         <div style="max-width: 700px; margin: 0 auto;">
-            {% include figure.liquid loading="eager" path="assets/img/project_content/dgca_pipeline.png" title="DGCA update pipeline" class="img-fluid rounded z-depth-1" %}
+            {% include figure.liquid loading="eager" path="assets/img/project_content/alife2025/dgca_pipeline.png" title="DGCA update pipeline" class="img-fluid rounded z-depth-1" %}
         </div>
     </div>
 </div>
@@ -73,7 +73,7 @@ Since recurrent neural networks (RNNs) are directed graphs, and reservoirs (at t
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
         <div style="max-width: 400px; margin: 0 auto;">
-            {% include figure.liquid loading="eager" path="assets/img/project_content/esn.png" title="echo state network" class="img-fluid rounded z-depth-1" %}
+            {% include figure.liquid loading="eager" path="assets/img/project_content/alife2025/esn.png" title="echo state network" class="img-fluid rounded z-depth-1" %}
         </div>
     </div>
 </div>
@@ -84,3 +84,11 @@ This raises a compelling question:
 Such an approach represents a crucial step toward modeling functional and adaptive morphogenesis.
 
 If this intrigues you, read the [paper](https://arxiv.org/abs/2508.08091). You’ll find that many of the resulting reservoirs exhibit sparse “life-like” structures rather than small-world reservoirs. This suggests that form may play a deeper role in computation within dynamical systems than previously imagined.
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <div style="max-width: 600px; margin: 0 auto;">
+            {% include figure.liquid loading="eager" path="assets/img/project_preview/dgca.png" title="life-like structures" class="img-fluid rounded z-depth-1" %}
+        </div>
+    </div>
+</div>

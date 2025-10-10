@@ -124,7 +124,7 @@ external_sources:
     posts:
       - url: https://www.linkedin.com/feed/update/urn:li:activity:7358190936280973312/
         title: "EASST award at ETAPS 2025"
-        summary: "Excited to share that I have been awarded the EASST award at ETAPS 2025 for my paper on verifiable Horn solving!"
+        summary: "I am excited to share that I have been awarded the EASST award at ETAPS 2025 for my paper on verifiable Horn solving!"
         published_date: 2025-08-15
   - name: LinkedIn
     posts:
@@ -144,6 +144,12 @@ external_sources:
         title: "Qiskit Fall Fest 2023"
         summary: "I am honored to share that I recently had the opportunity to organize and present at Qiskit Fall Fest 2023 in LU Leipzig."
         published_date: 2023-11-10
+  - name: LinkedIn
+    posts:
+      - url: https://www.linkedin.com/posts/matias-barandiaran_im-excited-to-share-that-i-was-accepted-activity-7382305907155685377-aRYS?utm_source=share&utm_medium=member_desktop&rcm=ACoAADGUewUBtH9c6wYZnkoE54AfWCBHPw8cK28
+        title: "ALIFE 2025"
+        summary: "I am excited to share that I was accepted for presentation at ALIFE 2025 in Kyoto, Japan."
+        published_date: 2025-10-10
   
 
 # -----------------------------------------------------------------------------

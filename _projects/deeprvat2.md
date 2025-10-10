@@ -3,7 +3,7 @@ layout: page
 title: DeepRVAT 2.0
 description: DeepRVAT gene scores can be approximated as a sum of variant level effects.
 img: assets/img/project_preview/deeprvat.png
-importance: 3
+importance: 2
 redirect:
 category: work
 ---

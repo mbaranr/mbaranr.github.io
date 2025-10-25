@@ -44,7 +44,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-alife-2025",
+        },{id: "post-chancellor-39-s-medal",
+        
+          title: 'Chancellor&#39;s Medal <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
+        
+        description: "I’m proud to share that I have graduated in Computer Science with one of Lancaster University’s highest honors, the Chancellor’s Medal.",
+        section: "Posts",
+        handler: () => {
+          
+            window.open("https://www.linkedin.com/posts/matias-barandiaran_alife2025-activity-7382305907155685377-VxDY?utm_source=share&utm_medium=member_desktop&rcm=ACoAADGUewUBtH9c6wYZnkoE54AfWCBHPw8cK28", "_blank");
+          
+        },
+      },{id: "post-alife-2025",
         
           title: 'ALIFE 2025 <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
         

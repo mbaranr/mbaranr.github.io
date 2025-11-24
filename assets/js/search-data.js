@@ -30,13 +30,6 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/projects/";
           },
-        },{id: "nav-repositories",
-          title: "repositories",
-          description: "Check out my GitHub stats and featured repositories here, or visit my profile directly.",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/repositories/";
-          },
         },{id: "nav-resume",
           title: "resume",
           description: "Welcome to my resume! You can browse it here or download the PDF using the big blue/purple button.",

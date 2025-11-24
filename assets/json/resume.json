@@ -6,7 +6,7 @@
     "email": "mbarandiaranr@gmail.com",
     "phone": "+49 15231626943",
     "url": "https://mbaranr.github.io",
-    "summary": "A Computer Science graduate from Lancaster University with over a year of research experience and a strong interest in software development and data engineering.",
+    "summary": "A Computer Science graduate from Lancaster University with over a year of research experience and a strong interest in software development, machine learning, and data engineering.",
     "location": {
       "city": "Leipzig",
       "countryCode": "Germany",
@@ -27,7 +27,7 @@
       "position": "Research Assistant",
       "startDate": "2024-07",
       "endDate": "2025-08",
-      "summary": "Hosted by the Gagneur Lab (Computational Molecular Medicine) in affiliation with Helmholtz Munich.",
+      "summary": "Hosted by the Gagneur Lab in affiliation with Helmholtz Munich.",
       "highlights": ["Worked on rare variant association testing using deep learning and data-driven burden scores (DeepRVAT), utilizing Python, R, PyTorch and Snakemake", "First-hand exposure to HPC cluster management, Linux, and Git version control"]
     },
     {
@@ -96,7 +96,7 @@
       "startDate": "2022-10",
       "endDate": "2025-07",
       "score": "4.00/4.00",
-      "courses": ["University ranked #132 worldwide for Computer Science (QS by subject) in 2025.", "First Class Honours (UK: 91.2% ~ GPA: 4.00/4.00).", "Valedictorian *won Chancellor’s Medal*."]
+      "courses": ["University ranked #132 worldwide for Computer Science (QS by subject) in 2025.", "First Class Honours (UK: 91.2% ~ GPA: 4.00/4.00).", "Ranked 1st out of 212 students."]
     }
   ],
   "awards": [
@@ -105,6 +105,12 @@
       "date": "2025-10",
       "awarder": "Lancaster University",
       "summary": "The university’s most prestigious award, presented annually to graduating students who demonstrate exceptional merit in their field. Achieved the cohort’s highest average grade across all three years of the BSc Computer Science program."
+    },
+    {
+      "title": "Valedictorian",
+      "date": "2025-10",
+      "awarder": "Lancaster University",
+      "summary": "Ranked 1st out of 212 students achieving the cohort’s highest average grade across all three years of the BSc Computer Science program."
     },
     {
       "title": "EASST Best Paper Award",
@@ -197,7 +203,7 @@
     },
     {
       "language": "German",
-      "fluency": "Beginner (A1)",
+      "fluency": "Beginner (A2)",
       "icon": ""
     }
   ]

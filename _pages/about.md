@@ -29,4 +29,4 @@ Born and raised in Lima, Peru. I recently completed my Bachelor’s degree in Co
 
 Lately, I've been particularly interested in the intersection of computer science and the natural sciences. In particular, I’ve been working in genomics, applying deep learning techniques for rare variant association testing. I’ve also explored Reservoir Computing, a branch of morphological computing, where I’ve used Developmental Graph Cellular Automata to lay the foundation for plastic reservoirs.
 
-Outside of coding, I enjoy scientific reading, scuba diving, hiking, and badminton. Feel free to explore my website, and if you’d like to connect, you can find my socials and contact info at the bottom of the page!
+Outside of coding, I enjoy scientific reading, fishwatching, hiking, and badminton. Feel free to explore my website, and if you’d like to connect, you can find my socials and contact info at the bottom of the page!

@@ -39,7 +39,7 @@ ninja.data = [{
           },
         },{id: "nav-resume",
           title: "resume",
-          description: "Welcome to my resume! You can browse it here or download the PDF using the big blue button.",
+          description: "Welcome to my resume! You can browse it here or download the PDF using the big blue/purple button.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/cv/";
@@ -48,7 +48,7 @@ ninja.data = [{
         
           title: 'Chancellor&#39;s Medal <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
         
-        description: "I’m proud to share that I have graduated in Computer Science with one of Lancaster University’s highest honors, the Chancellor’s Medal.",
+        description: "I graduated in Computer Science with one of Lancaster University’s highest honors, the Chancellor’s Medal.",
         section: "Posts",
         handler: () => {
           
@@ -59,7 +59,7 @@ ninja.data = [{
         
           title: 'ALIFE 2025 <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
         
-        description: "I am excited to share that I was accepted for presentation at ALIFE 2025 in Kyoto, Japan.",
+        description: "I presented at ALIFE 2025 in Kyoto, Japan.",
         section: "Posts",
         handler: () => {
           
@@ -70,11 +70,22 @@ ninja.data = [{
         
           title: 'EASST award at ETAPS 2025 <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
         
-        description: "I am excited to share that I have been awarded the EASST award at ETAPS 2025 for my paper on verifiable Horn solving!",
+        description: "I have been awarded the EASST award at ETAPS 2025 for my paper on verifiable Horn solving!",
         section: "Posts",
         handler: () => {
           
             window.open("https://www.linkedin.com/feed/update/urn:li:activity:7358190936280973312/", "_blank");
+          
+        },
+      },{id: "post-neptune-memorial-reef",
+        
+          title: "Neptune Memorial Reef",
+        
+        description: "Fishwatching off the coast of Key Biscayne, Florida.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/neptune/";
           
         },
       },{id: "post-lucomp-travels-to-bailrigg",
@@ -103,7 +114,7 @@ ninja.data = [{
         
           title: 'Qiskit Fall Fest 2023 <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
         
-        description: "I am honored to share that I recently had the opportunity to organize and present at Qiskit Fall Fest 2023 in LU Leipzig.",
+        description: "I organized and presented at Qiskit Fall Fest 2023 in LU Leipzig.",
         section: "Posts",
         handler: () => {
           
@@ -131,11 +142,6 @@ ninja.data = [{
           description: "Developmental Graph Cellular Automata can grow reservoir computers.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/alife2025/";
-            },},{id: "projects-computer-vision",
-          title: 'Computer Vision',
-          description: "Computer vision playground (GANs, Diffusion Models, Autoencoders, CNNs, etc.).",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/computer_vision/";
             },},{id: "projects-deeprvat-2-0",
           title: 'DeepRVAT 2.0',
           description: "DeepRVAT gene scores can be approximated as a sum of variant level effects.",

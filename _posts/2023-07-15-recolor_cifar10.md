@@ -2,7 +2,7 @@
 layout: post
 title: Recoloring CIFAR-10
 date: 2023-07-15
-description: Solving the recoloring task of CIFAR-10 images using unsupervised learning.
+description: Solving the recoloring task of CIFAR-10 images with unsupervised learning.
 tags: code python pytorch computer_vision
 categories: machine_learning
 featured: false

@@ -2,19 +2,19 @@
 layout: post
 title: Classifying CIFAR-10
 date: 2023-07-01
-description: Solving the classification task of CIFAR-10 images using supervised learning.
+description: Solving the classification task of CIFAR-10 images with supervised learning.
 tags: code python pytorch computer_vision
 categories: machine_learning
 featured: false
 ---
 
-We tackled the classification task of CIFAR10 images comparing multiple supervised learning approaches. See the [repo](https://github.com/mbaranr/classify_cifar10) to access the jupyter notebook.
+We tackled the task of classifying CIFAR-10 images by comparing multiple supervised learning approaches. You can access the Jupyter notebook in the [repo](https://github.com/mbaranr/classify_cifar10).
 
-Supervised machine learning is a widely used form of artificial intelligence. There are plenty of ways to approach supervised learning: some of them being Neural Networks, Convolutional Neural Networks and Residual Networks. I worked on analysing the difference between these for the `CIFAR-10` classification task.
+Supervised machine learning is a widely used form of artificial intelligence. There are many approaches to supervised learning, including Neural Networks, Convolutional Neural Networks, and Residual Networks.
 
 ### CIFAR-10
 
-CIFAR-10, a subset of CIFAR-100, consists of 60000 32x32 colour images in split into 10 classes (6000 images per class). There are 50000 training images and 10000 test images.
+CIFAR-10, a subset of CIFAR-100, consists of 60000 32x32 colour images split into 10 classes (6000 images per class). There are 50000 training images and 10000 test images.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
@@ -27,7 +27,7 @@ CIFAR-10, a subset of CIFAR-100, consists of 60000 32x32 colour images in split 
 
 ### Linear Neural Network
 
-To begin with, let's start with a simple deep NN of 5 layers with no activation function on the last layer. We will be using ReLu to introduce non linearazation.
+To begin with, let's start with a simple deep NN of 5 layers with no activation function on the last layer. We will be using ReLu to introduce non-linearity.
 
 As simple as:
 
@@ -49,7 +49,7 @@ class MyNN(nn.Module):
     return self.layer5(x)
 ```
 
-As expected, the performance of a simple deep NN for images is not as high as other models, with a final accuracy of 46.8% on the training set and 44.7% on the validation set.
+As expected, the performance of a simple deep NN for images is not really "state-of-the-art", with a final accuracy of 46.8% on the training set and 44.7% on the validation set.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
@@ -65,13 +65,13 @@ As expected, the performance of a simple deep NN for images is not as high as ot
     </div>
 </div>
 
-Judging from the confusion matrix, the biggest missmatch lies on cats and frogs... There's also a big mismatch between cats and dogs, which makes more sense. However, there are some unpredictable mismatches between labels like frogs and dogs, dogs and airplanes, trucks and automobiles, etc.
+Judging from the confusion matrix, the largest mismatches occur between cats and frogs. There is also a significant confusion between cats and dogs, which is more understandable. However, some unpredictable mismatches appear between labels such as frogs and dogs, dogs and airplanes, and trucks and automobiles.
 
-Other models, like CNNs which can capture the complexity of images on a much more effective manner.
+Other models, like CNNs, can capture the complexity of images in a much more effective manner.
 
 ### Convolutional Neural Network
 
-Now let's build a deep CNN to compare the performance of a much more complex model. The feature extractor will be using max pooling to reduce the dimensions of the features and it will have 3 convolutional layers. The classifier on the other hand will use ReLu as the activation function and will contain 4 linear layers
+Now, let’s build a deep CNN to compare the performance of a more complex model. The feature extractor will consist of 3 convolutional layers, using max pooling to reduce the spatial dimensions of the features. The classifier, on the other hand, will contain 4 linear layers and use ReLU as the activation function.
 
 ```python
 class MyCNN(nn.Module):
@@ -106,7 +106,7 @@ The training and validation losses evolved as such:
     </div>
 </div>
 
-We can observe already that the CNN is performing much better, with 71.3% accuracy for the training set, 64.3% accuracy for the validation set, and no overfitting.
+We can already observe that the CNN is performing significantly better, achieving 71.3% accuracy on the training set and 64.3% accuracy on the validation set, with no signs of overfitting.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
@@ -116,7 +116,7 @@ We can observe already that the CNN is performing much better, with 71.3% accura
     </div>
 </div>
 
-This graph compares the training loss function for the simple NN and CNN. It is clear that a more complex model like the CNN, which applies filters to the images performs better, with a steeper gradient that becomes more notorious at around epoch 1.
+This graph compares the training loss of the simple NN and the CNN. It is clear that a more complex model like the CNN, which applies filters to the images, performs better, showing a steeper decrease in loss that becomes particularly noticeable around epoch 1.
 
 ### More Epochs
 
@@ -135,9 +135,9 @@ So far, we've only trained for 10 epochs. What if we double that?
     </div>
 </div>
 
-This graphs shows us a better understanding of how a model like this may overfit on the training set. Eventhough it performs better than the training for 10 epochs, we can clearly see that around 10 epochs, the gradient of the validation loss function starts becoming positive.
+This graph provides a better understanding of how a model like this may overfit on the training set. Even though it performs well for the first 10 epochs, we can clearly see that around epoch 10, the gradient of the validation loss starts becoming positive, indicating the onset of overfitting.
 
-**Bonus**. These graphs shows us the intermediate features for the 3 convolution layers. As one can observe, the first layers start identifying textures and edges, and as we go deeper into the network, we can start observing more complex shapes, like the siloutte of the horse. 
+**Bonus**: These graphs show the intermediate features for the three convolutional layers. As observed, the first layers capture textures and edges, while deeper layers begin to identify more complex shapes, such as the silhouette of a horse.
 
 <div class="col">
     <div class="col-sm mt-3 mt-md-0">
@@ -170,7 +170,7 @@ The main goal of data augmentation is to increase the diversity and variability 
 
 As we saw before, the model started overfitting when training for a higher number of epochs. Let's apply some transformations to the data to check if we can solve this problem. These include random rotations, color jitters, and horizontal flips.
 
-*Note*: We only apply the transformnations to the training set, as we want to leave the validation and testing sets as accurate to the actual information as possible. 
+*Note*: We only apply the transformnations to the training set, as we want to leave the validation and testing sets as accurate to the actual images as possible. 
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
@@ -180,9 +180,9 @@ As we saw before, the model started overfitting when training for a higher numbe
     </div>
 </div>
 
-The validation loss function is now performing better with augmentation (69.7%), significantly solving the overfitting problem from before.
+The validation loss is now performing better with data augmentation, achieving 69.7% accuracy and significantly mitigating the overfitting problem observed earlier.
 
-Is this the best we can do with machine learning? Certainly not... Pretrained models on much bigger datasets can help us tackle problems like this, where datasets of fewer samples don't provide enough knowledge to our models.
+Is this the best we can do? Certainly not. Pretrained models on much larger datasets can help address challenges like this, where smaller datasets do not provide enough information for the model to learn effectively.
 
 ### Residual Network
 
@@ -196,7 +196,7 @@ Transfer learning means taking the relevant parts of a pre-trained machine learn
     </div>
 </div>
 
-We will be using the resnet18 network pretrained for the ImageNet dataset. This dataset consists of millions of labeled images from a wide range of categories, such as animals, objects, and scenes. The only fintuning going on here lays on the final layer, as we need to specify that there are only 10 labels for our dataset.
+We will be using the ResNet-18 network pretrained on the ImageNet dataset. ImageNet contains millions of labeled images across a wide range of categories, including animals, objects, and scenes. The only fine-tuning performed here is on the final layer, as we need to adjust it to output predictions for the 10 labels in our dataset.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
@@ -211,7 +211,7 @@ We will be using the resnet18 network pretrained for the ImageNet dataset. This 
     </div>
 </div>
 
-An increase in accuracy of around 10%! The starting loss is much smaller for the pretrained network for both the validation and training sets. Testing accuracy of 82.0%!
+An increase in accuracy of around 10%! The starting loss is much smaller for the pretrained network for both the validation and training sets. Testing accuracy of 82.0%.
 
 Now, the question arises once again: is this the `best` we can do? In many implementations, including the one in PyTorch, the default input size for the ResNet models is 224x224 pixels. But we are feeding it 32x32 images. Let's fix this by resizing the images to 224x224.
 

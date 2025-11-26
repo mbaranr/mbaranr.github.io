@@ -121,15 +121,26 @@ ninja.data = [{
             window.open("https://www.linkedin.com/posts/matias-barandiaran_i-am-honored-to-share-that-i-recently-had-activity-7129392395892273152-sqBS?utm_source=share&utm_medium=member_desktop&rcm=ACoAADGUewUBtH9c6wYZnkoE54AfWCBHPw8cK28", "_blank");
           
         },
-      },{id: "post-recoloring-cifar10",
+      },{id: "post-recoloring-cifar-10",
         
-          title: "Recoloring CIFAR10",
+          title: "Recoloring CIFAR-10",
         
-        description: "Solving the recoloring task of CIFAR10 images using supervised learning.",
+        description: "Solving the recoloring task of CIFAR-10 images using unsupervised learning.",
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/2023/cifar10/";
+            window.location.href = "/blog/2023/recolor_cifar10-copy/";
+          
+        },
+      },{id: "post-classifying-cifar-10",
+        
+          title: "Classifying CIFAR-10",
+        
+        description: "Solving the classification task of CIFAR-10 images using supervised learning.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2023/classify_cifar10/";
           
         },
       },{id: "books-the-anxious-generation",

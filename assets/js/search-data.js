@@ -30,6 +30,20 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/projects/";
           },
+        },{id: "nav-repositories",
+          title: "repositories",
+          description: "Check out my GitHub stats and featured repositories here, or visit my profile directly.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/repositories/";
+          },
+        },{id: "nav-bookshelf",
+          title: "bookshelf",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/books/";
+          },
         },{id: "nav-resume",
           title: "resume",
           description: "Welcome to my resume! You can browse it here or download the PDF using the big blue/purple button.",
@@ -114,11 +128,52 @@ ninja.data = [{
             window.open("https://www.linkedin.com/posts/matias-barandiaran_i-am-honored-to-share-that-i-recently-had-activity-7129392395892273152-sqBS?utm_source=share&utm_medium=member_desktop&rcm=ACoAADGUewUBtH9c6wYZnkoE54AfWCBHPw8cK28", "_blank");
           
         },
-      },{id: "books-the-godfather",
-          title: 'The Godfather',
+      },{id: "post-recoloring-cifar10",
+        
+          title: "Recoloring CIFAR10",
+        
+        description: "Solving the recoloring task of CIFAR10 images using supervised learning.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2023/cifar10/";
+          
+        },
+      },{id: "books-the-anxious-generation",
+          title: 'The Anxious Generation',
           description: "",
           section: "Books",handler: () => {
-              window.location.href = "/books/the_godfather/";
+              window.location.href = "/books/anxious_generation/";
+            },},{id: "books-la-casa-verde",
+          title: 'La Casa Verde',
+          description: "",
+          section: "Books",handler: () => {
+              window.location.href = "/books/casa_verde/";
+            },},{id: "books-the-god-delusion",
+          title: 'The God Delusion',
+          description: "",
+          section: "Books",handler: () => {
+              window.location.href = "/books/god_delusion/";
+            },},{id: "books-lifespan-why-we-age-and-why-we-don-39-t-have-to",
+          title: 'Lifespan: Why We Age―and Why We Don&amp;#39;t Have To',
+          description: "",
+          section: "Books",handler: () => {
+              window.location.href = "/books/lifespan/";
+            },},{id: "books-other-minds-the-octopus-the-sea-and-the-deep-origins-of-consciousness",
+          title: 'Other Minds: The Octopus, the Sea, and the Deep Origins of Consciousness',
+          description: "",
+          section: "Books",handler: () => {
+              window.location.href = "/books/other_minds/";
+            },},{id: "books-the-selfish-gene",
+          title: 'The Selfish Gene',
+          description: "",
+          section: "Books",handler: () => {
+              window.location.href = "/books/selfish_gene/";
+            },},{id: "books-starry-messenger-cosmic-perspectives-on-civilization",
+          title: 'Starry Messenger: Cosmic Perspectives on Civilization',
+          description: "",
+          section: "Books",handler: () => {
+              window.location.href = "/books/starry_messenger/";
             },},{id: "news-a-simple-inline-announcement",
           title: 'A simple inline announcement.',
           description: "",

@@ -9,7 +9,9 @@ images:
   slider: true
 ---
 
-You wake up as a mage, trapped deep within the confines of a goblin-ruled dungeon. Luckily, your butterfly companion has managed to set you free. It is now up to your imagination and your ability to control minds to help you escape!
+This project was developed almost entirely on my own as part of a graded project in my BSc in Computer Science Program. It was developed in `libGDX` and the art was done using `Aseprite`.
+
+**Introduction**: You wake up as a mage, trapped deep within the confines of a goblin-ruled dungeon. Luckily, your butterfly companion has managed to set you free. It is now up to your imagination and your ability to control minds to help you escape!
 
 ### How to play
 

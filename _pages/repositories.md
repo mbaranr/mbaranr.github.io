@@ -4,7 +4,7 @@ permalink: /repositories/
 title: repositories
 description: Check out my GitHub stats and featured repositories here, or visit my profile directly.
 nav: true
-nav_order: 8
+nav_order: 4
 ---
 
 {% if site.data.repositories.github_users %}

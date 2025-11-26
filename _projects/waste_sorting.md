@@ -7,7 +7,13 @@ importance: 4
 category: fun
 ---
 
-This project was developed as part of an international collaborative initiative between the Lancaster University campuses of Leipzig (Germany) and Bailrigg (England). I led the computer vision team, focusing on `object detection` and `image classification`.
+This project was developed as part of an international collaborative initiative between the Lancaster University campuses of Leipzig (Germany) and Bailrigg (England). 
+
+**HW**: KUKA industrial robots, the same ones used in car assembly lines, capable of handling loads of 180kg and moving at 3m/s. 
+
+**Motivation**: By innovating in waste management, we hope to contribute toward sustainable solutions for one of the world’s growing environmental concerns. Our long-term vision is to extend this technology to more critical areas, such as nuclear waste management, where safe and efficient handling is of utter importance.
+
+I led the computer vision team, focusing on `object detection` and `image classification`.
 
 ### Dataset
 
@@ -24,36 +30,6 @@ Fine-tuned pre-trained ResNet50 architecture. Model weights can be downloaded [h
         </div>
     </div>
 </div>
-
-### Control Flow
-
-```
-on start:
-    lock lock
-    move to detect
-    once in detect pos, unlock lock
-
-on video frame -> detect done:
-    if locked, continue
-    lock lock
-    get detect position
-    move robot to detect position @ fixed height
-    start classify
-
-on classify done:
-    move to lower height above obj
-    open gripper
-    move down
-    close gripper
-    move up
-    move to bin (up)
-    move down
-    open gripper
-    move up
-    close gripper
-    move to detect
-    unlock lock
-```
 
 ### Demo
 
@@ -75,21 +51,32 @@ on classify done:
 
 ### Credits
 
-- Matias Barandiaran 
-- Parichay Sachdev 
-- Mustafa Azizi
-- Athar Syed
-- Osvaldo Catine
-- Mikelis Kamepe
-- Inderjot Sitt
-- Isaac Richardson
-- Andre Mariucci
-- Toby Vermon
+<div class="row align-items-start pt-4"> <!-- padding on top -->
+  
+  <!-- Left column: Credits -->
+  <div class="col-md-6 pr-md-2"> <!-- reduce right padding -->
+    <ul class="mb-0"> <!-- remove bottom margin -->
+      <li>Matias Barandiaran</li>
+      <li>Parichay Sachdev</li>
+      <li>Mustafa Azizi</li>
+      <li>Athar Syed</li>
+      <li>Osvaldo Catine</li>
+      <li>Mikelis Kamepe</li>
+      <li>Inderjot Sitt</li>
+      <li>Isaac Richardson</li>
+      <li>Andre Mariucci</li>
+      <li>Toby Vermon</li>
+    </ul>
+  </div>
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        <div style="max-width: 600px; margin: 0 auto;">
-            {% include figure.liquid loading="eager" path="assets/img/project_content/waste_sorting/group_photo.jpg" title="group" class="img-fluid rounded z-depth-1" %}
-        </div>
+  <!-- Right column: Image -->
+  <div class="col-md-6 pl-md-2"> <!-- reduce left padding -->
+    <div style="max-width: 600px; margin: 0 auto;">
+      {% include figure.liquid loading="eager"
+         path="assets/img/project_content/waste_sorting/group_photo.jpg"
+         title="group"
+         class="img-fluid rounded z-depth-1" %}
     </div>
+  </div>
+
 </div>

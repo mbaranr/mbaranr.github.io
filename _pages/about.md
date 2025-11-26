@@ -27,6 +27,6 @@ latest_posts:
 
 Born and raised in Lima, Peru. I recently completed my Bachelor’s degree in Computer Science at `Lancaster University`, where I developed a strong interest in software development, data engineering, and machine learning. With over a year of research experience, I’m now motivated to build on that foundation through practical industry work.
 
-Lately, I've been particularly interested in the intersection of computer science and the natural sciences. In particular, I’ve been working in genomics, applying deep learning techniques for rare variant association testing. I’ve also explored Reservoir Computing, a branch of morphological computing, where I’ve used Developmental Graph Cellular Automata to lay the foundation for plastic reservoirs.
+Lately, I've been particularly interested in the intersection of computer science and the natural sciences. In particular, I’ve been working in genomics, applying deep learning techniques for rare variant association testing. I’ve also explored Reservoir Computing, a branch of morphological computing, where I’ve used Developmental Graph Cellular Automata to lay the foundation for *plastic* reservoirs.
 
-Outside of coding, I enjoy scientific reading, fishwatching, hiking, and badminton. Feel free to explore my website, and if you’d like to connect, you can find my socials and contact info at the bottom of the page!
+Outside of coding, I enjoy reading, fishwatching, and badminton. Feel free to explore my website, and if you’d like to connect, you can find my socials and contact info at the bottom of the page!

@@ -289,7 +289,7 @@ jekyll-archives:
     enabled: [year, tags, categories] # enables year, tag and category archives (remove if you need to disable one of them).
 
 display_tags: [code, video] # these tags will be displayed on the front page of your blog
-display_categories: [fishwatching, computer_vision, machine_learning] # these categories will be displayed on the front page of your blog
+display_categories: [fishwatching, machine_learning] # these categories will be displayed on the front page of your blog
 
 # -----------------------------------------------------------------------------
 # Jekyll Scholar

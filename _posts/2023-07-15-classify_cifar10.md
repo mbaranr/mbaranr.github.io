@@ -213,7 +213,7 @@ We will be using the resnet18 network pretrained for the ImageNet dataset. This 
 
 Already we can observe much effective results, with an increase in accuracy of around 10%! By comparing the resnet18 model with our previous CNN we can see that the starting loss is much smaller for the pretrained network for both the validation and training sets. We have a testing accuracy of 82.0%!
 
-Now, the question arises once again: is this the `best` we can do? In many implementations, including the one in PyTorch, the default input size for the ResNet models is 224x224 pixels. But we are feeding it 32x32 pixel images. Let's fix this by resizing the images to 224x224 pixels.
+Now, the question arises once again: is this the `best` we can do? In many implementations, including the one in PyTorch, the default input size for the ResNet models is 224x224 pixels. But we are feeding it 32x32 images. Let's fix this by resizing the images to 224x224.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
@@ -228,4 +228,4 @@ Now, the question arises once again: is this the `best` we can do? In many imple
     </div>
 </div>
 
-Now it's clear that it wasn't fair for us the feed the model differently sized images to the ones that were used to train it in the first place. Particularly, it is really impressive how low the loss starts for the validation set, and how it stays almost constant throught the 20 epochs. We finally have a testing accuracy of 95%.
+Now it's clear that it wasn't fair to feed the model differently sized images to the ones that were used to train it in the first place. Particularly, it is really impressive how low the loss starts for the validation set. Finally, we have a testing accuracy of 95%.

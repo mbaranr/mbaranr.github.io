@@ -8,7 +8,7 @@ category: work
 related_publications: false
 ---
 
-### What distinguishes living matter from non-living matter?
+> What distinguishes living matter from non-living matter?
 
 Until the late 19th century, scientists believed that life possessed a special vital force. A property not just of living beings, but of their chemical constituents themselves.
 
@@ -34,7 +34,7 @@ Yet, there remains something unique about living systems beyond chemistry alone.
 
 In recent years, researchers have turned to `function` as the defining feature of life. 
 
-### Morphogenesis
+> What gives rise to function in multicellular organisms?
 
 Morphogenesis orchestrates how cells collectively form complex structures like eyes, limbs, and hearts.
 
@@ -78,10 +78,11 @@ Since recurrent neural networks (RNNs) are directed graphs, and reservoirs (at t
     </div>
 </div>
 
-This raises a compelling question:
-`Why not grow our own reservoirs?`
+This raises a compelling question...
 
-Such an approach represents a crucial step toward modeling functional and adaptive morphogenesis.
+> Why not grow our own reservoirs?
+
+Achieving so represents a crucial step toward modeling a more functional, adaptive morphogenesis.
 
 If this intrigues you, read the [paper](https://arxiv.org/abs/2508.08091). You’ll find that many of the resulting reservoirs exhibit sparse “life-like” structures rather than small-world reservoirs. This suggests that form may play a deeper role in computation within dynamical systems than previously imagined.
 

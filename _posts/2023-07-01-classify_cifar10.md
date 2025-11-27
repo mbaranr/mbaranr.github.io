@@ -106,7 +106,7 @@ The training and validation losses evolved as such:
     </div>
 </div>
 
-We can already observe that the CNN is performing significantly better, achieving 71.3% accuracy on the training set and 64.3% accuracy on the validation set, with no signs of overfitting.
+Already, we can observe that the CNN is performing significantly better, achieving 71.3% accuracy on the training set and 64.3% accuracy on the validation set, with no signs of overfitting.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">

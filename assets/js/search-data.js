@@ -132,6 +132,17 @@ ninja.data = [{
             window.open("https://www.linkedin.com/posts/matias-barandiaran_i-am-honored-to-share-that-i-recently-had-activity-7129392395892273152-sqBS?utm_source=share&utm_medium=member_desktop&rcm=ACoAADGUewUBtH9c6wYZnkoE54AfWCBHPw8cK28", "_blank");
           
         },
+      },{id: "post-generating-simpsons-faces",
+        
+          title: "Generating Simpsons Faces",
+        
+        description: "Generating Simpsons faces with Generative Adversarial Networks",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2023/simpsons_gan/";
+          
+        },
       },{id: "post-recoloring-cifar-10",
         
           title: "Recoloring CIFAR-10",

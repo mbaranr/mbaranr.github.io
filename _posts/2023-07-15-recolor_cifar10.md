@@ -8,8 +8,6 @@ categories: generative_ai
 featured: false
 ---
 
-I tackled the colorization task of CIFAR10 images comparing two approaches: Auto Encoders and Deep Conditional Generative Adversarial Networks (DCGANs).
-
 Over the last decade, the process of automatic colorization has been studied thoroughly due to its potential for restoration of aged and/or degraded images. This problem is highly ill-posed due to the extremely large degrees of freedom during the assignment of color information. 
 
 In this project, I explored the colorization task on the CIFAR-10 dataset by comparing two approaches:

@@ -156,7 +156,10 @@
         "Git",
         "Linux",
         "SQL",
-        "Docker",
+        "Snakemake",
+        "Qiskit",
+        "QEMU",
+        "OS-Ken",
         "PyTorch"
       ]
     },
@@ -166,15 +169,14 @@
       "icon": "fa-solid fa-hashtag",
       "keywords": [
         "Rare Variant Association Testing",
-        "Data Engineering",
+        "Data Pipelines",
         "Computer Vision",
-        "Network Protocols",
         "Generative Modelling",
         "Supervised Learning",
         "Reinforcement Learning",
         "Graph Anomaly Detection",
         "Reservoir Computing",
-        "Distributed Systems"
+        "Cloud Computing"
       ]
     },
     {
@@ -183,10 +185,8 @@
       "icon": "fa-solid fa-hashtag",
       "keywords": [
         "Game Development",
-        "Scuba Diving",
-        "Badminton",
-        "Videography",
-        "Saxophone"
+        "Fishwatching",
+        "Badminton"
       ]
     }
   ],

@@ -52,7 +52,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.open("https://www.linkedin.com/posts/matias-barandiaran_alife2025-activity-7382305907155685377-VxDY?utm_source=share&utm_medium=member_desktop&rcm=ACoAADGUewUBtH9c6wYZnkoE54AfWCBHPw8cK28", "_blank");
+            window.open("https://www.linkedin.com/posts/matias-barandiaran_three-years-ago-i-made-the-decision-to-fly-activity-7387866582879879169-PKdk?utm_source=share&utm_medium=member_desktop&rcm=ACoAADGUewUBtH9c6wYZnkoE54AfWCBHPw8cK28", "_blank");
           
         },
       },{id: "post-lul-39-s-graduation-day",

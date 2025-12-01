@@ -40,8 +40,6 @@ As the winner of this year's Chancellor's Medal, I had to deliver a speech to LU
 
 <em>And on the topic of risk, there’s a phrase a dear friend of mine once said that has stuck with me ever since: “There’s no freedom without risk.”</em>
 
-<em>And for those who know Iason, yes, he’s exactly the type to bet it all on black. Anyways…</em>
-
 <em>When I agreed to give some words today, I risked making a fool of myself.  
 When choosing the members for your group projects, you risked having to do most of the work.  
 When you love someone, you risk not being loved in return.  
@@ -54,7 +52,7 @@ But those who risk nothing, ultimately do nothing.</em>
 
 <em>But I do understand that with risk failing is sometimes inevitable. I go as far to say that if you don’t fail, you are not even trying.</em>
 
-<em>Mario Vargas Llosa, Peru’s only Nobel Laureate, rest in peace, once said: “Good literature is not a product of happiness."</em>
+<em>Mario Vargas Llosa, Peru’s only Nobel Laureate, once said: “Good literature is not a product of happiness."</em>
 
 <em>So if you’re looking to write a memorable story for your life, expect to fall face first here and there.</em>
 

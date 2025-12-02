@@ -55,17 +55,6 @@ ninja.data = [{
             window.open("https://www.linkedin.com/posts/matias-barandiaran_three-years-ago-i-made-the-decision-to-fly-activity-7387866582879879169-PKdk?utm_source=share&utm_medium=member_desktop&rcm=ACoAADGUewUBtH9c6wYZnkoE54AfWCBHPw8cK28", "_blank");
           
         },
-      },{id: "post-lul-39-s-graduation-day",
-        
-          title: "LUL&#39;s Graduation Day",
-        
-        description: "BTS of LUL&#39;s graduation day.",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2025/graduation/";
-          
-        },
       },{id: "post-alife-2025",
         
           title: 'ALIFE 2025 <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',

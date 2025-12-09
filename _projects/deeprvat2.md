@@ -22,7 +22,7 @@ My work consisted on revisiting DeepRVAT by focusing on `4` dimensions:
 
 ### Robustness and Performance
 
-The Max Permutation Invariant Function (PIF) cannot model interactions or compound effects. For example, one variant might suppress or mask another, while two moderate-impact variants together could produce a stronger effect than either alone.
+The `max` Permutation Invariant Function (PIF) cannot model interactions or compound effects. For example, one variant might suppress or mask another, while two moderate-impact variants together could produce a stronger effect than either alone. Sifting to a `sum` PIF helps adress this.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">

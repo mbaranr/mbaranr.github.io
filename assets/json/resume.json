@@ -121,13 +121,6 @@
   ],
   "certificates": [
     {
-      "name": "Hardware of a Quantum Computer",
-      "date": "2023",
-      "issuer": "Delft University of Technology (edX)",
-      "url": "https://courses.edx.org/certificates/4b018b8ccaa74736b095c92516e55a15",
-      "icon": "fa-solid fa-calendar"
-    },
-    {
       "name": "Artificial Intelligence and Machine Learning: Theory and Practice",
       "date": "2023",
       "issuer": "University of Oxford",
@@ -139,6 +132,13 @@
       "date": "2023",
       "issuer": "University of Oxford",
       "url": "https://drive.google.com/file/d/1pIdKvTEFACEXg67JEgbBvKvZKom6_4Ds/view?usp=share_link",
+      "icon": "fa-solid fa-calendar"
+    },
+    {
+      "name": "AWS Certified AI Practitioner",
+      "date": "2025",
+      "issuer": "Amazon Web Services",
+      "url": "https://www.credly.com/badges/315a6cc0-39b2-48d6-ae07-7a0fa106adc6/public_url",
       "icon": "fa-solid fa-calendar"
     }
   ],
@@ -160,7 +160,8 @@
         "Qiskit",
         "QEMU",
         "OS-Ken",
-        "PyTorch"
+        "PyTorch",
+        "Amazon Bedrock"
       ]
     },
     {

@@ -140,6 +140,13 @@
       "issuer": "Amazon Web Services",
       "url": "https://www.credly.com/badges/315a6cc0-39b2-48d6-ae07-7a0fa106adc6/public_url",
       "icon": "fa-solid fa-calendar"
+    },
+    {
+      "name": "Prompt Engineering for Developers",
+      "date": "2025",
+      "issuer": "DeepLearning.AI",
+      "url": "https://learn.deeplearning.ai/accomplishments/5816b563-7435-4470-9a8c-4491dc34518d?usp=sharing",
+      "icon": "fa-solid fa-calendar"
     }
   ],
   "skills": [

@@ -13,7 +13,7 @@ This project was developed as part of an international collaborative initiative 
 
 **Motivation**: By innovating in waste management, we hope to contribute toward sustainable solutions for one of the world’s growing environmental concerns. Our long-term vision is to extend this technology to more critical areas, such as nuclear waste management, where safe and efficient handling is of utter importance.
 
-I led the computer vision team, focusing on `object detection` and `image classification`.
+I led the computer vision team, focusing on `object detection` and `image classification`. For the code, see [repo](https://github.com/LUComp/waste_sorter).
 
 ### Dataset
 

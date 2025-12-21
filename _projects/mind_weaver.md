@@ -15,7 +15,7 @@ This game was developed almost entirely on my own as part of a graded project in
 
 ### How to play
 
-Download the latest version (jar file) from the [Releases](https://github.com/m4mbo/mind-weaver/releases) section or alternatively [build from source](#building-from-source). Also available on [Steam](https://store.steampowered.com/app/3158220/Mind_Weaver/)!
+Download the latest version (jar file) from the [Releases](https://github.com/mbaranr/mind-weaver/releases) section or alternatively [build from source](#building-from-source). Also available on [Steam](https://store.steampowered.com/app/3158220/Mind_Weaver/)!
 
 ### Controls
 

@@ -88,11 +88,11 @@ ninja.data = [{
             window.location.href = "/blog/2025/neptune/";
           
         },
-      },{id: "post-connect-x-minimax-vs-mcts",
+      },{id: "post-connect-x-mcts-vs-minimax",
         
-          title: "Connect X: Minimax vs MCTS",
+          title: "Connect X: MCTS vs. Minimax",
         
-        description: "Empirical comparison of Minimax and Monte Carlo Tree Search for Connect X search.",
+        description: "Empirical study comparing Monte Carlo Tree Search and Minimax in Connect X.",
         section: "Posts",
         handler: () => {
           

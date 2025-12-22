@@ -137,7 +137,7 @@ So far, we've only trained for 10 epochs. What if we double that?
 
 This graph provides a better understanding of how a model like this may overfit on the training set. Even though it performs well for the first 10 epochs, we can clearly see that around epoch 10, the gradient of the validation loss starts becoming positive, indicating the onset of overfitting.
 
-**Bonus**: These graphs show the intermediate features for the three convolutional layers. As observed, the first layers capture textures and edges, while deeper layers begin to identify more complex shapes, such as the silhouette of a horse.
+**Bonus**: These graphs show the intermediate features for the three convolutional layers. As observed, the first layers capture textures and edges, while deeper layers begin to identify more complex shapes (information dense receptive fields).
 
 <div class="col">
     <div class="col-sm mt-3 mt-md-0">

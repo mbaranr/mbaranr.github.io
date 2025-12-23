@@ -147,6 +147,13 @@
       "issuer": "DeepLearning.AI",
       "url": "https://learn.deeplearning.ai/accomplishments/5816b563-7435-4470-9a8c-4491dc34518d?usp=sharing",
       "icon": "fa-solid fa-calendar"
+    },
+    {
+      "name": "PyTorch for Deep Learning",
+      "date": "2025",
+      "issuer": "DeepLearning.AI",
+      "url": "https://learn.deeplearning.ai/certificates/287c5bc2-837a-46c0-b4c3-afd8bd92a4a5?usp=sharing",
+      "icon": "fa-solid fa-calendar"
     }
   ],
   "skills": [

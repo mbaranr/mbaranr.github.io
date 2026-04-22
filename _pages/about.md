@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Computer Scientist
+subtitle: Quantitative Developer
 
 profile:
   align: right
@@ -25,8 +25,8 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Born and raised in Lima, Peru. I recently completed my Bachelor’s degree in Computer Science at `Lancaster University`, where I developed a strong interest in software development, data engineering, and machine learning. With over a year of research experience, I’m now motivated to build on that foundation through practical industry work.
+Born and raised in Lima, Peru, I hold a Bachelor's degree in Computer Science from `Lancaster University`. I have a strong interest in software development, data engineering, and machine learning. I've picked up a lot from my research experience, and I'm excited to bring that into more practical settings.
 
-Lately, I've been particularly interested in the intersection of computer science and the life sciences. In particular, I’ve been working in genomics, applying deep learning techniques for rare variant association testing. I’ve also explored Reservoir Computing, a branch of morphological computing, where I’ve used Developmental Graph Cellular Automata to lay the foundation for *plastic* reservoirs.
+Lately, I've been particularly interested in the crypto space, specifically volatility forecasting of crypto options. I'm now working alongside quants and traders at Ransky Tech, a proprietary trading firm, to help streamline research and contribute to crypto trading strategy.
 
 Outside of coding, I enjoy reading, fishwatching, and badminton. Feel free to explore my website, and if you’d like to connect, you can find my socials and contact info at the bottom of the page!

@@ -22,6 +22,15 @@
   },
   "work": [
     {
+      "name": "Ransky Tech",
+      "location": "Remote",
+      "position": "Quantitative Developer",
+      "startDate": "2026-04",
+      "endDate": "Present",
+      "summary": "Collaborating with quants and traders.",
+      "highlights": ["Working on research and strategy in proprietary crypto trading."]
+    },
+    {
       "name": "Technical University of Munich",
       "location": "Munich, Germany",
       "position": "Research Assistant",

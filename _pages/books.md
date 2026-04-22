@@ -12,5 +12,3 @@ nav_order: 5
 > *Reading is protesting against life’s shortcomings.*
 >
 > -- Mario Vargas Llosa, Nobel Prize in Literature Lecture, Stockholm (2010)
-
-## Books that I am reading, have read, or will read

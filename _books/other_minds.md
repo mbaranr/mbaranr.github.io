@@ -7,10 +7,10 @@ categories: life_sciences philosophy
 tags: 
 buy_link: https://a.co/d/dQyGHzM
 started: 2025-10-02
-finished: 
+finished: 2025-11-14
 released: 2016
-stars: 
-status: Reading # abandoned,finished,interested,paused,queued,reading,reread
+stars: 4.3
+status: Finished # abandoned,finished,interested,paused,queued,reading,reread
 ---
 
 coming soon...

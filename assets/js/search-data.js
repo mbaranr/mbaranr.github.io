@@ -180,6 +180,11 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/books/god_delusion/";
+            },},{id: "books-the-laws-of-trading",
+          title: 'The Laws of Trading',
+          description: "",
+          section: "Books",handler: () => {
+              window.location.href = "/books/laws_of_trading/";
             },},{id: "books-lifespan-why-we-age-and-why-we-don-39-t-have-to",
           title: 'Lifespan: Why We Age―and Why We Don&amp;#39;t Have To',
           description: "",

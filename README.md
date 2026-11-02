@@ -9,7 +9,7 @@ Edit a file, commit, push.
 index.html                  homepage (bio, post list, publications, contact)
 feed.xml                    Atom/RSS feed of posts (update by hand)
 blog/index.html             list of all posts
-blog/YYYY/slug/index.html   one folder per post  ->  /blog/YYYY/slug/
+blog/slug/index.html        one folder per post  ->  /blog/slug/
 publications/index.html     publications
 books/index.html            the bookshelf: reading, read, want to read (edit by hand)
 style.css                   the only stylesheet (beige light / navy dark, follows the system)
@@ -28,7 +28,7 @@ Then open http://localhost:8000. Any static file server works.
 
 ## Add a post
 
-1. Copy an existing post folder, e.g. `blog/2024/c4_search/` to `blog/2026/my-post/`.
+1. Copy an existing post folder, e.g. `blog/c4_search/` to `blog/my-post/`.
 2. In the copied `index.html`, change:
    - the `<title>` and the description `<meta>`,
    - the `og:` tags (title, description, `og:url`, and `og:image`, the picture shown when the
@@ -38,7 +38,7 @@ Then open http://localhost:8000. Any static file server works.
 3. Add a line to the post lists in **both** `index.html` and `blog/index.html` (newest first):
 
    ```html
-   <li><span class="date">2026-11-02</span><a href="/blog/2026/my-post/">My post</a></li>
+   <li><span class="date">2026-11-02</span><a href="/blog/my-post/">My post</a></li>
    ```
 
 4. Add an `<entry>` at the top of `feed.xml` (copy the one below it) and update the feed's

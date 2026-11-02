@@ -9,7 +9,7 @@
 <meta property="og:description" content="DeepRVAT gene scores can be approximated as a sum of variant level effects.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://mbaranr.github.io/blog/2025/deeprvat2/">
-<meta property="og:image" content="https://mbaranr.github.io/assets/img/project_content/deeprvat2/deeprvat_motivation.png">
+<meta property="og:image" content="https://mbaranr.github.io/assets/20251010-deeprvat-motivation.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="alternate" type="application/atom+xml" title="Matias Barandiaran" href="/feed.xml">
 <link rel="stylesheet" href="/style.css">
@@ -19,17 +19,17 @@
 <main>
 <header>
 <a href="/" class="name">Matias Barandiaran</a>
-<nav><a href="/blog/">blog</a> <a href="/publications/">publications</a> <a href="/assets/pdf/Resume.pdf">resume</a></nav>
+<nav><a href="/blog/">blog</a> <a href="/publications/">publications</a> <a href="/books/">bookshelf</a></nav>
 </header>
 <article>
 <h1>DeepRVAT 2.0</h1>
-<p class="meta">Published 2025-10-10, research</p>
+<p class="meta"><i><time datetime="2025-10-10">10 Oct, 2025</time></i></p>
 
 <p><a href="https://www.nature.com/articles/s41588-024-01919-z">DeepRVAT</a> integrates variant annotations using deep set networks to boost rare variant association testing. The pre-trained DeepRVAT model can be used to compute gene impairment scores for new genes and samples.</p>
 <div class="fig-row">
 <div class="fig-col">
 <div style="max-width: 600px; margin: 0 auto;">
-<img src="/assets/img/project_content/deeprvat2/deeprvat_motivation.png" alt="echo state network" loading="lazy" />
+<img src="/assets/20251010-deeprvat-motivation.png" alt="echo state network" loading="lazy" />
 </div>
 </div>
 </div><p>My work consisted on revisiting DeepRVAT by focusing on <code>4</code> dimensions:</p>
@@ -38,35 +38,35 @@
 <div class="fig-row">
 <div class="fig-col">
 <div style="max-width: 400px; margin: 0 auto;">
-<img src="/assets/img/project_content/deeprvat2/sumvsmax.png" alt="sum vs max" loading="lazy" />
+<img src="/assets/20251010-deeprvat-sumvsmax.png" alt="sum vs max" loading="lazy" />
 </div>
 </div>
 </div><p>Removing the final sigmoid layer alleviates issues with burden distribution and produces scores that better align with <code>biological expectations</code>.</p>
 <div class="fig-row">
 <div class="fig-col">
 <div style="max-width: 700px; margin: 0 auto;">
-<img src="/assets/img/project_content/deeprvat2/additivity.png" alt="additivity" loading="lazy" />
+<img src="/assets/20251010-deeprvat-additivity.png" alt="additivity" loading="lazy" />
 </div>
 </div>
 </div><p>Missing values should be treated as unknowns, not as defaults. This was addressed through the introduction of a dummy variable.</p>
 <div class="fig-row">
 <div class="fig-col">
 <div style="max-width: 400px; margin: 0 auto;">
-<img src="/assets/img/project_content/deeprvat2/na_handling.png" alt="na_handling" loading="lazy" />
+<img src="/assets/20251010-deeprvat-na-handling.png" alt="na_handling" loading="lazy" />
 </div>
 </div>
 </div><p>Insertions and deletions (indels) can disrupt splicing or regulatory regions (frameshift in-frame risks) but such scores are often unavailable. In non-coding regions, effects are even harder to predict, though the impact remains significant.</p>
 <div class="fig-row">
 <div class="fig-col">
 <div style="max-width: 700px; margin: 0 auto;">
-<img src="/assets/img/project_content/deeprvat2/indels.png" alt="indels" loading="lazy" />
+<img src="/assets/20251010-deeprvat-indels.png" alt="indels" loading="lazy" />
 </div>
 </div>
 </div><p>Some indels can be imputed by approximating them as single-nucleotide variants at the affected loci.</p>
 <div class="fig-row">
 <div class="fig-col">
 <div style="max-width: 400px; margin: 0 auto;">
-<img src="/assets/img/project_content/deeprvat2/indel_imputation.png" alt="indel_imputation" loading="lazy" />
+<img src="/assets/20251010-deeprvat-indel-imputation.png" alt="indel_imputation" loading="lazy" />
 </div>
 </div>
 </div><h3>Interpretability</h3>
@@ -78,7 +78,7 @@
 <div class="fig-row">
 <div class="fig-col">
 <div style="max-width: 100px; margin: 0 auto;">
-<img src="/assets/img/project_content/deeprvat2/rescaling_factors.png" alt="factors" loading="lazy" />
+<img src="/assets/20251010-deeprvat-rescaling-factors.png" alt="factors" loading="lazy" />
 </div>
 </div>
 </div><p>Rescaling burdens improves <code>interpretability</code> and <code>downstream</code> compatibility. Technically, unscaled burdens are difficult to compare with other tools because they lack a clear point of reference.</p>
@@ -87,12 +87,12 @@
 <div class="fig-row">
 <div class="fig-col">
 <div style="max-width: 400px; margin: 0 auto;">
-<img src="/assets/img/project_content/deeprvat2/deeprvat_vep.png" alt="VEP approach" loading="lazy" />
+<img src="/assets/20251010-deeprvat-vep.png" alt="VEP approach" loading="lazy" />
 </div>
 </div>
 <div class="fig-col">
 <div style="max-width: 400px; margin: 0 auto;">
-<img src="/assets/img/project_content/deeprvat2/vep_performance.png" alt="VEP performance" loading="lazy" />
+<img src="/assets/20251010-deeprvat-vep-performance.png" alt="VEP performance" loading="lazy" />
 </div>
 </div>
 </div><p>For cases with multiple variants, summing variant-level scores instead of re-running the full end-to-end model yields comparable performance. This allows precomputation of variant-level scores, paving the way for ensemble methods that complement existing predictors such as CADD.</p>

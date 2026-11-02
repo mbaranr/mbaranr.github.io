@@ -1,24 +1,25 @@
 /* One stylesheet for every page. Plain CSS, no build step.
-   Light or dark follows the visitor's system setting. */
+   Beige and orange in light mode, navy in dark mode, following the
+   visitor's system setting. */
 
 :root {
-	--back-color: rgb(250, 250, 248);
-	--text-color: rgb(30, 30, 30);
-	--dim-color: rgb(105, 105, 105);
-	--code-back: rgb(238, 238, 235);
-	--rule-color: rgb(210, 210, 205);
-	--link-color: rgb(40, 95, 200);
-	--visited-color: rgb(120, 85, 180);
+	--back-color: #f4ecdc;
+	--text-color: #2b2520;
+	--dim-color: #75685a;
+	--code-back: #ebe0cb;
+	--rule-color: #d8c9ad;
+	--link-color: #b8470f;
+	--visited-color: #9a3412;
 	color-scheme: light;
 }
 
 @media (prefers-color-scheme: dark) {
 	:root {
-		--back-color: rgb(30, 30, 30);
-		--text-color: rgb(212, 212, 212);
-		--dim-color: rgb(150, 150, 150);
-		--code-back: rgb(40, 40, 40);
-		--rule-color: rgb(70, 70, 70);
+		--back-color: #01242e;
+		--text-color: #dddddd;
+		--dim-color: #dddddd; /* same as text: Bear uses no grey */
+		--code-back: #0b3441;
+		--rule-color: #23495a;
 		--link-color: rgb(140, 194, 221);
 		--visited-color: rgb(184, 163, 230);
 		color-scheme: dark;
@@ -34,13 +35,13 @@
 body {
 	background-color: var(--back-color);
 	color: var(--text-color);
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-family: Verdana, sans-serif;
 }
 
 main {
 	margin: 0 auto;
-	padding: 30px 140px 0 140px;
-	max-width: 600px;
+	padding: 30px 20px 0 20px;
+	max-width: 720px;
 	min-height: 100vh;
 }
 
@@ -57,7 +58,8 @@ header nav {
 
 h1 {
 	margin-top: 50px;
-	font-size: 1.5em;
+	font-size: 2em;
+	line-height: 1.2em;
 }
 
 h2 {
@@ -94,10 +96,17 @@ a:hover, a:focus {
 	color: var(--back-color);
 	background-color: var(--link-color);
 }
-header a, header a:visited {
+/* Nav links: light blue like Bear, no underline, no visited purple.
+   The site name keeps the text colour. */
+header nav a, header nav a:visited {
+	color: var(--link-color);
+	text-decoration: none;
+	margin-right: 8px;
+}
+header .name, header .name:visited {
 	color: var(--text-color);
 }
-header a:hover, header a:focus {
+header .name:hover, header .name:focus {
 	background-color: var(--text-color);
 }
 
@@ -150,6 +159,61 @@ ul.dated li {
 	color: var(--dim-color);
 	font-variant-numeric: tabular-nums;
 }
+/* Timeline, after karpathy.ai: years on the left (right-aligned, grey),
+   then a logo column whose left border is the vertical line, with a dot
+   at the top of each entry, then the description. */
+.timeline {
+	margin-top: 20px;
+}
+.timeline .entry {
+	display: grid;
+	grid-template-columns: 6.5em 68px 1fr;
+}
+.timeline .timespan {
+	padding-right: 8px;
+	text-align: right;
+	font-size: 0.85em;
+	color: var(--dim-color);
+}
+.timeline .ico {
+	position: relative;
+	border-left: 2px solid var(--rule-color);
+}
+/* No line hanging below the last entry. */
+.timeline .entry:last-child .desc {
+	padding-bottom: 0;
+}
+.timeline .ico img {
+	display: block;
+	width: 48px;
+	height: 48px;
+	margin-left: 10px;
+	border-radius: 5px;
+}
+/* Black-only logos turn white on the navy background. */
+@media (prefers-color-scheme: dark) {
+	.timeline .ico img.mono {
+		filter: invert(1);
+	}
+}
+.timeline .entry-dot {
+	position: absolute;
+	top: 0;
+	left: -8px;
+	width: 10px;
+	height: 10px;
+	border-radius: 7px;
+	background-color: var(--rule-color);
+	border: 2px solid var(--back-color);
+}
+.timeline .desc {
+	padding-left: 10px;
+	padding-bottom: 40px;
+	line-height: 1.5em;
+}
+.dim {
+	color: var(--dim-color);
+}
 /* Publications: APA-style references with a hanging indent. */
 ul.pubs li {
 	margin-top: 15px;
@@ -167,8 +231,21 @@ ul.pubs li {
 /* posts */
 
 .meta {
-	margin-top: 5px;
+	margin-top: 20px;
 	color: var(--dim-color);
+}
+
+/* Dates: monospace and upright, like Bear. */
+time {
+	font-family: ui-monospace, Menlo, Consolas, monospace;
+	font-style: normal;
+}
+.meta time {
+	font-size: 0.9em;
+}
+
+.gallery img {
+	margin-top: 10px;
 }
 
 article img {
@@ -179,9 +256,10 @@ article img {
 }
 
 blockquote {
-	padding-left: 15px;
-	border-left: 2px solid var(--dim-color);
-	color: var(--dim-color);
+	margin-left: 2em;
+	padding-left: 20px;
+	border-left: 1px solid var(--dim-color);
+	font-style: italic;
 }
 
 code {
@@ -227,8 +305,8 @@ sup a {
 
 /* Figures. Put one or more images side by side, with an optional caption:
    <div class="fig-row">
-     <div class="fig-col"><img src="/assets/img/posts/my-post/a.png" alt=""></div>
-     <div class="fig-col"><img src="/assets/img/posts/my-post/b.png" alt=""></div>
+     <div class="fig-col"><img src="/assets/20261102-mypost-a.png" alt=""></div>
+     <div class="fig-col"><img src="/assets/20261102-mypost-b.png" alt=""></div>
    </div>
    <div class="caption">What the images show.</div> */
 .fig-row {
@@ -265,10 +343,10 @@ sup a {
 
 @media (max-width: 600px) {
 	main {
-		padding: 10px;
+		padding: 10px 16px 0 16px;
 	}
 	h1 {
-		font-size: 1.3em;
+		font-size: 1.6em;
 	}
 	.half {
 		max-width: 100%;

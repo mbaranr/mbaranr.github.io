@@ -9,8 +9,7 @@
 <meta property="og:description" content="Solving the classification task of CIFAR-10 images with supervised learning.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://mbaranr.github.io/blog/2023/classify_cifar10/">
-<meta property="og:image" content="https://mbaranr.github.io/assets/img/post_content/classify_cifar10/cifar10_examples
-.png">
+<meta property="og:image" content="https://mbaranr.github.io/assets/20230701-cifar-examples.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="alternate" type="application/atom+xml" title="Matias Barandiaran" href="/feed.xml">
 <link rel="stylesheet" href="/style.css">
@@ -20,11 +19,11 @@
 <main>
 <header>
 <a href="/" class="name">Matias Barandiaran</a>
-<nav><a href="/blog/">blog</a> <a href="/publications/">publications</a> <a href="/assets/pdf/Resume.pdf">resume</a></nav>
+<nav><a href="/blog/">blog</a> <a href="/publications/">publications</a> <a href="/books/">bookshelf</a></nav>
 </header>
 <article>
 <h1>Classifying CIFAR-10</h1>
-<p class="meta">Published 2023-07-01, machine learning, python, pytorch, computer vision</p>
+<p class="meta"><i><time datetime="2023-07-01">01 Jul, 2023</time></i></p>
 
 <p>We tackled the task of classifying CIFAR-10 images by comparing multiple supervised learning approaches. You can access the Jupyter notebook in the <a href="https://github.com/mbaranr/classify_cifar10">repo</a>.</p>
 <p>Supervised machine learning is a widely used form of artificial intelligence. There are many approaches to supervised learning, including Neural Networks, Convolutional Neural Networks, and Residual Networks.</p>
@@ -33,8 +32,7 @@
 <div class="fig-row">
 <div class="fig-col">
 <div style="max-width: 600px; margin: 0 auto;">
-<img src="/assets/img/post_content/classify_cifar10/cifar10_examples
-.png" alt="examples" loading="lazy" />
+<img src="/assets/20230701-cifar-examples.png" alt="examples" loading="lazy" />
 </div>
 </div>
 </div><h3>Linear Neural Network</h3>
@@ -60,13 +58,12 @@
 <div class="fig-row">
 <div class="fig-col">
 <div style="max-width: 600px; margin: 0 auto;">
-<img src="/assets/img/post_content/classify_cifar10/linear_loss.png" alt="linear loss" loading="lazy" />
+<img src="/assets/20230701-cifar-linear-loss.png" alt="linear loss" loading="lazy" />
 </div>
 </div>
 <div class="fig-col">
 <div style="max-width: 600px; margin: 0 auto;">
-<img src="/assets/img/post_content/classify_cifar10/linear_confusion
-.png" alt="linear confusion" loading="lazy" />
+<img src="/assets/20230701-cifar-linear-confusion.png" alt="linear confusion" loading="lazy" />
 </div>
 </div>
 </div><p>Judging from the confusion matrix, the largest mismatches occur between cats and frogs. There is also a significant confusion between cats and dogs, which is more understandable. However, some unpredictable mismatches appear between labels such as frogs and dogs, dogs and airplanes, and trucks and automobiles.</p>
@@ -99,14 +96,14 @@
 <div class="fig-row">
 <div class="fig-col">
 <div style="max-width: 600px; margin: 0 auto;">
-<img src="/assets/img/post_content/classify_cifar10/conv_loss.png" alt="conv loss" loading="lazy" />
+<img src="/assets/20230701-cifar-conv-loss.png" alt="conv loss" loading="lazy" />
 </div>
 </div>
 </div><p>Already, we can observe that the CNN is performing significantly better, achieving 71.3% accuracy on the training set and 64.3% accuracy on the validation set, with no signs of overfitting.</p>
 <div class="fig-row">
 <div class="fig-col">
 <div style="max-width: 600px; margin: 0 auto;">
-<img src="/assets/img/post_content/classify_cifar10/linear_conv.png" alt="linear vs conv" loading="lazy" />
+<img src="/assets/20230701-cifar-linear-conv.png" alt="linear vs conv" loading="lazy" />
 </div>
 </div>
 </div><p>This graph compares the training loss of the simple NN and the CNN. It is clear that a more complex model like the CNN, which applies filters to the images, performs better, showing a steeper decrease in loss that becomes particularly noticeable around epoch 1.</p>
@@ -115,12 +112,12 @@
 <div class="fig-row">
 <div class="fig-col">
 <div style="max-width: 600px; margin: 0 auto;">
-<img src="/assets/img/post_content/classify_cifar10/conv_more.png" alt="conv more epochs" loading="lazy" />
+<img src="/assets/20230701-cifar-conv-more.png" alt="conv more epochs" loading="lazy" />
 </div>
 </div>
 <div class="fig-col">
 <div style="max-width: 600px; margin: 0 auto;">
-<img src="/assets/img/post_content/classify_cifar10/conv_confusion.png" alt="conv confusion" loading="lazy" />
+<img src="/assets/20230701-cifar-conv-confusion.png" alt="conv confusion" loading="lazy" />
 </div>
 </div>
 </div><p>This graph provides a better understanding of how a model like this may overfit on the training set. Even though it performs well for the first 10 epochs, we can clearly see that around epoch 10, the gradient of the validation loss starts becoming positive, indicating the onset of overfitting.</p>
@@ -128,22 +125,22 @@
 <div class="fig-col">
 <div class="fig-col">
 <div style="max-width: 600px; margin: 0 auto;">
-<img src="/assets/img/post_content/classify_cifar10/feat1.png" alt="feature 1" loading="lazy" />
+<img src="/assets/20230701-cifar-feat1.png" alt="feature 1" loading="lazy" />
 </div>
 </div>
 <div class="fig-col">
 <div style="max-width: 600px; margin: 0 auto;">
-<img src="/assets/img/post_content/classify_cifar10/feat2.png" alt="feature 2" loading="lazy" />
+<img src="/assets/20230701-cifar-feat2.png" alt="feature 2" loading="lazy" />
 </div>
 </div>
 <div class="fig-col">
 <div style="max-width: 600px; margin: 0 auto;">
-<img src="/assets/img/post_content/classify_cifar10/feat3.png" alt="feature 3" loading="lazy" />
+<img src="/assets/20230701-cifar-feat3.png" alt="feature 3" loading="lazy" />
 </div>
 </div>
 <div class="fig-col">
 <div style="max-width: 200px; margin: 0 auto;">
-<img src="/assets/img/post_content/classify_cifar10/feat4.png" alt="feature 4" loading="lazy" />
+<img src="/assets/20230701-cifar-feat4.png" alt="feature 4" loading="lazy" />
 </div>
 </div>
 </div><h3>Data Augmentation</h3>
@@ -154,7 +151,7 @@
 <div class="fig-row">
 <div class="fig-col">
 <div style="max-width: 600px; margin: 0 auto;">
-<img src="/assets/img/post_content/classify_cifar10/overfitting.png" alt="overfitting fix" loading="lazy" />
+<img src="/assets/20230701-cifar-overfitting.png" alt="overfitting fix" loading="lazy" />
 </div>
 </div>
 </div><p>The validation loss is now performing better with data augmentation, achieving 69.7% accuracy and significantly mitigating the overfitting problem observed earlier.</p>
@@ -164,19 +161,19 @@
 <div class="fig-row">
 <div class="fig-col">
 <div style="max-width: 600px; margin: 0 auto;">
-<img src="/assets/img/post_content/classify_cifar10/transfer_learning.png" alt="transfer learning" loading="lazy" />
+<img src="/assets/20230701-cifar-transfer-learning.png" alt="transfer learning" loading="lazy" />
 </div>
 </div>
 </div><p>We will be using the ResNet-18 network pretrained on the ImageNet dataset. ImageNet contains millions of labeled images across a wide range of categories, including animals, objects, and scenes. The only fine-tuning performed here is on the final layer, as we need to adjust it to output predictions for the 10 labels in our dataset.</p>
 <div class="fig-row">
 <div class="fig-col">
 <div style="max-width: 600px; margin: 0 auto;">
-<img src="/assets/img/post_content/classify_cifar10/resnet.png" alt="resnet loss" loading="lazy" />
+<img src="/assets/20230701-cifar-resnet.png" alt="resnet loss" loading="lazy" />
 </div>
 </div>
 <div class="fig-col">
 <div style="max-width: 600px; margin: 0 auto;">
-<img src="/assets/img/post_content/classify_cifar10/resnet_conv.png" alt="resnet vs conv loss" loading="lazy" />
+<img src="/assets/20230701-cifar-resnet-conv.png" alt="resnet vs conv loss" loading="lazy" />
 </div>
 </div>
 </div><p>An increase in accuracy of around 10%! The starting loss is much smaller for the pretrained network for both the validation and training sets. Testing accuracy of 82.0%.</p>
@@ -184,12 +181,12 @@
 <div class="fig-row">
 <div class="fig-col">
 <div style="max-width: 600px; margin: 0 auto;">
-<img src="/assets/img/post_content/classify_cifar10/resnet_imagetuned.png" alt="resnet imagetuned" loading="lazy" />
+<img src="/assets/20230701-cifar-resnet-imagetuned.png" alt="resnet imagetuned" loading="lazy" />
 </div>
 </div>
 <div class="fig-col">
 <div style="max-width: 600px; margin: 0 auto;">
-<img src="/assets/img/post_content/classify_cifar10/resnet_confusion.png" alt="resnet confusion" loading="lazy" />
+<img src="/assets/20230701-cifar-resnet-confusion.png" alt="resnet confusion" loading="lazy" />
 </div>
 </div>
 </div><p>Now it&#39;s clear that it wasn&#39;t fair to feed the model differently sized images to the ones that were used to train it in the first place. Particularly, it is really impressive how low the loss starts for the validation set. Finally, we have a testing accuracy of 95%.</p>

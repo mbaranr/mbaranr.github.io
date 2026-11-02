@@ -11,11 +11,11 @@ feed.xml                    Atom/RSS feed of posts (update by hand)
 blog/index.html             list of all posts
 blog/YYYY/slug/index.html   one folder per post  ->  /blog/YYYY/slug/
 publications/index.html     publications
-style.css                   the only stylesheet (light/dark follows the system)
-assets/img/                 images
-assets/pdf/Resume.pdf       resume (linked from the nav)
+books/index.html            the bookshelf: reading, read, want to read (edit by hand)
+style.css                   the only stylesheet (beige light / navy dark, follows the system)
+assets/                     every image and file, flat, named YYYYMMDD-name.ext
 404.html                    not-found page
-cv/, books/, projects/      redirects from old URLs
+cv/, projects/              redirects from old URLs
 ```
 
 ## Preview locally
@@ -32,7 +32,7 @@ Then open http://localhost:8000. Any static file server works.
 2. In the copied `index.html`, change:
    - the `<title>` and the description `<meta>`,
    - the `og:` tags (title, description, `og:url`, and `og:image`, the picture shown when the
-     link is shared; use the post's main image, or `/assets/img/prof_pic.jpg`),
+     link is shared; use the post's main image, or `/assets/20250920-portrait.jpg`),
    - the `subject=` of the "Reply by email" link,
    - the `<h1>`, the "Published" line, and everything between the `.meta` paragraph and the reply link.
 3. Add a line to the post lists in **both** `index.html` and `blog/index.html` (newest first):
@@ -47,16 +47,17 @@ Then open http://localhost:8000. Any static file server works.
 
 ## Add images to a post
 
-Put the files in `assets/img/posts/<post-name>/`, then in the post:
+Put the files straight in `assets/`, named with the post's date and a short name
+(e.g. `assets/20261102-mypost-plot.png`), then in the post:
 
 ```html
 <!-- one image -->
-<img src="/assets/img/posts/my-post/plot.png" alt="What the plot shows">
+<img src="/assets/20261102-mypost-plot.png" alt="What the plot shows">
 
 <!-- several side by side, with a caption -->
 <div class="fig-row">
-  <div class="fig-col"><img src="/assets/img/posts/my-post/a.png" alt=""></div>
-  <div class="fig-col"><img src="/assets/img/posts/my-post/b.png" alt=""></div>
+  <div class="fig-col"><img src="/assets/20261102-mypost-a.png" alt=""></div>
+  <div class="fig-col"><img src="/assets/20261102-mypost-b.png" alt=""></div>
 </div>
 <div class="caption">Left: training loss. Right: validation loss.</div>
 ```

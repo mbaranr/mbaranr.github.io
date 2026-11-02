@@ -9,7 +9,7 @@
 <meta property="og:description" content="Empirical study comparing Monte Carlo Tree Search and Minimax in Connect X.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://mbaranr.github.io/blog/2024/c4_search/">
-<meta property="og:image" content="https://mbaranr.github.io/assets/img/post_content/c4_search/feat_2a.png">
+<meta property="og:image" content="https://mbaranr.github.io/assets/20241220-c4-feat-2a.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="alternate" type="application/atom+xml" title="Matias Barandiaran" href="/feed.xml">
 <link rel="stylesheet" href="/style.css">
@@ -19,11 +19,11 @@
 <main>
 <header>
 <a href="/" class="name">Matias Barandiaran</a>
-<nav><a href="/blog/">blog</a> <a href="/publications/">publications</a> <a href="/assets/pdf/Resume.pdf">resume</a></nav>
+<nav><a href="/blog/">blog</a> <a href="/publications/">publications</a> <a href="/books/">bookshelf</a></nav>
 </header>
 <article>
 <h1>Connect X: MCTS vs. Minimax</h1>
-<p class="meta">Published 2024-12-20, ai, python</p>
+<p class="meta"><i><time datetime="2024-12-20">20 Dec, 2024</time></i></p>
 
 <h2>Abstract</h2>
 <p>Connect X, a solved perfect-information strategy game, has established itself as a staple in game AI research. With the rise of advanced non-machine-learning search techniques like Monte Carlo Tree Search (MCTS), traditional methods such as heuristic Minimax are struggling to maintain their relevance. This study offers an empirical comparison of these approaches using both result-oriented and result-agnostic metrics to assess their performance in a Connect X setting.</p>
@@ -102,16 +102,16 @@
 <div class="fig-col">
 <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
 <div style="flex: 1 1 0; min-width: 0; max-width: 150px;">
-<img src="/assets/img/post_content/c4_search/feat_2a.png" alt="feat 2 examples" loading="lazy" />
+<img src="/assets/20241220-c4-feat-2a.png" alt="feat 2 examples" loading="lazy" />
 </div>
 <div style="flex: 1 1 0; min-width: 0; max-width: 150px;">
-<img src="/assets/img/post_content/c4_search/feat_2b.png" alt="feat 2 examples" loading="lazy" />
+<img src="/assets/20241220-c4-feat-2b.png" alt="feat 2 examples" loading="lazy" />
 </div>
 <div style="flex: 1 1 0; min-width: 0; max-width: 150px;">
-<img src="/assets/img/post_content/c4_search/feat_2c.png" alt="feat 2 examples" loading="lazy" />
+<img src="/assets/20241220-c4-feat-2c.png" alt="feat 2 examples" loading="lazy" />
 </div>
 <div style="flex: 1 1 0; min-width: 0; max-width: 150px;">
-<img src="/assets/img/post_content/c4_search/feat_2d.png" alt="feat 2 examples" loading="lazy" />
+<img src="/assets/20241220-c4-feat-2d.png" alt="feat 2 examples" loading="lazy" />
 </div>
 </div>
 <p class="caption">Feature 2 examples.</p>
@@ -135,7 +135,7 @@
 <div class="fig-row">
 <div class="fig-col">
 <div style="max-width: 700px; margin: 0 auto;">
-<img src="/assets/img/post_content/c4_search/fig_1.png" alt="" loading="lazy" />
+<img src="/assets/20241220-c4-fig-1.png" alt="" loading="lazy" />
 <p class="caption">
 <strong>a</strong>, <strong>b</strong>, <strong>c</strong>, Analysis of game results.
 <strong>a</strong>, Line plot of the effect of Minimax's depth on its (adjusted) win rate across multiple budgets.
@@ -149,7 +149,7 @@ Each map represents a strategy. Color scheme maps win rate.
 </div><div class="fig-row">
 <div class="fig-col">
 <div style="max-width: 700px; margin: 0 auto;">
-<img src="/assets/img/post_content/c4_search/fig_2.png" alt="" loading="lazy" />
+<img src="/assets/20241220-c4-fig-2.png" alt="" loading="lazy" />
 <p class="caption">
 <strong>a</strong>, <strong>b</strong>, Visualization of result-agnostic performance metrics.
 Only Minimax's best depth at each budget. Color scheme represents the timing of each move,
@@ -163,7 +163,7 @@ Calculated as <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathM
 </div><div class="fig-row">
 <div class="fig-col">
 <div style="max-width: 700px; margin: 0 auto;">
-<img src="/assets/img/post_content/c4_search/fig_4.png" alt="" loading="lazy" />
+<img src="/assets/20241220-c4-fig-4.png" alt="" loading="lazy" />
 <p class="caption">
 <strong>a</strong>, <strong>b</strong>, Simulations extended to variable board/rule configurations.
 Again, Minimax's depths at each budget were chosen according to the previous analysis.

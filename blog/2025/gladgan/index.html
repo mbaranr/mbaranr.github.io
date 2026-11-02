@@ -9,7 +9,7 @@
 <meta property="og:description" content="Generative Adversarial Networks can be used to detect graph level anomalies.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://mbaranr.github.io/blog/2025/gladgan/">
-<meta property="og:image" content="https://mbaranr.github.io/assets/img/project_content/gladgan/glad_applications.png">
+<meta property="og:image" content="https://mbaranr.github.io/assets/20251010-gladgan-applications.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="alternate" type="application/atom+xml" title="Matias Barandiaran" href="/feed.xml">
 <link rel="stylesheet" href="/style.css">
@@ -19,11 +19,11 @@
 <main>
 <header>
 <a href="/" class="name">Matias Barandiaran</a>
-<nav><a href="/blog/">blog</a> <a href="/publications/">publications</a> <a href="/assets/pdf/Resume.pdf">resume</a></nav>
+<nav><a href="/blog/">blog</a> <a href="/publications/">publications</a> <a href="/books/">bookshelf</a></nav>
 </header>
 <article>
 <h1>gladGAN</h1>
-<p class="meta">Published 2025-10-10, research</p>
+<p class="meta"><i><time datetime="2025-10-10">10 Oct, 2025</time></i></p>
 
 <p><strong>Goal</strong>: Detect rare graph patterns that differ from the majority of graphs.</p>
 <p>Some real world applications include:</p>
@@ -35,14 +35,14 @@
 <div class="fig-row">
 <div class="fig-col">
 <div style="max-width: 400px; margin: 0 auto;">
-<img src="/assets/img/project_content/gladgan/glad_applications.png" alt="glad_applications" loading="lazy" />
+<img src="/assets/20251010-gladgan-applications.png" alt="glad_applications" loading="lazy" />
 </div>
 </div>
 </div><p><strong>Problem</strong>: Can sometimes be <code>very difficult</code>...</p>
 <div class="fig-row">
 <div class="fig-col">
 <div style="max-width: 600px; margin: 0 auto;">
-<img src="/assets/img/project_content/gladgan/glad_baselines.png" alt="glad_baselines" loading="lazy" />
+<img src="/assets/20251010-gladgan-baselines.png" alt="glad_baselines" loading="lazy" />
 </div>
 </div>
 </div><h3>GANs</h3>
@@ -56,7 +56,7 @@
 <div class="fig-row">
 <div class="fig-col">
 <div style="max-width: 600px; margin: 0 auto;">
-<img src="/assets/img/project_content/gladgan/latent_dogs.png" alt="latent_dogs" loading="lazy" />
+<img src="/assets/20251010-gladgan-latent-dogs.png" alt="latent_dogs" loading="lazy" />
 </div>
 </div>
 </div><p>How does this relate to <code>anomaly detection</code>?</p>
@@ -65,7 +65,7 @@
 <div class="fig-row">
 <div class="fig-col">
 <div style="max-width: 600px; margin: 0 auto;">
-<img src="/assets/img/project_content/gladgan/latent_search.png" alt="latent_search" loading="lazy" />
+<img src="/assets/20251010-gladgan-latent-search.png" alt="latent_search" loading="lazy" />
 </div>
 </div>
 </div><p>Works! But as you can imagine, the time that takes to search for x_n grows linearly with the size of X (X is usually <code>huge</code>).</p>
@@ -74,18 +74,18 @@
 <div class="fig-row">
 <div class="fig-col">
 <div style="max-width: 400px; margin: 0 auto;">
-<img src="/assets/img/project_content/gladgan/gladgan_pipeline.png" alt="gladgan_pipeline" loading="lazy" />
+<img src="/assets/20251010-gladgan-pipeline.png" alt="gladgan_pipeline" loading="lazy" />
 </div>
 </div>
 </div><div class="fig-row">
 <div class="fig-col">
 <div style="max-width: 400px; margin: 0 auto;">
-<img src="/assets/img/project_content/gladgan/gladgan_wgan_training.png" alt="wgan_training" loading="lazy" />
+<img src="/assets/20251010-gladgan-wgan-training.png" alt="wgan_training" loading="lazy" />
 </div>
 </div>
 <div class="fig-col">
 <div style="max-width: 400px; margin: 0 auto;">
-<img src="/assets/img/project_content/gladgan/gladgan_encoder_training.png" alt="encoder_training" loading="lazy" />
+<img src="/assets/20251010-gladgan-encoder-training.png" alt="encoder_training" loading="lazy" />
 </div>
 </div>
 </div><p>Graph anomaly detection is a relatively hard problem: a <code>scientific gap</code> is identified. GANs are proposed as a novel approach to tackle this problem.</p>

@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Recoloring CIFAR-10 | Matias Barandiaran</title>
+<meta name="description" content="Solving the recoloring task of CIFAR-10 images with unsupervised learning.">
+<meta property="og:title" content="Recoloring CIFAR-10">
+<meta property="og:description" content="Solving the recoloring task of CIFAR-10 images with unsupervised learning.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://mbaranr.github.io/blog/2023/recolor_cifar10/">
+<meta property="og:image" content="https://mbaranr.github.io/assets/img/post_content/recolor_cifar10/u_net.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" type="application/atom+xml" title="Matias Barandiaran" href="/feed.xml">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<main>
+<header>
+<a href="/" class="name">Matias Barandiaran</a>
+<nav><a href="/blog/">blog</a> <a href="/publications/">publications</a> <a href="/assets/pdf/Resume.pdf">resume</a></nav>
+</header>
+<article>
+<h1>Recoloring CIFAR-10</h1>
+<p class="meta">Published 2023-07-15, generative ai, python, pytorch, computer vision</p>
+
+<p>Over the last decade, the process of automatic colorization has been studied thoroughly due to its potential for restoration of aged and/or degraded images. This problem is highly ill-posed due to the extremely large degrees of freedom during the assignment of color information. </p>
+<p>In this project, I explored the colorization task on the CIFAR-10 dataset by comparing two approaches:</p>
+<ul>
+<li>Autoencoders (U-Net-style)</li>
+<li>Deep Convolutional GANs (DCGANs) with conditional inputs</li>
+</ul>
+<p><strong>Objective</strong>: design a system capable of learning realistic color mappings directly from data, without relying on handcrafted color heuristics.</p>
+<h3>U-Net Architecture</h3>
+<p>The U-Net (Ronneberger et al., 2015) is a fully convolutional encoder–decoder network with skip connections that link layers at opposite sides. This design helps preserve spatial information that would otherwise be lost through downsampling.</p>
+<p>In the context of colorization, the U-Net acts as an autoencoder, compressesing the grayscale input and reconstructing a 3-channel RGB output.</p>
+<p>Essentially, this implementation allows the network to learn a mapping from luminance to chrominance</p>
+<p>It also resembles a U...</p>
+<div class="fig-row">
+<div class="fig-col">
+<div style="max-width: 600px; margin: 0 auto;">
+<img src="/assets/img/post_content/recolor_cifar10/u_net.png" alt="u_net" loading="lazy" />
+</div>
+</div>
+</div><h3>Auto Encoder</h3>
+<p>Following the U-Net structure, results showed:</p>
+<div class="fig-row">
+<div class="fig-col">
+<div style="max-width: 800px; margin: 0 auto;">
+<img src="/assets/img/post_content/recolor_cifar10/auto_encoder.png" alt="auto encoder results" loading="lazy" />
+</div>
+</div>
+</div><h3>DCGAN</h3>
+<p>To introduce more expressive and realistic color patterns, I implemented a conditional DCGAN. The generator uses the same U-Net encoder–decoder structure but is trained adversarially:</p>
+<ul>
+<li>Generator input: grayscale image</li>
+<li>Discriminator input: either<ul>
+<li>the real color image + its grayscale version, or</li>
+<li>the generated image + the grayscale version</li>
+</ul>
+</li>
+</ul>
+<p>This “conditional” pairing forces the GAN to generate colorizations that are consistent with the grayscale structure.</p>
+<p>I also added an L1 reconstruction loss to stabilize training and prevent the generator from drifting toward unrealistic color assignments. This encourages fidelity to the ground truth while still leveraging adversarial training to enhance vividness.</p>
+<p>The generator’s forward pass resembles a typical U-Net with upsampling layers and skip connections (see, <a href="https://github.com/mbaranr/recolor_cifar10/tree/main">repo</a>):</p>
+<pre><code class="language-python">  def forward(self, x):
+
+    x1 = self.encoding_unit1(x)
+    x = F.max_pool2d(x1, (2,2))
+
+    x2 = self.encoding_unit2(x)
+    x = F.max_pool2d(x2, (2,2))
+
+    ...
+
+    x = self.encoding_unit5(x)
+
+    x = self.upsampling1(x)
+    x = torch.cat([x, x4], dim=1)
+    x = self.decoding_unit1(x)
+
+    x = self.upsampling2(x)
+    x = torch.cat([x, x3], dim=1)
+    x = self.decoding_unit2(x)
+
+    ...
+
+    x = self.decoding_unit5(x)
+
+    x = F.tanh(x)
+
+    return x
+</code></pre>
+<p>The DCGAN can evidently solve the task...</p>
+<div class="fig-row">
+<div class="fig-col">
+<div style="max-width: 800px; margin: 0 auto;">
+<img src="/assets/img/post_content/recolor_cifar10/gan.png" alt="dcgan results" loading="lazy" />
+</div>
+</div>
+</div><h3>Thoughts</h3>
+<ul>
+<li>The DCGAN generated images with significantly more vibrant and realistic colorization than the U-Net autoencoder.</li>
+<li>The autoencoder often produced washed-out, sepia-like results due to its deterministic nature and reliance on pixel-wise losses.</li>
+<li>The conditional DCGAN captured richer color distributions and occasionally replicated ground truth almost exactly.</li>
+<li>With only 20 training epochs, neither model fully converged. GANs in particular benefit from substantially longer training.</li>
+<li>GAN training is known to be unstable, especially with small datasets and shallow architectures like DCGAN.</li>
+</ul>
+
+<p class="reply"><a href="mailto:mbarandiaranr@gmail.com?subject=Re%3A%20Recoloring%20CIFAR-10">Reply by email</a></p>
+</article>
+
+<footer><a href="/feed.xml">RSS feed</a>. Updated 2026-11-02</footer>
+</main>
+
+</body>
+</html>

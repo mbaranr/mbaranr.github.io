@@ -1,0 +1,276 @@
+/* One stylesheet for every page. Plain CSS, no build step.
+   Light or dark follows the visitor's system setting. */
+
+:root {
+	--back-color: rgb(250, 250, 248);
+	--text-color: rgb(30, 30, 30);
+	--dim-color: rgb(105, 105, 105);
+	--code-back: rgb(238, 238, 235);
+	--rule-color: rgb(210, 210, 205);
+	--link-color: rgb(40, 95, 200);
+	--visited-color: rgb(120, 85, 180);
+	color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--back-color: rgb(30, 30, 30);
+		--text-color: rgb(212, 212, 212);
+		--dim-color: rgb(150, 150, 150);
+		--code-back: rgb(40, 40, 40);
+		--rule-color: rgb(70, 70, 70);
+		--link-color: rgb(140, 194, 221);
+		--visited-color: rgb(184, 163, 230);
+		color-scheme: dark;
+	}
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	font-size: 1em;
+}
+
+body {
+	background-color: var(--back-color);
+	color: var(--text-color);
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+main {
+	margin: 0 auto;
+	padding: 30px 140px 0 140px;
+	max-width: 600px;
+	min-height: 100vh;
+}
+
+header .name {
+	font-size: 1.2em;
+	font-weight: 700;
+	text-decoration: none;
+	margin-right: 5px;
+}
+
+header nav {
+	display: inline;
+}
+
+h1 {
+	margin-top: 50px;
+	font-size: 1.5em;
+}
+
+h2 {
+	margin-top: 50px;
+	font-size: 1.2em;
+}
+
+h3 {
+	margin-top: 30px;
+	font-size: 1em;
+}
+
+p, ul, ol, pre, table, blockquote {
+	line-height: 1.5em;
+	margin-top: 20px;
+}
+
+ul, ol {
+	padding-left: 20px;
+}
+
+li {
+	margin-top: 8px;
+}
+
+/* Links are coloured so they stand out when scanning; hover inverts them. */
+a {
+	color: var(--link-color);
+}
+a:visited {
+	color: var(--visited-color);
+}
+a:hover, a:focus {
+	color: var(--back-color);
+	background-color: var(--link-color);
+}
+header a, header a:visited {
+	color: var(--text-color);
+}
+header a:hover, header a:focus {
+	background-color: var(--text-color);
+}
+
+b, strong {
+	font-weight: 700;
+}
+
+hr {
+	border: 0;
+	border-top: 1px solid var(--rule-color);
+	margin-top: 30px;
+}
+
+footer a, footer a:visited {
+	color: inherit;
+}
+
+.reply {
+	margin-top: 40px;
+}
+
+footer {
+	text-align: right;
+	margin-top: 80px;
+	padding-bottom: 20px;
+	color: var(--dim-color);
+}
+
+/* home */
+
+.portrait {
+	display: block;
+	margin-top: 40px;
+	width: 140px;
+	height: auto;
+}
+
+/* lists with a date (or rating) in front */
+
+ul.dated, ul.plain, ul.pubs {
+	list-style: none;
+	padding-left: 0;
+}
+ul.dated li {
+	display: flex;
+	gap: 15px;
+}
+.date {
+	flex: 0 0 auto;
+	color: var(--dim-color);
+	font-variant-numeric: tabular-nums;
+}
+/* Publications: APA-style references with a hanging indent. */
+ul.pubs li {
+	margin-top: 15px;
+	padding-left: 2em;
+	text-indent: -2em;
+	overflow-wrap: anywhere;
+}
+.pubnote {
+	display: inline-block;
+	text-indent: 0;
+	color: var(--dim-color);
+	font-size: 0.9em;
+}
+
+/* posts */
+
+.meta {
+	margin-top: 5px;
+	color: var(--dim-color);
+}
+
+article img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	margin: 0 auto;
+}
+
+blockquote {
+	padding-left: 15px;
+	border-left: 2px solid var(--dim-color);
+	color: var(--dim-color);
+}
+
+code {
+	font-family: ui-monospace, Menlo, Consolas, monospace;
+	font-size: 0.9em;
+}
+pre {
+	padding: 10px;
+	overflow-x: auto;
+	background-color: var(--code-back);
+	line-height: 1.4em;
+}
+
+article table {
+	display: block;
+	overflow-x: auto;
+	border-collapse: collapse;
+	font-size: 0.9em;
+}
+article th, article td {
+	padding: 5px 8px;
+	border: 1px solid var(--rule-color);
+	text-align: left;
+	vertical-align: top;
+}
+
+math[display="block"] {
+	margin-top: 20px;
+}
+
+sup {
+	line-height: 0;
+	font-size: 0.75em;
+}
+sup a {
+	text-decoration: none;
+}
+
+.notes, .references {
+	font-size: 0.9em;
+	color: var(--dim-color);
+}
+
+/* Figures. Put one or more images side by side, with an optional caption:
+   <div class="fig-row">
+     <div class="fig-col"><img src="/assets/img/posts/my-post/a.png" alt=""></div>
+     <div class="fig-col"><img src="/assets/img/posts/my-post/b.png" alt=""></div>
+   </div>
+   <div class="caption">What the images show.</div> */
+.fig-row {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 10px;
+	margin-top: 20px;
+}
+.fig-col {
+	flex: 1 1 200px;
+	min-width: 0;
+}
+.caption {
+	margin-top: 10px;
+	font-size: 0.9em;
+	color: var(--dim-color);
+	text-align: center;
+}
+.center {
+	text-align: center;
+}
+.half {
+	max-width: 50%;
+	margin: 0 auto;
+}
+.note {
+	display: block;
+	margin-top: 20px;
+	padding-left: 15px;
+	border-left: 2px solid var(--dim-color);
+	color: var(--dim-color);
+}
+
+@media (max-width: 600px) {
+	main {
+		padding: 10px;
+	}
+	h1 {
+		font-size: 1.3em;
+	}
+	.half {
+		max-width: 100%;
+	}
+}

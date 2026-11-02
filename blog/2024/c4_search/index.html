@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Connect X: MCTS vs. Minimax | Matias Barandiaran</title>
+<meta name="description" content="Empirical study comparing Monte Carlo Tree Search and Minimax in Connect X.">
+<meta property="og:title" content="Connect X: MCTS vs. Minimax">
+<meta property="og:description" content="Empirical study comparing Monte Carlo Tree Search and Minimax in Connect X.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://mbaranr.github.io/blog/2024/c4_search/">
+<meta property="og:image" content="https://mbaranr.github.io/assets/img/post_content/c4_search/feat_2a.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" type="application/atom+xml" title="Matias Barandiaran" href="/feed.xml">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<main>
+<header>
+<a href="/" class="name">Matias Barandiaran</a>
+<nav><a href="/blog/">blog</a> <a href="/publications/">publications</a> <a href="/assets/pdf/Resume.pdf">resume</a></nav>
+</header>
+<article>
+<h1>Connect X: MCTS vs. Minimax</h1>
+<p class="meta">Published 2024-12-20, ai, python</p>
+
+<h2>Abstract</h2>
+<p>Connect X, a solved perfect-information strategy game, has established itself as a staple in game AI research. With the rise of advanced non-machine-learning search techniques like Monte Carlo Tree Search (MCTS), traditional methods such as heuristic Minimax are struggling to maintain their relevance. This study offers an empirical comparison of these approaches using both result-oriented and result-agnostic metrics to assess their performance in a Connect X setting.</p>
+<h2>Introduction</h2>
+<p>The arrival of Monte Carlo Tree Search (MCTS) has transformed the field of game AI, notably through its integration with AlphaGo<sup><a href="#ref-1">1</a></sup>, offering an innovative alternative to traditional search methods for decision-making. With the aim of exploring the relative strengths and weaknesses of these approaches, this study presents an empirical comparison between MCTS and Minimax in the context of Connect X with a tailored evaluation function to facilitate it. Previous research has extensively benchmarked Minimax agents using various heuristics, demonstrating their effectiveness in games with clear rules and straightforward evaluation metrics. However, these studies often lack a direct comparison to more advanced algorithms, like MCTS, under the constraints and strategic nuances of Connect X. This study seeks to fill that gap by providing a rigorous analysis.</p>
+<h2>Background</h2>
+<h3>Connect X</h3>
+<p>Connect X is a two-player game traditionally consisting of a board of 7 vertical slots containing 6 positions each. Both players alternate to choose a slot to drop a chip that falls to its lowest free position. The goal is to attempt to create horizontal, vertical, or diagonal chip sequences of given length <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span>.</p>
+<h3>Minimax Search</h3>
+<p>Minimax Search, introduced by Von Neumann in 1928<sup><a href="#ref-2">2</a></sup>, is considered a theoretical foundation for solving competitive zero-sum, perfect information problems<sup><a href="#ref-3">3</a></sup>. The algorithm assumes two players, Max and Min, and assigns values to every terminal node in a game tree based on a heuristic or evaluation function<sup><a href="#ref-4">4</a></sup>. Terminal nodes represent winning states or states at a specific depth, determined by a hyperparameter relative to the current root state. If a non-terminal node <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span> has Max as the agent to move, the value of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span> will be the maximum of its successors. Conversely, if Min is the agent to move, the value of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span> will be the minimum. Alpha-beta pruning is often incorporated into the Minimax algorithm to evaluate the game tree at a reduced cost. It does this by &quot;pruning&quot; branches that are guaranteed not to affect the value of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><sup><a href="#ref-5">5</a></sup>.</p>
+<h3>Monte Carlo Tree Search</h3>
+<p>Monte Carlo Tree Search (MCTS), introduced by Kocsis et al.<sup><a href="#ref-6">6</a></sup>, gained prominence for automating Go<sup><a href="#ref-7">7</a></sup> gameplay. As an anytime algorithm, MCTS can be stopped at any point to provide the best current estimate, often within a pre-defined budget of iterations due to practical constraints. Each iteration includes four phases, as detailed by Świechowski et al.<sup><a href="#ref-8">8</a></sup>: <strong>Selection</strong> (explores the existing tree using a tree policy<sup><a href="#note1" id="ref1">[1]</a></sup>), <strong>Expansion</strong> (adds at least one new node to the tree), <strong>Simulation</strong> (random gameplay to simulate outcomes), and <strong>Backpropagation</strong> (propagates payoffs through the tree).</p>
+<h2>Methods</h2>
+<h3>Minimax Implementation</h3>
+<p>The Minimax algorithm was implemented recursively, with each tree node invoking the same function on its successors. Although an explicit tree data structure was constructed during the algorithm&#39;s execution, this was optional and primarily done for evaluation purposes. It is worth noting that implementation variations that do not construct this tree may yield different results for metrics like the time taken to pick a move. Additionally, alpha-beta pruning was integrated to reduce the search cost, improving the algorithm&#39;s efficiency.</p>
+<h3>Evaluation Function</h3>
+<p>The evaluation function implemented to guide the Minimax search was heavily inspired by the literature, specifically by the work of Kang et al.<sup><a href="#ref-10">10</a></sup>. Although no theoretical proof will be provided to establish its admissibility, an informed affirmation can be made based on domain-specific knowledge of the game.</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Sequence</th>
+<th>Explanation</th>
+<th>Utility</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>1</th>
+<td><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span></td>
+<td>Winning state.</td>
+<td>inf</td>
+</tr>
+<tr>
+<th rowspan="3">2</th>
+<td><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">X-1</annotation></semantics></math></span></td>
+<td><strong>2.1</strong> Spaces available at both sides.</td>
+<td>inf</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>2.2</strong> Space available at one side.</td>
+<td>90000</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>2.3</strong> Spaces available at neither side.</td>
+<td>0</td>
+</tr>
+<tr>
+<th rowspan="3">3</th>
+<td><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>−</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">X-2</annotation></semantics></math></span></td>
+<td><strong>3.1</strong> Spaces available at both sides.</td>
+<td>50000</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>3.2</strong> Spaces available at one side. Depends on number of spaces available (<span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">s</annotation></semantics></math></span>).</td>
+<td><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>max</mi><mo>⁡</mo><mo stretchy="false">(</mo><mn>0</mn><mo separator="true">,</mo><mo stretchy="false">(</mo><mi>s</mi><mo>−</mo><mn>1</mn><mo stretchy="false">)</mo><mo>×</mo><mn>10000</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\max(0, (s-1) \times 10000)</annotation></semantics></math></span></td>
+</tr>
+<tr>
+<td></td>
+<td><strong>3.3</strong> Spaces available at neither side.</td>
+<td>0</td>
+</tr>
+<tr>
+<th>4</th>
+<td>1</td>
+<td>Depends on chip's distance to center column (<span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi></mrow><annotation encoding="application/x-tex">d</annotation></semantics></math></span>).</td>
+<td><span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>max</mi><mo>⁡</mo><mo stretchy="false">(</mo><mn>0</mn><mo separator="true">,</mo><mn>200</mn><mo>−</mo><mn>40</mn><mo>×</mo><mi>d</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\max(0, 200 - 40 \times d)</annotation></semantics></math></span></td>
+</tr>
+</tbody>
+</table><p>The function can be broken down into 4 distinct features, as shown in the table above. Each feature corresponds to the presence of chip sequences of length <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span>. Moreover, each feature is comprised of sub-cases that will help to determine the value of a given game state. The most important feature is <strong>1</strong>, which returns a value of infinity on the winning terminal nodes, as no other state is more valuable. The function <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi></mrow><annotation encoding="application/x-tex">E</annotation></semantics></math></span> will be calculated for the perspectives of players that maximize (<span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mi>a</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">max</annotation></semantics></math></span>) and minimize (<span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mi>i</mi><mi>n</mi></mrow><annotation encoding="application/x-tex">min</annotation></semantics></math></span>), with a final value of <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo stretchy="false">(</mo><mi>m</mi><mi>a</mi><mi>x</mi><mo stretchy="false">)</mo><mo>−</mo><mi>E</mi><mo stretchy="false">(</mo><mi>m</mi><mi>i</mi><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">E(max) - E(min)</annotation></semantics></math></span> to balance out the resulting heuristic value.</p>
+<p>For simplicity, the figure below will be used to explain the subcases of feature <strong>2</strong> in a game with board dimensions [6, 7] and <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>=</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">X=4</annotation></semantics></math></span>. Assuming that red is <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mi>a</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">max</annotation></semantics></math></span>, <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo stretchy="false">(</mo><mi>m</mi><mi>a</mi><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">E(max)</annotation></semantics></math></span> would yield infinity for the leftmost state, since a win is unstoppable at that point (<strong>2.1</strong>). The middle left state would result in 90k, as it represents an immediate advantage/threat (<strong>2.2</strong>). On the other hand, both the middle-right and right-most boards would yield 0, as the former cannot lead to a win, and the latter does not have any immediately available moves on either side (<strong>2.3</strong>). This is done to ensure that the <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi></mrow><annotation encoding="application/x-tex">E</annotation></semantics></math></span> does not overestimate a state&#39;s utility.</p>
+<div class="fig-row">
+<div class="fig-col">
+<div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+<div style="flex: 1 1 0; min-width: 0; max-width: 150px;">
+<img src="/assets/img/post_content/c4_search/feat_2a.png" alt="feat 2 examples" loading="lazy" />
+</div>
+<div style="flex: 1 1 0; min-width: 0; max-width: 150px;">
+<img src="/assets/img/post_content/c4_search/feat_2b.png" alt="feat 2 examples" loading="lazy" />
+</div>
+<div style="flex: 1 1 0; min-width: 0; max-width: 150px;">
+<img src="/assets/img/post_content/c4_search/feat_2c.png" alt="feat 2 examples" loading="lazy" />
+</div>
+<div style="flex: 1 1 0; min-width: 0; max-width: 150px;">
+<img src="/assets/img/post_content/c4_search/feat_2d.png" alt="feat 2 examples" loading="lazy" />
+</div>
+</div>
+<p class="caption">Feature 2 examples.</p>
+</div>
+</div><p>Note that E yields a value of 0 when there is a single available space (s = 1) on one of the sides of a C-2 sequence (3.2). The equation:</p>
+<div class="center">
+<span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mi>a</mi><mi>x</mi><mo stretchy="false">(</mo><mn>0</mn><mo separator="true">,</mo><mo stretchy="false">(</mo><mi>s</mi><mo>−</mo><mn>1</mn><mo stretchy="false">)</mo><mo>∗</mo><mn>10000</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">max(0, (s - 1) * 10000)</annotation></semantics></math></span>
+</div><p>is proposed as it guarantees a utility of 40k for the case of 5 available spaces, the maximum of a traditional board of 7 columns, while still being lower than 3.1. Reasonably, one could argue that this might not scale well to different board sizes, which is recognized as a weakness of feature 3.2. In contrast, feature 4 will return a much lower value, as it is significantly less powerful than the other combinations. Chips closer to the center have a higher utility as they provide an increased number of potential plays being further from the edges of the board.</p>
+<p>In terms of implementation, heavily optimized convolution operations were used to facilitate the detection of chip sequences of given lengths throughout the board. The convolution kernel employed consisted of all zeroes, except for the locations corresponding to the sequence being targeted, where ones were placed.</p>
+<h3>Empirical Comparison</h3>
+<p>Since Minimax search would theoretically be able to expand the entire game tree at each move to assess every possible state, four distinct <strong>computational budgets</strong> were set to ensure a fair comparison. The budget refers to Minimax&#39;s game state evaluations (tree nodes) and MCTS&#39; game tree rollouts. Since Minimax&#39;s budget consumption depends on its <em>depth</em> parameter, different depths are assessed. On the other hand, since the number of MCTS&#39; rollouts is budget-agnostic, three different strategies were proposed to control its consumption behavior:</p>
+<ul>
+<li><strong>Thrifty:</strong> Allocates the same budget to every move, assuming a game with <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mi>o</mi><mi>w</mi><mi>s</mi><mo>×</mo><mi>c</mi><mi>o</mi><mi>l</mi><mi>s</mi></mrow><annotation encoding="application/x-tex">rows \times cols</annotation></semantics></math></span> chips dropped.  </li>
+<li><strong>Optimistic:</strong> Allocates a budget of 1 to the last move, with uniformly increasing budgets for earlier moves. This agent is <em>optimistic</em> about the possibility of winning earlier with a larger budget.  </li>
+<li><strong>Greedy:</strong> Allocates the entire budget equally among the first half of potential moves, leaving no budget for the second half.</li>
+</ul>
+<p>When an agent runs out of computational budget in the middle of a game, it forfeits, and its opponent automatically wins. Note that Minimax will have <em>depth</em> number of additional moves after its budget is consumed, since it can reuse the tree computed in previous moves without further state evaluations.</p>
+<p>Two main simulation sets were run to empirically compare both algorithms. Sets consist of 12k and 19k total simulations, respectively. Both involved running a number of repeats per unique combination of hyper-parameters to ensure fairness in the assessment of both agents. The hyper-parameters in question were: <strong>first set:</strong> <em>depth</em>, starting agent (to get rid of a possible source of bias), budget, and MCTS strategy; <strong>second set:</strong> board dimensions (and X values), budget, MCTS strategy, and starting agent. Additionally, depths were not included in the second set as only the best-performing ones were selected to compete (results from the first).  </p>
+<aside>For every board with column number <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi></mrow><annotation encoding="application/x-tex">c</annotation></semantics></math></span>, the rows were <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">c - 1</annotation></semantics></math></span> and <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span> was <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mo>−</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">c - 3</annotation></semantics></math></span>, to maintain the original Connect 4 proportions.</aside><p>For every move, relevant metrics and game attributes were recorded in a parquet file that was later used for the analysis. Some of these metrics included: time (ms), number of tree nodes, current agent, etc.</p>
+<h2>Results</h2>
+<div class="fig-row">
+<div class="fig-col">
+<div style="max-width: 700px; margin: 0 auto;">
+<img src="/assets/img/post_content/c4_search/fig_1.png" alt="" loading="lazy" />
+<p class="caption">
+<strong>a</strong>, <strong>b</strong>, <strong>c</strong>, Analysis of game results.
+<strong>a</strong>, Line plot of the effect of Minimax's depth on its (adjusted) win rate across multiple budgets.
+<strong>b</strong>, Bar plots of number of losses due to forfeit/budget depletion across multiple budgets.
+Color scheme follows that of <strong>a</strong>. Left: Comparison of Minimax depths. Right: Greedy MCTS.
+<strong>c</strong>, Heatmaps of Minimax's win rate across multiple depths, budgets and MCTS strategies.
+Each map represents a strategy. Color scheme maps win rate.
+</p>
+</div>
+</div>
+</div><div class="fig-row">
+<div class="fig-col">
+<div style="max-width: 700px; margin: 0 auto;">
+<img src="/assets/img/post_content/c4_search/fig_2.png" alt="" loading="lazy" />
+<p class="caption">
+<strong>a</strong>, <strong>b</strong>, Visualization of result-agnostic performance metrics.
+Only Minimax's best depth at each budget. Color scheme represents the timing of each move,
+indicating how early or late in the game it was performed.
+<strong>a</strong>, Box plot visualization of time (ms) taken to pick a move across all budgets.
+<strong>b</strong>, Box plot visualization of approximation of memory (bytes) consumed at each move.
+Calculated as <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mi>e</mi><mi>a</mi><mi>n</mi><mo stretchy="false">(</mo><mi>M</mi><mi>i</mi><mi>n</mi><mi>i</mi><mi>m</mi><mi>a</mi><mi>x</mi><mi>N</mi><mi>o</mi><mi>d</mi><mi>e</mi><mo stretchy="false">(</mo><mi>b</mi><mi>y</mi><mi>t</mi><mi>e</mi><mi>s</mi><mo stretchy="false">)</mo><mo>÷</mo><mi>M</mi><mi>C</mi><mi>T</mi><mi>S</mi><mi>N</mi><mi>o</mi><mi>d</mi><mi>e</mi><mo stretchy="false">(</mo><mi>b</mi><mi>y</mi><mi>t</mi><mi>e</mi><mi>s</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">mean(Minimax Node (bytes) \div MCTS Node (bytes))</annotation></semantics></math></span>.
+</p>
+</div>
+</div>
+</div><div class="fig-row">
+<div class="fig-col">
+<div style="max-width: 700px; margin: 0 auto;">
+<img src="/assets/img/post_content/c4_search/fig_4.png" alt="" loading="lazy" />
+<p class="caption">
+<strong>a</strong>, <strong>b</strong>, Simulations extended to variable board/rule configurations.
+Again, Minimax's depths at each budget were chosen according to the previous analysis.
+<strong>a</strong>, Line plot visualization of the effect of the game's branching factor (board's number of columns)
+on Minimax's win rate across multiple budgets. The dashed line marks the 50% win rate, with every point above
+it indicating performance superior to that of MCTS.
+<strong>b</strong>, Bar plots showcasing the average number of moves played to reach a win across X values.
+Every plot represents a budget, the color scale indicates the number of simulations used
+to compute the average, and the hatch indicates the agent.
+</p>
+</div>
+</div>
+</div><h2>Discussion</h2>
+<p>As evidenced from the results, the number of losses due to budget depletion is inversely proportional to the win rate for any given budget, which aligns with theoretical expectations. The optimistic MCTS performed the most consistently across multiple budgets and depths, followed by the thrifty and greedy. The heatmaps reveal that the choice of MCTS strategy is crucial. Although the idea of a greedy agent was appealing, particularly for larger budgets, games tend to take longer when agents can afford to utilize more computation, which resulted in a significant number of greedy losses due to budget depletion. On the other hand, it is pleasing to see that the optimistic agent performed relatively close to expectations. Since the game tree is significantly bigger at early stages--as will be explained later--the higher initial budget allows for MCTS to build a better foundation of chips.</p>
+<p>Picking moves at later stages of the game requires less memory for both algorithms, which aligns with a decreasing branching factor for the states in question. However, no clear patterns emerged concerning the time taken to pick a move and its timing--how late or early in the game the move was played. Moreover, MCTS built overall larger game trees in most budgets, which could explain its higher win rates. In fact, the only case where Minimax&#39;s mean memory consumed was significantly higher (budget 500) is also the case where Minimax could win more games than its Monte Carlo counterpart. One could think of this budget and <em>depth</em> combination as a ``sweet spot&#39;&#39; in Minimax&#39;s favor, where the richest trees were able to be generated without risking computation depletion. Moreover, the growth in time and memory is exponential with respect to <em>depth</em> and budget for both agents.</p>
+<p>For the second set of simulations, one could state that MCTS generalized better across different board and rule configurations. However, it was surprising to see Minimax achieve really high win rates for some of these new combinations. Focusing on the three cases mentioned before, one could transfer the information gathered from the result-agnostic box plots to affirm that increasing the branching factor allowed for a Minimax algorithm that fully utilized its computational budget (since a higher branching factor would result in bigger game trees), specializing in outclassing MCTS for said combinations (around 70% win rate). Moreover, one could state that Minimax performs better at really low budgets and small boards, since terminal states are reached faster. On the contrary, MCTS shines at higher computational budgets, particularly when paired with larger board sizes. Interestingly, the weakness identified on feature <strong>3.2</strong> did not really hold in practice, as budgets 100 and 1k didn&#39;t appear to perform significantly worse for bigger board sizes.</p>
+<p>It is safe to say that Minimax is more efficient with its wins, as it is shown that fewer numbers of moves are needed to end a game. This could be interpreted as <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi></mrow><annotation encoding="application/x-tex">E</annotation></semantics></math></span> being either really accurate of a game state&#39;s utility or, alternatively, relatively poor.</p>
+<h2>Conclusions</h2>
+<p>MCTS proved to be generally more effective in terms of time and memory consumption. Note that, in this case, higher memory usage is desirable as it indicates that the computational budget is being utilized to its full potential. As demonstrated by the data collected, MCTS was also the superior search algorithm in terms of game results, with some interesting exceptions.</p>
+<p>A limitation of this study lies in the decision to include all MCTS strategies in the analysis. It is reasonable to think that this approach may not have been entirely fair to MCTS, as the optimal Minimax depths were tailored for each budget. This choice was motivated by a conflict between the optimal Minimax depth and the best-performing MCTS strategy, as these configurations rarely align. Moreover, while Minimax depths were strategically selected to minimize defeats caused by budget depletion, this risk remained present, particularly with bigger board sizes. On the other hand, selecting a specific MCTS strategy that avoids such losses (e.g., thrifty or optimistic strategies) could be perceived as unfair to Minimax.</p>
+<p>Future extensions of this study could involve exploring alternative MCTS strategies or refining the evaluation function. Otherwise, another direction might be redefining the budget&#39;s nature to reflect more realistic measures, such as time allowed to pick a move or CPU utilization.</p>
+<h2>References</h2>
+<ol>
+<li id="ref-1">Samuel Gibbs. <a href="https://www.theguardian.com/technology/2016/mar/15/googles-alphago-seals-4-1-victory-over-grandmaster-lee-sedol">Google’s AlphaGo seals 4-1 victory over grandmaster Lee Sedol</a>. <em>The Guardian</em>, 2016.</li>
+<li id="ref-2">Manfred J Holler. John von Neumann (1903--1957). <em>Handbook on the History of Economic Analysis, Volume I</em>, 2016.</li>
+<li id="ref-3">Donald Francis Beal. The nature of minimax search. <em>Institute of Knowledge and Agent Technology</em>, 1999.</li>
+<li id="ref-4">Murray S Campbell and T. Anthony Marsland. A comparison of minimax tree search algorithms. <em>Artificial Intelligence</em>, 1983.</li>
+<li id="ref-5">Donald E Knuth and Ronald W Moore. An analysis of alpha-beta pruning. <em>Artificial Intelligence</em>, 1975.</li>
+<li id="ref-6">Levente Kocsis and Csaba Szepesvári. Bandit based Monte-Carlo planning. <em>European Conference on Machine Learning</em>, 2006.</li>
+<li id="ref-7">Peter Shotwell. Go! More than a game. <em>Tuttle Publishing</em>, 2011.</li>
+<li id="ref-8">Maciej Świechowski, Konrad Godlewski, Bartosz Sawicki, Jacek Mańdziuk. Monte Carlo tree search: A review of recent modifications and applications. <em>Artificial Intelligence Review</em>, 2023.</li>
+<li id="ref-9">Peter Auer. Finite-time Analysis of the Multiarmed Bandit Problem. <em>Kluwer Academic Publishers</em>, 2002.</li>
+<li id="ref-10">Xiyu Kang, Yiqi Wang, Yanrui Hu, et al.. Research on different heuristics for minimax algorithm: Insights from Connect-4 game. <em>Journal of Intelligent Learning Systems and Applications</em>, 2019.</li>
+</ol><div class="notes">
+<p id="note1">[1] The policy used for this study is UCB1<sup><a href="#ref-9">9</a></sup>. <a href="#ref1">back</a></p>
+</div>
+
+<p class="reply"><a href="mailto:mbarandiaranr@gmail.com?subject=Re%3A%20Connect%20X%3A%20MCTS%20vs.%20Minimax">Reply by email</a></p>
+</article>
+
+<footer><a href="/feed.xml">RSS feed</a>. Updated 2026-11-02</footer>
+</main>
+
+</body>
+</html>

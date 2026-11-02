@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>gladGAN | Matias Barandiaran</title>
+<meta name="description" content="Generative Adversarial Networks can be used to detect graph level anomalies.">
+<meta property="og:title" content="gladGAN">
+<meta property="og:description" content="Generative Adversarial Networks can be used to detect graph level anomalies.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://mbaranr.github.io/blog/2025/gladgan/">
+<meta property="og:image" content="https://mbaranr.github.io/assets/img/project_content/gladgan/glad_applications.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" type="application/atom+xml" title="Matias Barandiaran" href="/feed.xml">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<main>
+<header>
+<a href="/" class="name">Matias Barandiaran</a>
+<nav><a href="/blog/">blog</a> <a href="/publications/">publications</a> <a href="/assets/pdf/Resume.pdf">resume</a></nav>
+</header>
+<article>
+<h1>gladGAN</h1>
+<p class="meta">Published 2025-10-10, research</p>
+
+<p><strong>Goal</strong>: Detect rare graph patterns that differ from the majority of graphs.</p>
+<p>Some real world applications include:</p>
+<ul>
+<li>Spotting toxic molecules in chemical compounds analysis.</li>
+<li>Recognizing patient neuroimaging in disease diagnosis.</li>
+<li>Detecting abnormal internet activity graphs.</li>
+</ul>
+<div class="fig-row">
+<div class="fig-col">
+<div style="max-width: 400px; margin: 0 auto;">
+<img src="/assets/img/project_content/gladgan/glad_applications.png" alt="glad_applications" loading="lazy" />
+</div>
+</div>
+</div><p><strong>Problem</strong>: Can sometimes be <code>very difficult</code>...</p>
+<div class="fig-row">
+<div class="fig-col">
+<div style="max-width: 600px; margin: 0 auto;">
+<img src="/assets/img/project_content/gladgan/glad_baselines.png" alt="glad_baselines" loading="lazy" />
+</div>
+</div>
+</div><h3>GANs</h3>
+<p>GANs have shown huge potential on image anomaly detection (IAD). Can we translate GANs’ application on IAD to GLAD?</p>
+<p><strong>Solution</strong>: <code>gladGAN</code>. A novel approach which lands in the category of “Generic normality feature learning” (GLADC’s close cousin). </p>
+<ul>
+<li>Non anomaly-aware </li>
+<li>Concerned only with normal graphs</li>
+</ul>
+<h3>Latent Space</h3>
+<div class="fig-row">
+<div class="fig-col">
+<div style="max-width: 600px; margin: 0 auto;">
+<img src="/assets/img/project_content/gladgan/latent_dogs.png" alt="latent_dogs" loading="lazy" />
+</div>
+</div>
+</div><p>How does this relate to <code>anomaly detection</code>?</p>
+<p>The generator has learned the mapping G(z) = z → x\hat. Which means that for every real image x there should an x\hat in the latent space X where x ~ x\hat (Assuming G’s training has been successful).</p>
+<p>So we can compare iteratively...</p>
+<div class="fig-row">
+<div class="fig-col">
+<div style="max-width: 600px; margin: 0 auto;">
+<img src="/assets/img/project_content/gladgan/latent_search.png" alt="latent_search" loading="lazy" />
+</div>
+</div>
+</div><p>Works! But as you can imagine, the time that takes to search for x_n grows linearly with the size of X (X is usually <code>huge</code>).</p>
+<p>But there is a trick! Have an encoder learn to map a given image x to a noise vector/matrix z. This drastically improves performance (T. Schlegl et al. 2019).</p>
+<h3>gladGAN</h3>
+<div class="fig-row">
+<div class="fig-col">
+<div style="max-width: 400px; margin: 0 auto;">
+<img src="/assets/img/project_content/gladgan/gladgan_pipeline.png" alt="gladgan_pipeline" loading="lazy" />
+</div>
+</div>
+</div><div class="fig-row">
+<div class="fig-col">
+<div style="max-width: 400px; margin: 0 auto;">
+<img src="/assets/img/project_content/gladgan/gladgan_wgan_training.png" alt="wgan_training" loading="lazy" />
+</div>
+</div>
+<div class="fig-col">
+<div style="max-width: 400px; margin: 0 auto;">
+<img src="/assets/img/project_content/gladgan/gladgan_encoder_training.png" alt="encoder_training" loading="lazy" />
+</div>
+</div>
+</div><p>Graph anomaly detection is a relatively hard problem: a <code>scientific gap</code> is identified. GANs are proposed as a novel approach to tackle this problem.</p>
+
+<p class="reply"><a href="mailto:mbarandiaranr@gmail.com?subject=Re%3A%20gladGAN">Reply by email</a></p>
+</article>
+
+<footer><a href="/feed.xml">RSS feed</a>. Updated 2026-11-02</footer>
+</main>
+
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Generating Simpsons Faces | Matias Barandiaran</title>
+<meta name="description" content="Generating Simpsons faces with Generative Adversarial Networks">
+<meta property="og:title" content="Generating Simpsons Faces">
+<meta property="og:description" content="Generating Simpsons faces with Generative Adversarial Networks">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://mbaranr.github.io/blog/2023/simpsons_gan/">
+<meta property="og:image" content="https://mbaranr.github.io/assets/gif/bart.gif">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" type="application/atom+xml" title="Matias Barandiaran" href="/feed.xml">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<main>
+<header>
+<a href="/" class="name">Matias Barandiaran</a>
+<nav><a href="/blog/">blog</a> <a href="/publications/">publications</a> <a href="/assets/pdf/Resume.pdf">resume</a></nav>
+</header>
+<article>
+<h1>Generating Simpsons Faces</h1>
+<p class="meta">Published 2023-08-15, generative ai, python, pytorch, computer vision</p>
+
+<p>Even a simple GAN can produce surprisingly cool results. By training a generative adversarial network on Simpsons faces, we can generate new characters that resemble the originals, demonstrating the power of GANs in computer vision.</p>
+<h3>The GAN Model</h3>
+<p>Here’s the simple GAN setup:</p>
+<pre><code class="language-python">import torch.nn as nn
+
+class Reshape(nn.Module):
+  &quot;&quot;&quot;A custom reshape layer.&quot;&quot;&quot;
+  def __init__(self, shape):
+    super(Reshape, self).__init__()
+    self.shape = shape
+
+  def forward(self, x):
+    return x.view(*self.shape)
+</code></pre>
+<pre><code class="language-python">class Generator(nn.Module):
+    def __init__(self, Z):
+        super().__init__()
+        self.Z = Z
+        self.gen_model = nn.Sequential(
+            nn.Linear(Z, 1024*8*8),
+            nn.BatchNorm1d(1024*8*8),
+            nn.LeakyReLU(0.2),
+            Reshape((-1, 1024, 8, 8)),
+            *self._make_deconv_blocks(),
+            nn.Conv2d(64, 3, 5, 1, 1),
+            nn.Tanh()
+        )
+
+    def _make_deconv_blocks(self):
+        channels = [1024, 512, 256, 128, 64]
+        kernels = [5, 5, 5, 5]
+        strides = [2, 2, 2, 2]
+        paddings = [1, 2, 2, 2]
+        output_pads = [0, 0, 0, 1]
+        blocks = []
+        for i in range(4):
+            blocks += [
+                nn.ConvTranspose2d(channels[i], channels[i+1], kernels[i], strides[i], paddings[i], output_pads[i]),
+                nn.BatchNorm2d(channels[i+1]),
+                nn.LeakyReLU(0.2)
+            ]
+        return blocks
+
+    def forward(self, noise):
+        return self.gen_model(noise)
+</code></pre>
+<pre><code class="language-python">class Discriminator(nn.Module):
+    def __init__(self):
+        super().__init__()
+        channels = [3, 64, 128, 256, 512, 1024]
+        conv_params = [(5, 2, 1), (5, 2, 1), (5, 2, 1), (5, 1, 2), (5, 2, 2)]
+        conv_blocks = []
+        for i in range(5):
+            k, s, p = conv_params[i]
+            conv_blocks += [
+                nn.Conv2d(channels[i], channels[i+1], k, s, p),
+                nn.BatchNorm2d(channels[i+1]),
+                nn.LeakyReLU(0.2)
+            ]
+
+        self.model = nn.Sequential(
+            *conv_blocks,
+            nn.Flatten(),
+            nn.Linear(1024*8*8, 1),
+            nn.Sigmoid()
+        )
+
+    def forward(self, x):
+        return self.model(x)
+</code></pre>
+<h3>Generator Outputs During Training</h3>
+<p>Even early in training, the generator can produce recognizable characters like Bart and Marge:</p>
+<div class="fig-row">
+<div class="fig-col">
+<img src="/assets/gif/bart.gif" alt="bart" loading="lazy" />
+</div>
+<div class="fig-col">
+<img src="/assets/gif/marge.gif" alt="marge" loading="lazy" />
+</div>
+</div><h3>A Variety of Generated Faces</h3>
+<p>After training, the GAN can create a variety of Simpsons-style characters:</p>
+<div class="fig-row">
+<div class="fig-col">
+<div style="max-width: 800px; margin: 0 auto;">
+<img src="/assets/img/post_content/simpsons/variety.jpg" alt="variety" loading="lazy" />
+</div>
+</div>
+</div>
+
+<p class="reply"><a href="mailto:mbarandiaranr@gmail.com?subject=Re%3A%20Generating%20Simpsons%20Faces">Reply by email</a></p>
+</article>
+
+<footer><a href="/feed.xml">RSS feed</a>. Updated 2026-11-02</footer>
+</main>
+
+</body>
+</html>

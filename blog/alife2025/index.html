@@ -9,7 +9,7 @@
 <meta property="og:description" content="Developmental Graph Cellular Automata can grow reservoir computers.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://mbaranr.github.io/blog/alife2025/">
-<meta property="og:image" content="https://mbaranr.github.io/assets/20251010-alife-vital-force.png">
+<meta property="og:image" content="https://mbaranr.github.io/blog/alife2025/vital-force.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="alternate" type="application/atom+xml" title="Matias Barandiaran" href="/feed.xml">
 <link rel="stylesheet" href="/style.css">
@@ -19,7 +19,7 @@
 <main>
 <header>
 <a href="/" class="name">Matias Barandiaran</a>
-<nav><a href="/blog/">blog</a> <a href="/publications/">publications</a> <a href="/books/">bookshelf</a></nav>
+<nav><a href="/blog/">blog</a> <a href="/publications/">publications</a> <a href="/bookshelf/">bookshelf</a></nav>
 </header>
 <article>
 <h1>Reservoir DGCAs</h1>
@@ -30,63 +30,55 @@
 </blockquote>
 <p>Until the late 19th century, scientists believed that life possessed a special vital force. A property not just of living beings, but of their chemical constituents themselves.</p>
 <div class="fig-row">
-<div class="fig-col">
-<div style="max-width: 400px; margin: 0 auto;">
-<img src="/assets/20251010-alife-vital-force.png" alt="vital force" loading="lazy" />
+<div class="fig-col" style="max-width: 400px;">
+<img src="vital-force.png" loading="lazy" alt="vital force" />
 </div>
 </div>
-</div><p>By the mid-20th century, the discovery of DNA and RNA structures and the successful synthesis of polynucleotides revealed that life’s chemistry follows the same physical laws as everything else. The atoms that make up our bodies are the same as those found all around the universe.</p>
+<p>By the mid-20th century, the discovery of DNA and RNA structures and the successful synthesis of polynucleotides revealed that life’s chemistry follows the same physical laws as everything else. The atoms that make up our bodies are the same as those found all around the universe.</p>
 <div class="fig-row">
-<div class="fig-col">
-<div style="max-width: 400px; margin: 0 auto;">
-<img src="/assets/20251010-alife-carbon-space.png" alt="carbon in space" loading="lazy" />
+<div class="fig-col" style="max-width: 400px;">
+<img src="carbon-space.png" loading="lazy" alt="carbon in space" />
 </div>
 </div>
-</div><p>Yet, there remains something unique about living systems beyond chemistry alone.</p>
-<p>In recent years, researchers have turned to <code>function</code> as the defining feature of life. </p>
+<p>Yet, there remains something unique about living systems beyond chemistry alone.</p>
+<p>In recent years, researchers have turned to <code>function</code> as the defining feature of life.</p>
 <blockquote>
 <p>What gives rise to function in multicellular organisms?</p>
 </blockquote>
 <p>Morphogenesis orchestrates how cells collectively form complex structures like eyes, limbs, and hearts.</p>
 <div class="fig-row">
-<div class="fig-col">
-<div style="max-width: 400px; margin: 0 auto;">
-<img src="/assets/20251010-alife-retina-structure.png" alt="human eye" loading="lazy" />
+<div class="fig-col" style="max-width: 400px;">
+<img src="retina-structure.png" loading="lazy" alt="human eye" />
 </div>
 </div>
-</div><p>In 2020, Mordvintsev et al. introduced Neural Cellular Automata (NCA) as a model of morphogenesis. By using neural networks as transition rules, NCAs can grow predefined two-dimensional shapes from a single-cell seed.</p>
+<p>In 2020, Mordvintsev et al. introduced Neural Cellular Automata (NCA) as a model of morphogenesis. By using neural networks as transition rules, NCAs can grow predefined two-dimensional shapes from a single-cell seed.</p>
+<div class="fig-row">
+<div class="fig-col" style="max-width: 400px;">
+<img src="gecko.gif" loading="lazy" alt="gecko" />
+</div>
+</div>
+<p>However, biological morphogenesis is not just about form, it is about function. In nature, structures emerge to do something. What better function to explore than computation itself?</p>
+<p>Developmental Graph Cellular Automata (DGCA) (Waldegrave et al., 2023) build upon NCAs by allowing the growth of directed graphs guided by fitness functions.</p>
 <div class="fig-row">
 <div class="fig-col">
-<div style="max-width: 400px; margin: 0 auto;">
-<img src="/assets/20251010-alife-gecko.gif" alt="gecko" loading="lazy" />
+<img src="dgca-pipeline.png" loading="lazy" alt="DGCA update pipeline" />
 </div>
 </div>
-</div><p>However, biological morphogenesis is not just about form, it is about function. In nature, structures emerge to do something. What better function to explore than computation itself?</p>
-<p>Developmental Graph Cellular Automata (DGCA) (Waldegrave et al., 2023) build upon NCAs by allowing the growth of directed graphs guided by fitness functions. </p>
+<p>Since recurrent neural networks (RNNs) are directed graphs, and reservoirs (at their simplest form) are RNNs, DGCAs bring us closer to systems that compute in ways reminiscent of nature.</p>
 <div class="fig-row">
-<div class="fig-col">
-<div style="max-width: 700px; margin: 0 auto;">
-<img src="/assets/20251010-alife-dgca-pipeline.png" alt="DGCA update pipeline" loading="lazy" />
+<div class="fig-col" style="max-width: 400px;">
+<img src="esn.png" loading="lazy" alt="echo state network" />
 </div>
 </div>
-</div><p>Since recurrent neural networks (RNNs) are directed graphs, and reservoirs (at their simplest form) are RNNs, DGCAs bring us closer to systems that compute in ways reminiscent of nature.</p>
-<div class="fig-row">
-<div class="fig-col">
-<div style="max-width: 400px; margin: 0 auto;">
-<img src="/assets/20251010-alife-esn.png" alt="echo state network" loading="lazy" />
-</div>
-</div>
-</div><p>This raises a compelling question...</p>
+<p>This raises a compelling question…</p>
 <blockquote>
 <p>Why not grow our own reservoirs?</p>
 </blockquote>
 <p>Achieving so represents a crucial step toward modeling a more functional, adaptive morphogenesis.</p>
 <p>If this intrigues you, read the <a href="https://arxiv.org/abs/2508.08091">paper</a>. You’ll find that many of the resulting reservoirs exhibit sparse “life-like” structures rather than small-world reservoirs. This suggests that form may play a deeper role in computation within dynamical systems than previously imagined.</p>
 <div class="fig-row">
-<div class="fig-col">
-<div style="max-width: 600px; margin: 0 auto;">
-<img src="/assets/20251010-alife-dgca.png" alt="life-like structures" loading="lazy" />
-</div>
+<div class="fig-col" style="max-width: 600px;">
+<img src="dgca.png" loading="lazy" alt="life-like structures" />
 </div>
 </div>
 

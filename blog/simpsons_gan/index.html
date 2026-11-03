@@ -9,7 +9,7 @@
 <meta property="og:description" content="Generating Simpsons faces with Generative Adversarial Networks">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://mbaranr.github.io/blog/simpsons_gan/">
-<meta property="og:image" content="https://mbaranr.github.io/assets/20230815-simpsons-bart.gif">
+<meta property="og:image" content="https://mbaranr.github.io/blog/simpsons_gan/bart.gif">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="alternate" type="application/atom+xml" title="Matias Barandiaran" href="/feed.xml">
 <link rel="stylesheet" href="/style.css">
@@ -19,16 +19,16 @@
 <main>
 <header>
 <a href="/" class="name">Matias Barandiaran</a>
-<nav><a href="/blog/">blog</a> <a href="/publications/">publications</a> <a href="/books/">bookshelf</a></nav>
+<nav><a href="/blog/">blog</a> <a href="/publications/">publications</a> <a href="/bookshelf/">bookshelf</a></nav>
 </header>
 <article>
 <h1>Generating Simpsons Faces</h1>
 <p class="meta"><i><time datetime="2023-08-15">15 Aug, 2023</time></i></p>
 
 <p>Even a simple GAN can produce surprisingly cool results. By training a generative adversarial network on Simpsons faces, we can generate new characters that resemble the originals, demonstrating the power of GANs in computer vision.</p>
-<h3>The GAN Model</h3>
+<h3 id="the-gan-model">The GAN Model</h3>
 <p>Here’s the simple GAN setup:</p>
-<pre><code class="language-python">import torch.nn as nn
+<pre class="python"><code>import torch.nn as nn
 
 class Reshape(nn.Module):
   &quot;&quot;&quot;A custom reshape layer.&quot;&quot;&quot;
@@ -37,9 +37,8 @@ class Reshape(nn.Module):
     self.shape = shape
 
   def forward(self, x):
-    return x.view(*self.shape)
-</code></pre>
-<pre><code class="language-python">class Generator(nn.Module):
+    return x.view(*self.shape)</code></pre>
+<pre class="python"><code>class Generator(nn.Module):
     def __init__(self, Z):
         super().__init__()
         self.Z = Z
@@ -69,9 +68,8 @@ class Reshape(nn.Module):
         return blocks
 
     def forward(self, noise):
-        return self.gen_model(noise)
-</code></pre>
-<pre><code class="language-python">class Discriminator(nn.Module):
+        return self.gen_model(noise)</code></pre>
+<pre class="python"><code>class Discriminator(nn.Module):
     def __init__(self):
         super().__init__()
         channels = [3, 64, 128, 256, 512, 1024]
@@ -93,24 +91,22 @@ class Reshape(nn.Module):
         )
 
     def forward(self, x):
-        return self.model(x)
-</code></pre>
-<h3>Generator Outputs During Training</h3>
+        return self.model(x)</code></pre>
+<h3 id="generator-outputs-during-training">Generator Outputs During Training</h3>
 <p>Even early in training, the generator can produce recognizable characters like Bart and Marge:</p>
 <div class="fig-row">
 <div class="fig-col">
-<img src="/assets/20230815-simpsons-bart.gif" alt="bart" loading="lazy" />
+<img src="bart.gif" loading="lazy" alt="bart" />
 </div>
 <div class="fig-col">
-<img src="/assets/20230815-simpsons-marge.gif" alt="marge" loading="lazy" />
+<img src="marge.gif" loading="lazy" alt="marge" />
 </div>
-</div><h3>A Variety of Generated Faces</h3>
+</div>
+<h3 id="a-variety-of-generated-faces">A Variety of Generated Faces</h3>
 <p>After training, the GAN can create a variety of Simpsons-style characters:</p>
 <div class="fig-row">
 <div class="fig-col">
-<div style="max-width: 800px; margin: 0 auto;">
-<img src="/assets/20230815-simpsons-variety.jpg" alt="variety" loading="lazy" />
-</div>
+<img src="variety.jpg" loading="lazy" alt="variety" />
 </div>
 </div>
 

@@ -85,16 +85,16 @@ li {
 	margin-top: 8px;
 }
 
-/* Links are coloured so they stand out when scanning; hover inverts them. */
+/* Links are coloured so they stand out when scanning; hover underlines them. */
 a {
 	color: var(--link-color);
+	text-decoration: none;
 }
 a:visited {
 	color: var(--visited-color);
 }
 a:hover, a:focus {
-	color: var(--back-color);
-	background-color: var(--link-color);
+	text-decoration: underline;
 }
 /* Nav links: light blue like Bear, no underline, no visited purple.
    The site name keeps the text colour. */
@@ -105,9 +105,6 @@ header nav a, header nav a:visited {
 }
 header .name, header .name:visited {
 	color: var(--text-color);
-}
-header .name:hover, header .name:focus {
-	background-color: var(--text-color);
 }
 
 b, strong {
@@ -289,6 +286,16 @@ article th, article td {
 math[display="block"] {
 	margin-top: 20px;
 }
+/* Aligned equations (LaTeX's aligned): <mtable class="aligned">, each row
+   <mtd>left side</mtd><mtd>= right side</mtd>, lined up on the "=". */
+mtable.aligned mtd:first-child {
+	text-align: right;
+	padding-right: 0;
+}
+mtable.aligned mtd:last-child {
+	text-align: left;
+	padding-left: 0;
+}
 
 sup {
 	line-height: 0;
@@ -298,15 +305,29 @@ sup a {
 	text-decoration: none;
 }
 
-.notes, .references {
+.notes, .references, .footnotes {
 	font-size: 0.9em;
 	color: var(--dim-color);
+}
+/* Markdown footnotes ([^1]), as pandoc writes them. */
+.footnotes {
+	margin-top: 40px;
+}
+.footnotes hr {
+	display: none;
+}
+.footnotes p {
+	margin-top: 5px;
+}
+.footnote-back {
+	margin-left: 5px;
+	text-decoration: none;
 }
 
 /* Figures. Put one or more images side by side, with an optional caption:
    <div class="fig-row">
-     <div class="fig-col"><img src="/assets/20261102-mypost-a.png" alt=""></div>
-     <div class="fig-col"><img src="/assets/20261102-mypost-b.png" alt=""></div>
+     <div class="fig-col"><img src="plot-a.png" alt=""></div>
+     <div class="fig-col"><img src="plot-b.png" alt=""></div>
    </div>
    <div class="caption">What the images show.</div> */
 .fig-row {

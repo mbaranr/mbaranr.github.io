@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Optimizing DeepRVAT | Matias Barandiaran</title>
+<meta name="description" content="DeepRVAT gene scores can be approximated as a sum of variant level effects.">
+<meta property="og:title" content="Optimizing DeepRVAT">
+<meta property="og:description" content="DeepRVAT gene scores can be approximated as a sum of variant level effects.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://mbaranr.github.io/blog/optimizing-deeprvat/">
+<meta property="og:image" content="https://mbaranr.github.io/blog/optimizing-deeprvat/motivation.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" type="application/atom+xml" title="Matias Barandiaran" href="/feed.xml">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<main>
+<header>
+<a href="/" class="name">Matias Barandiaran</a>
+<nav><a href="/blog/">blog</a> <a href="/publications/">publications</a> <a href="/bookshelf/">bookshelf</a></nav>
+</header>
+<article>
+<h1>Optimizing DeepRVAT</h1>
+<p class="meta"><i><time datetime="2025-09-10">10 Sep, 2025</time></i></p>
+
+<p><a href="https://www.nature.com/articles/s41588-024-01919-z">DeepRVAT</a> is a tool for integrating variant annotations using deep set networks to boost rare variant association testing. The pre-trained DeepRVAT model can be used to compute gene impairment scores for new genes and samples.</p>
+
+<div class="fig-row">
+<img src="motivation.png"/>
+</div>
+
+<p>My project at the Gagneur Lab consisted in revisiting DeepRVAT by focusing on 4 dimensions:</p>
+
+<p><b>Biology</b>. The <code>max</code> permutation invariant function (PIF) cannot model interactions or compound effects. For example, one variant might suppress or mask another, while two moderate-impact variants together could produce a stronger effect than either alone. Shifting to a <code>sum</code> PIF helps address this problem. Additionally, removing the final sigmoid layer alleviates issues with burden distribution and produces scores that better align with biological expectations.</p>
+
+<div class="fig-row">
+<img src="sum-vs-max.png"/>
+<img src="additivity.png"/>
+</div>
+
+<p><b>Robustness</b>. Missing values should be treated as unknowns, not as defaults. This was addressed through the introduction of a dummy variable. Insertions and deletions (indels) can disrupt splicing or regulatory regions (frameshift in-frame risks) but such scores are often unavailable. In non-coding regions, effects are even harder to predict, though the impact remains significant. Some indels can be imputed by approximating them as single-nucleotide variants at the affected loci.</p>
+
+<div class="fig-row">
+<img src="na-handling.png" loading="lazy" alt="na_handling" />
+</div>
+
+<p><b>Interpretability</b>. Genes with LoF variants can be used as markers for burden rescaling. Rescaling burdens improves interpretability and downstream compatibility. Technically, unscaled burdens are difficult to compare with other tools because they lack a clear point of reference.</p>
+
+<p>We compute rescaling factors:</p>
+<p><math><msub><mi>X</mi><mn>0</mn></msub></math>: median of gene burdens of individuals with no variants</p>
+<p><math><msub><mi>X</mi><mn>1</mn></msub></math>: median of gene burdens of individuals with exactly one loftee_hc=1 variant</p>
+<p>Rescaling factors (for each model):</p>
+<math display="block">
+  <mtable class="aligned">
+    <mtr>
+      <mtd><mi>a</mi></mtd>
+      <mtd><mo>=</mo><mfrac><mn>1</mn><mrow><msub><mi>X</mi><mn>1</mn></msub><mo>−</mo><msub><mi>X</mi><mn>0</mn></msub></mrow></mfrac></mtd>
+    </mtr>
+    <mtr>
+      <mtd><mi>b</mi></mtd>
+      <mtd><mo>=</mo><mfrac><mrow><mo>−</mo><msub><mi>X</mi><mn>0</mn></msub></mrow><mrow><msub><mi>X</mi><mn>1</mn></msub><mo>−</mo><msub><mi>X</mi><mn>0</mn></msub></mrow></mfrac></mtd>
+    </mtr>
+  </mtable>
+</math>
+
+<p><b>Usability</b>. In most samples, DeepRVAT sees a single variant, not a set. This means that the DeepRVAT variant score is actually the gene impairment score. For cases with multiple variants, summing variant-level scores instead of re-running the full end-to-end model yields comparable performance. This allows precomputation of variant-level scores, paving the way for ensemble methods that complement existing predictors such as CADD.</p>
+<div class="fig-row">
+<img src="vep.png" loading="lazy"/>
+<img src="vep-performance.png"/>
+</div>
+
+<p class="reply"><a href="mailto:mbarandiaranr@gmail.com?subject=Re%3A%20DeepRVAT%202.0">Reply by email</a></p>
+</article>
+
+<footer><a href="/feed.xml">RSS feed</a>. Updated 2026-11-02</footer>
+</main>
+
+</body>
+</html>

@@ -9,7 +9,7 @@
 <meta property="og:description" content="Generative Adversarial Networks can be used to detect graph level anomalies.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://mbaranr.github.io/blog/gladgan/">
-<meta property="og:image" content="https://mbaranr.github.io/assets/20251010-gladgan-applications.png">
+<meta property="og:image" content="https://mbaranr.github.io/blog/gladgan/applications.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="alternate" type="application/atom+xml" title="Matias Barandiaran" href="/feed.xml">
 <link rel="stylesheet" href="/style.css">
@@ -19,7 +19,7 @@
 <main>
 <header>
 <a href="/" class="name">Matias Barandiaran</a>
-<nav><a href="/blog/">blog</a> <a href="/publications/">publications</a> <a href="/books/">bookshelf</a></nav>
+<nav><a href="/blog/">blog</a> <a href="/publications/">publications</a> <a href="/bookshelf/">bookshelf</a></nav>
 </header>
 <article>
 <h1>gladGAN</h1>
@@ -33,62 +33,54 @@
 <li>Detecting abnormal internet activity graphs.</li>
 </ul>
 <div class="fig-row">
-<div class="fig-col">
-<div style="max-width: 400px; margin: 0 auto;">
-<img src="/assets/20251010-gladgan-applications.png" alt="glad_applications" loading="lazy" />
+<div class="fig-col" style="max-width: 400px;">
+<img src="applications.png" loading="lazy" alt="glad_applications" />
 </div>
 </div>
-</div><p><strong>Problem</strong>: Can sometimes be <code>very difficult</code>...</p>
+<p><strong>Problem</strong>: Can sometimes be <code>very difficult</code>…</p>
 <div class="fig-row">
-<div class="fig-col">
-<div style="max-width: 600px; margin: 0 auto;">
-<img src="/assets/20251010-gladgan-baselines.png" alt="glad_baselines" loading="lazy" />
+<div class="fig-col" style="max-width: 600px;">
+<img src="baselines.png" loading="lazy" alt="glad_baselines" />
 </div>
 </div>
-</div><h3>GANs</h3>
+<h3 id="gans">GANs</h3>
 <p>GANs have shown huge potential on image anomaly detection (IAD). Can we translate GANs’ application on IAD to GLAD?</p>
-<p><strong>Solution</strong>: <code>gladGAN</code>. A novel approach which lands in the category of “Generic normality feature learning” (GLADC’s close cousin). </p>
+<p><strong>Solution</strong>: <code>gladGAN</code>. A novel approach which lands in the category of “Generic normality feature learning” (GLADC’s close cousin).</p>
 <ul>
-<li>Non anomaly-aware </li>
+<li>Non anomaly-aware</li>
 <li>Concerned only with normal graphs</li>
 </ul>
-<h3>Latent Space</h3>
+<h3 id="latent-space">Latent Space</h3>
 <div class="fig-row">
-<div class="fig-col">
-<div style="max-width: 600px; margin: 0 auto;">
-<img src="/assets/20251010-gladgan-latent-dogs.png" alt="latent_dogs" loading="lazy" />
+<div class="fig-col" style="max-width: 600px;">
+<img src="latent-dogs.png" loading="lazy" alt="latent_dogs" />
 </div>
 </div>
-</div><p>How does this relate to <code>anomaly detection</code>?</p>
-<p>The generator has learned the mapping G(z) = z → x\hat. Which means that for every real image x there should an x\hat in the latent space X where x ~ x\hat (Assuming G’s training has been successful).</p>
-<p>So we can compare iteratively...</p>
+<p>How does this relate to <code>anomaly detection</code>?</p>
+<p>The generator has learned the mapping <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>G</mi><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>z</mi><mo>→</mo><mover><mi>x</mi><mo accent="true">̂</mo></mover></mrow><annotation encoding="application/x-tex">G(z) = z \to \hat{x}</annotation></semantics></math>. Which means that for every real image <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math> there should an <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>x</mi><mo accent="true">̂</mo></mover><annotation encoding="application/x-tex">\hat{x}</annotation></semantics></math> in the latent space <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math> where <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∼</mo><mover><mi>x</mi><mo accent="true">̂</mo></mover></mrow><annotation encoding="application/x-tex">x \sim \hat{x}</annotation></semantics></math> (Assuming G’s training has been successful).</p>
+<p>So we can compare iteratively…</p>
 <div class="fig-row">
-<div class="fig-col">
-<div style="max-width: 600px; margin: 0 auto;">
-<img src="/assets/20251010-gladgan-latent-search.png" alt="latent_search" loading="lazy" />
+<div class="fig-col" style="max-width: 600px;">
+<img src="latent-search.png" loading="lazy" alt="latent_search" />
 </div>
 </div>
-</div><p>Works! But as you can imagine, the time that takes to search for x_n grows linearly with the size of X (X is usually <code>huge</code>).</p>
-<p>But there is a trick! Have an encoder learn to map a given image x to a noise vector/matrix z. This drastically improves performance (T. Schlegl et al. 2019).</p>
-<h3>gladGAN</h3>
+<p>Works! But as you can imagine, the time that takes to search for x_n grows linearly with the size of X (X is usually <code>huge</code>).</p>
+<p>But there is a trick! Have an encoder learn to map a given image x to a noise vector/matrix z. This drastically improves performance (T. Schlegl et al. 2019).</p>
+<h3 id="gladgan">gladGAN</h3>
 <div class="fig-row">
-<div class="fig-col">
-<div style="max-width: 400px; margin: 0 auto;">
-<img src="/assets/20251010-gladgan-pipeline.png" alt="gladgan_pipeline" loading="lazy" />
+<div class="fig-col" style="max-width: 400px;">
+<img src="pipeline.png" loading="lazy" alt="gladgan_pipeline" />
 </div>
 </div>
-</div><div class="fig-row">
-<div class="fig-col">
-<div style="max-width: 400px; margin: 0 auto;">
-<img src="/assets/20251010-gladgan-wgan-training.png" alt="wgan_training" loading="lazy" />
+<div class="fig-row">
+<div class="fig-col" style="max-width: 400px;">
+<img src="wgan-training.png" loading="lazy" alt="wgan_training" />
+</div>
+<div class="fig-col" style="max-width: 400px;">
+<img src="encoder-training.png" loading="lazy" alt="encoder_training" />
 </div>
 </div>
-<div class="fig-col">
-<div style="max-width: 400px; margin: 0 auto;">
-<img src="/assets/20251010-gladgan-encoder-training.png" alt="encoder_training" loading="lazy" />
-</div>
-</div>
-</div><p>Graph anomaly detection is a relatively hard problem: a <code>scientific gap</code> is identified. GANs are proposed as a novel approach to tackle this problem.</p>
+<p>Graph anomaly detection is a relatively hard problem: a <code>scientific gap</code> is identified. GANs are proposed as a novel approach to tackle this problem.</p>
 
 <p class="reply"><a href="mailto:mbarandiaranr@gmail.com?subject=Re%3A%20gladGAN">Reply by email</a></p>
 </article>

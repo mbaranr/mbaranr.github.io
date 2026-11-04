@@ -25,7 +25,7 @@
 <h1>Optimizing DeepRVAT</h1>
 <p class="meta"><i><time datetime="2025-09-10">10 Sep, 2025</time></i></p>
 
-<p><a href="https://www.nature.com/articles/s41588-024-01919-z">DeepRVAT</a> is a tool for integrating variant annotations using deep set networks to boost rare variant association testing. The pre-trained DeepRVAT model can be used to compute gene impairment scores for new genes and samples.</p>
+<p><a href="https://www.nature.com/articles/s41588-024-01919-z">DeepRVAT</a> is a tool for integrating genetic variant annotations using deep set networks to boost rare variant association testing. The pre-trained DeepRVAT model can be used to compute gene impairment scores for new genes and samples.</p>
 
 <div class="fig-row">
 <img src="motivation.png"/>
@@ -37,6 +37,8 @@
 
 <div class="fig-row">
 <img src="sum-vs-max.png"/>
+</div>
+<div class="fig-row">
 <img src="additivity.png"/>
 </div>
 
@@ -68,7 +70,6 @@
 <p><b>Usability</b>. In most samples, DeepRVAT sees a single variant, not a set. This means that the DeepRVAT variant score is actually the gene impairment score. For cases with multiple variants, summing variant-level scores instead of re-running the full end-to-end model yields comparable performance. This allows precomputation of variant-level scores, paving the way for ensemble methods that complement existing predictors such as CADD.</p>
 <div class="fig-row">
 <img src="vep.png" loading="lazy"/>
-<img src="vep-performance.png"/>
 </div>
 
 <p class="reply"><a href="mailto:mbarandiaranr@gmail.com?subject=Re%3A%20Optimizing%20DeepRVAT">Reply by email</a></p>

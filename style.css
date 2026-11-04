@@ -183,9 +183,16 @@ ul.dated li {
 .timeline .ico img {
 	display: block;
 	width: 48px;
-	height: 48px;
+	height: auto;
 	margin-left: 10px;
 	border-radius: 5px;
+}
+/* Flag logos: sharp corners, sized and placed to match the other logos,
+   which sit inside a 4px margin of their 48px box. */
+.timeline .ico img.square {
+	width: 40px;
+	margin-left: 14px;
+	border-radius: 0;
 }
 /* Black-only logos turn white on the navy background. */
 @media (prefers-color-scheme: dark) {
@@ -247,6 +254,7 @@ time {
 
 article img {
 	display: block;
+	width: 100%;
 	max-width: 100%;
 	height: auto;
 	margin: 0 auto;
@@ -337,7 +345,8 @@ sup a {
 	gap: 10px;
 	margin-top: 20px;
 }
-.fig-col {
+.fig-col,
+.fig-row > img {
 	flex: 1 1 200px;
 	min-width: 0;
 }

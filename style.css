@@ -354,6 +354,10 @@ sup a {
 	max-width: 50%;
 	margin: 0 auto;
 }
+/* A quiet inline remark, e.g. a short disclaimer after a sentence. */
+.aside {
+	color: var(--dim-color);
+}
 .note {
 	display: block;
 	margin-top: 20px;

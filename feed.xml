@@ -9,23 +9,7 @@
   <updated>2026-11-04T00:00:00Z</updated>
   <author><name>Matias Barandiaran</name><email>mbarandiaranr@gmail.com</email></author>
   <entry>
-    <title>ALIFE in Kyoto</title>
-    <link href="https://mbaranr.github.io/blog/alife-kyoto/"/>
-    <id>https://mbaranr.github.io/blog/alife-kyoto/</id>
-    <published>2026-11-04T00:00:00Z</published>
-    <updated>2026-11-04T00:00:00Z</updated>
-    <summary></summary>
-  </entry>
-  <entry>
-    <title>The chancellor's medal</title>
-    <link href="https://mbaranr.github.io/blog/chancellors-medal/"/>
-    <id>https://mbaranr.github.io/blog/chancellors-medal/</id>
-    <published>2026-11-04T00:00:00Z</published>
-    <updated>2026-11-04T00:00:00Z</updated>
-    <summary></summary>
-  </entry>
-  <entry>
-    <title>Journal special issue</title>
+    <title>Best papers in Kyoto</title>
     <link href="https://mbaranr.github.io/blog/journal-special-issue/"/>
     <id>https://mbaranr.github.io/blog/journal-special-issue/</id>
     <published>2026-11-04T00:00:00Z</published>
@@ -36,49 +20,25 @@
     <title>Leipzig half-marathon</title>
     <link href="https://mbaranr.github.io/blog/leipzig-half-marathon/"/>
     <id>https://mbaranr.github.io/blog/leipzig-half-marathon/</id>
-    <published>2026-11-04T00:00:00Z</published>
-    <updated>2026-11-04T00:00:00Z</updated>
+    <published>2026-04-19T00:00:00Z</published>
+    <updated>2026-04-19T00:00:00Z</updated>
     <summary></summary>
   </entry>
   <entry>
-    <title>Leipziger Neuseenland</title>
-    <link href="https://mbaranr.github.io/blog/leipziger-neuseenland/"/>
-    <id>https://mbaranr.github.io/blog/leipziger-neuseenland/</id>
-    <published>2026-11-04T00:00:00Z</published>
-    <updated>2026-11-04T00:00:00Z</updated>
+    <title>ALIFE in Kyoto</title>
+    <link href="https://mbaranr.github.io/blog/alife-kyoto/"/>
+    <id>https://mbaranr.github.io/blog/alife-kyoto/</id>
+    <published>2025-11-15T00:00:00Z</published>
+    <updated>2025-11-15T00:00:00Z</updated>
     <summary></summary>
   </entry>
   <entry>
-    <title>Reservoir DGCAs</title>
-    <link href="https://mbaranr.github.io/blog/alife2025/"/>
-    <id>https://mbaranr.github.io/blog/alife2025/</id>
-    <published>2025-10-10T00:00:00Z</published>
-    <updated>2025-10-10T00:00:00Z</updated>
-    <summary>Developmental Graph Cellular Automata can grow reservoir computers.</summary>
-  </entry>
-  <entry>
-    <title>gladGAN</title>
-    <link href="https://mbaranr.github.io/blog/gladgan/"/>
-    <id>https://mbaranr.github.io/blog/gladgan/</id>
-    <published>2025-10-10T00:00:00Z</published>
-    <updated>2025-10-10T00:00:00Z</updated>
-    <summary>Generative Adversarial Networks can be used to detect graph level anomalies.</summary>
-  </entry>
-  <entry>
-    <title>Mind Weaver</title>
-    <link href="https://mbaranr.github.io/blog/mind_weaver/"/>
-    <id>https://mbaranr.github.io/blog/mind_weaver/</id>
-    <published>2025-10-10T00:00:00Z</published>
-    <updated>2025-10-10T00:00:00Z</updated>
-    <summary>A puzzle, dungeon-crawling 2D platformer.</summary>
-  </entry>
-  <entry>
-    <title>Automated Waste Sorting</title>
-    <link href="https://mbaranr.github.io/blog/waste_sorting/"/>
-    <id>https://mbaranr.github.io/blog/waste_sorting/</id>
-    <published>2025-10-10T00:00:00Z</published>
-    <updated>2025-10-10T00:00:00Z</updated>
-    <summary>Image classification and object detection for automated waste sorting.</summary>
+    <title>The chancellor's medal</title>
+    <link href="https://mbaranr.github.io/blog/chancellors-medal/"/>
+    <id>https://mbaranr.github.io/blog/chancellors-medal/</id>
+    <published>2025-10-29T00:00:00Z</published>
+    <updated>2025-10-29T00:00:00Z</updated>
+    <summary></summary>
   </entry>
   <entry>
     <title>Optimizing DeepRVAT</title>
@@ -89,35 +49,59 @@
     <summary>DeepRVAT gene scores can be approximated as a sum of variant level effects.</summary>
   </entry>
   <entry>
-    <title>Connect X: MCTS vs. Minimax</title>
+    <title>Growing reservoir computers</title>
+    <link href="https://mbaranr.github.io/blog/alife2025/"/>
+    <id>https://mbaranr.github.io/blog/alife2025/</id>
+    <published>2025-08-02T00:00:00Z</published>
+    <updated>2025-08-02T00:00:00Z</updated>
+    <summary>Developmental Graph Cellular Automata can grow reservoir computers.</summary>
+  </entry>
+  <entry>
+    <title>Two ways to play Connect 4</title>
     <link href="https://mbaranr.github.io/blog/c4_search/"/>
     <id>https://mbaranr.github.io/blog/c4_search/</id>
-    <published>2024-12-20T00:00:00Z</published>
-    <updated>2024-12-20T00:00:00Z</updated>
+    <published>2025-07-06T00:00:00Z</published>
+    <updated>2025-07-06T00:00:00Z</updated>
     <summary>Empirical study comparing Monte Carlo Tree Search and Minimax in Connect X.</summary>
   </entry>
   <entry>
-    <title>Generating Simpsons Faces</title>
-    <link href="https://mbaranr.github.io/blog/simpsons_gan/"/>
-    <id>https://mbaranr.github.io/blog/simpsons_gan/</id>
-    <published>2023-08-15T00:00:00Z</published>
-    <updated>2023-08-15T00:00:00Z</updated>
-    <summary>Generating Simpsons faces with Generative Adversarial Networks</summary>
-  </entry>
-  <entry>
-    <title>Recoloring CIFAR-10</title>
-    <link href="https://mbaranr.github.io/blog/recolor_cifar10/"/>
-    <id>https://mbaranr.github.io/blog/recolor_cifar10/</id>
-    <published>2023-07-15T00:00:00Z</published>
-    <updated>2023-07-15T00:00:00Z</updated>
-    <summary>Solving the recoloring task of CIFAR-10 images with unsupervised learning.</summary>
-  </entry>
-  <entry>
-    <title>Classifying CIFAR-10</title>
+    <title>PyTorch tutorial</title>
     <link href="https://mbaranr.github.io/blog/classify_cifar10/"/>
     <id>https://mbaranr.github.io/blog/classify_cifar10/</id>
-    <published>2023-07-01T00:00:00Z</published>
-    <updated>2023-07-01T00:00:00Z</updated>
+    <published>2025-07-01T00:00:00Z</published>
+    <updated>2025-07-01T00:00:00Z</updated>
     <summary>Solving the classification task of CIFAR-10 images with supervised learning.</summary>
+  </entry>
+  <entry>
+    <title>Automating waste sorting</title>
+    <link href="https://mbaranr.github.io/blog/waste_sorting/"/>
+    <id>https://mbaranr.github.io/blog/waste_sorting/</id>
+    <published>2024-12-20T00:00:00Z</published>
+    <updated>2024-12-20T00:00:00Z</updated>
+    <summary>Image classification and object detection for automated waste sorting.</summary>
+  </entry>
+  <entry>
+    <title>GANs and graph anomalies</title>
+    <link href="https://mbaranr.github.io/blog/gladgan/"/>
+    <id>https://mbaranr.github.io/blog/gladgan/</id>
+    <published>2024-09-30T00:00:00Z</published>
+    <updated>2024-09-30T00:00:00Z</updated>
+    <summary>Generative Adversarial Networks can be used to detect graph level anomalies.</summary>
+  </entry>
+  <entry>
+    <title>Mind Weaver</title>
+    <link href="https://mbaranr.github.io/blog/mind_weaver/"/>
+    <id>https://mbaranr.github.io/blog/mind_weaver/</id>
+    <published>2024-07-01T00:00:00Z</published>
+    <updated>2024-07-01T00:00:00Z</updated>
+    <summary>A puzzle, dungeon-crawling 2D platformer.</summary>
+  </entry>
+  <entry>
+    <title>Leipziger Neuseenland</title>
+    <link href="https://mbaranr.github.io/blog/leipziger-neuseenland/"/>
+    <id>https://mbaranr.github.io/blog/leipziger-neuseenland/</id>
+    <published>2024-03-02T00:00:00Z</published>
+    <updated>2024-03-02T00:00:00Z</updated>
+    <summary></summary>
   </entry>
 </feed>

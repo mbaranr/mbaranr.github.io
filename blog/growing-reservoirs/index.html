@@ -52,7 +52,7 @@
 <img src="nca-lizard.png"/>
 </div>
 
-<p>Two-dimensional grids are great for images, but I personally enjoy the flexibility of graphs. Naturally, I tried to replicate these results on a graph lattice to grow three-dimensional structures, and it mostly <a href="https://github.com/mbaranr/graph-growing-nca">worked</a>. The problem is that both approaches are tied to a fixed grid, so most of the benefits of graphs (i.e. irregular, emergent connections between nodes) go unused. Moreover, as we’ve seen so far, morphogenesis is not just about form; it’s about function. So which function should we grow? What better candidate than computation itself?</p>
+<p>Two-dimensional grids are great for images, but I personally enjoy the flexibility of graphs. Naturally, I tried to replicate these results on a graph lattice to grow three-dimensional structures, and it mostly <a href="https://github.com/mbaranr/graph-growing-nca">worked</a>. The problem is that both approaches are tied to a fixed grid, so most of the benefits of graphs (i.e. irregular, emergent connections between nodes) go unused. Moreover, as we’ve seen so far, morphogenesis is not just about form; it’s about function.</p>
 
 <p>Developmental Graph Cellular Automata (DGCA) (Waldegrave et al., 2023) build on NCAs by growing directed graphs guided by fitness functions. Evolutionary algorithms find the optimal set of “genes” (the transition rule networks), and the CA takes care of the rest. This is where function comes in: a directed graph can be used as a recurrent neural network (RNN), so the structures DGCA grow can compute. RNNs excel at modeling sequential data and have become powerful tools for tasks such as time series prediction and natural language processing.</p>
 

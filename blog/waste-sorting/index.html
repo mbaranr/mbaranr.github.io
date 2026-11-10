@@ -24,51 +24,56 @@
 <article>
 <h1>Automating waste sorting</h1>
 <p class="meta"><i><time datetime="2024-12-20">20 Dec, 2024</time></i></p>
+<p>Washing and reusing a water bottle is far “greener” than melting it down to make a new one, and not buying a disposable bottle in the first place is better still. But expecting people, especially in urban areas, to drastically cut their consumption of disposable packaging is unrealistic.</p>
 
-<p>This project was developed as part of an international collaborative initiative between the Lancaster University campuses of Leipzig (Germany) and Bailrigg (England).</p>
-<p><strong>HW</strong>: KUKA industrial robots, the same ones used in car assembly lines, capable of handling loads of 180kg and moving at 3m/s.</p>
-<p><strong>Motivation</strong>: By innovating in waste management, we hope to contribute toward sustainable solutions for one of the world’s growing environmental concerns. Our long-term vision is to extend this technology to more critical areas, such as nuclear waste management, where safe and efficient handling is of utter importance.</p>
-<p>I led the computer vision team, focusing on <code>object detection</code> and <code>image classification</code>. For the code, see <a href="https://github.com/LUComp/waste_sorter">repo</a>.</p>
-<h3 id="dataset">Dataset</h3>
-<p>Custom curated dataset of labeled trash/waste images. These are spread across 6 subfolders (waste types). The dataset can be downloaded <a href="https://www.dropbox.com/scl/fi/iqdp1yqlpczd6oyoqu2a8/dataset.zip?rlkey=l1qq1vq9zdma1095nw1boymoc&amp;st=kdaaomas&amp;dl=0">here</a>.</p>
-<h3 id="model">Model</h3>
-<p>Fine-tuned pre-trained ResNet50 architecture. Model weights can be downloaded <a href="https://www.dropbox.com/scl/fo/8lik3r8dvd46oc7je5egg/AJz9jQDM7P-uupWw3HokPFw?rlkey=ovap0z4vufqskny28zqy3v89v&amp;st=quylbvca&amp;dl=0">here</a>.</p>
-<div class="fig-row">
-<img src="confusion.png" loading="lazy" alt="confusion matrix" />
-</div>
-<h3 id="demo">Demo</h3>
+<p>Germany is a great example of a successful nationwide recycling program. Federal laws like the Circular Economy Act and the Packaging Act set mandatory recycling standards across all states. Germany also runs one of the best deposit-return systems (Pfand): you pay a deposit of ~€0.25 on top of the price of plastic and glass bottles, and you only get it back by returning them to a retailer, usually through a Pfand machine.</p>
+
+<p>Unfortunately, not everyone follows these rules. One of the hardest parts of recycling is sorting recyclables that end up mixed in with our trash into their respective categories. This is especially difficult where recycling is decentralized, as in the United States, which has <a href="https://recyclingpartnership.org/data/" target="_blank" rel="noopener noreferrer">over 9,000 separate local recycling programs</a>, each with its own rules. This makes it difficult to standardize recycling at scale. To grasp how big of a problem this is, the US produces ~290M tons (the weight of 1.5M blue whales) of garbage per year, and only 30% of it gets recycled, compared to Germany's 70% of 40M tons.</p>
+
+<p>Sorting waste is dangerous, error-prone, and relatively low-value work, the kind of job people won't take on unless they're paid well for it. I don't know a single person whose childhood dream was to become a waste sorter. This makes it a perfect job for automation. What sets it apart from typical production-line automation is that waste is unpredictable: no two items look the same, so a robot needs “eyes” to tell what it's picking up.</p>
+
+<p>I founded the Computer Science Society at Lancaster University's Leipzig campus. As part of an international initiative, we collaborated with our friends from CompSoc (the society at Bailrigg) on our most ambitious project to date: designing an automated waste-sorting system. It took us a few months to build a case worthy of university funding, but we managed to secure ~£10k to cover travel expenses and materials.</p>
+
+
+<p>The first milestone was for CompSoc to visit Leipzig and work with us on a first prototype, using our 3D printer to build a robotic arm. This was a success and a great opportunity for both teams to get to know each other. I led the computer vision team, where we focused on image classification. We fine-tuned a pre-trained ResNet50 using open-access garbage datasets. Model weights can be downloaded <a href="https://www.dropbox.com/scl/fo/8lik3r8dvd46oc7je5egg/AJz9jQDM7P-uupWw3HokPFw?rlkey=ovap0z4vufqskny28zqy3v89v&amp;st=quylbvca&amp;dl=0" target="_blank" rel="noopener noreferrer">here</a>.</p>
+
 <div class="fig-row">
 <img src="prototype.jpg" loading="lazy" alt="team members testing a small prototype robot arm on a desk" />
 </div>
+
+<div class="fig-col">
+<img src="group-photo.jpg" />
+</div>
+
+<p>The second milestone required us to visit Bailrigg. This was my first time crossing the Chunnel, a 50km railway tunnel beneath the English Channel that connects the United Kingdom with northern France. This time, thanks to the generosity of the engineering faculty, we scaled things up. We replaced the 3D-printed arm with a pair of KUKA industrial robots, the same ones used on car assembly lines. These beasts are capable of handling loads of 180kg and moving at 3m/s. As you can see from the picture below, they were enclosed in a caged area, and we made sure to take all the necessary safety precautions.</p>
+
 <div class="fig-row">
 <img src="robot-lab.jpg" loading="lazy" alt="two KUKA robot arms beside a conveyor belt in the lab, with the team working around them" />
 </div>
+
+<p>I will now detail some of the challenges we faced and how we overcame them. The arms could only be controlled through a Windows XP machine. Our OS expert, Isaac, designed a custom plugin with a communication protocol to send actions from our Python process, which was running on a separate machine.</p>
+
+<p>The arms had no built-in gripper. We designed a claw with a custom attachment and space for a Raspberry Pi and camera, which we could control remotely. This decoupled the arm's movement from the opening and closing actions.</p>
+
+<p>The model we had fine-tuned in Leipzig still had a lot of room for improvement. Reflections, differences in lighting, and harder-to-classify materials revealed some of the areas we could work on. To tackle this, I worked on curating a richer dataset by combining several open-access datasets available online. The dataset can be downloaded <a href="https://www.dropbox.com/scl/fi/iqdp1yqlpczd6oyoqu2a8/dataset.zip?rlkey=l1qq1vq9zdma1095nw1boymoc&amp;st=kdaaomas&amp;dl=0" target="_blank" rel="noopener noreferrer">here</a>. I also implemented different levels of data augmentation and adversarial training to decrease our misclassification rate. See confusion matrix.</p>
+
+<div class="fig-row">
+<img src="confusion.png" loading="lazy" alt="confusion matrix" />
+</div>
+
+<p>We also tackled the problem of object detection. Previously, we had fixed coordinates for items to be picked up. We relaxed this constraint by allowing items to appear at different locations along the conveyor belt. We therefore had to perform some camera and hand-eye calibration and integrate an object detection model (YOLO) to tell the arm where to go. And perhaps the biggest challenge was time: we had 48 hours to work on everything I just mentioned.</p>
+
+<p>We worked in parallel by dividing into teams in charge of different areas, leveraging every member's strengths. In the end, integration hell wasn't all that bad, and everything worked. By innovating in waste management, we hope to contribute to sustainable solutions for one of the world's growing environmental concerns. Our long-term vision is to extend this technology to more critical areas, such as nuclear waste management, where safe and efficient handling is of utmost importance.</p>
+
 <div class="fig-row">
 <img src="detection-approach.jpg" loading="lazy" alt="detection view: a can found on the belt, with its bounding box, coordinates and predicted type (metal), arm above it" />
 </div>
 <div class="fig-row">
 <img src="detection-pick.jpg" loading="lazy" alt="detection view: the gripper lowered onto the can" />
 </div>
-<h3 id="credits">Credits</h3>
-<div class="fig-row">
-<div class="fig-col">
-<ul>
-<li>Matias Barandiaran</li>
-<li>Parichay Sachdev</li>
-<li>Mustafa Azizi</li>
-<li>Athar Syed</li>
-<li>Osvaldo Catine</li>
-<li>Mikelis Kamepe</li>
-<li>Inderjot Sitt</li>
-<li>Isaac Richardson</li>
-<li>Andre Mariucci</li>
-<li>Toby Vermon</li>
-</ul>
-</div>
-<div class="fig-col">
-<img src="group-photo.jpg" loading="lazy" alt="the team posing together in the common room" />
-</div>
-</div>
+
+
+
 
 <p class="reply"><a href="mailto:mbarandiaranr@gmail.com?subject=Re%3A%20Automating%20waste%20sorting">Reply by email</a></p>
 </article>

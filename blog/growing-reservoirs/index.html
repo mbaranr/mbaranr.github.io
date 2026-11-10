@@ -28,10 +28,6 @@
 
 <p><b>What distinguishes life from non-living matter?</b> Until the late 19th century, scientists believed that life possessed a special vital force. By the mid-20th century, the discovery of the structures of DNA and RNA, along with the successful synthesis of polynucleotides, revealed that life’s chemistry follows the same physical laws as everything else. The atoms in our bodies are the same ones found throughout the universe. Yet something about living systems remains unique beyond their chemistry. In recent years, researchers have turned to <b>function</b> as the defining feature of life.</p>
 
-<div class="fig-row">
-<img src="space-carbon.png"/>
-</div>
-
 <p><b>What gives rise to function in multicellular organisms?</b> At the level of species, evolutionary biology tells us that function is the reason certain structures evolve through natural selection over generations. For example, Pakicetus, the common ancestor of whales, gained an evolutionary advantage by growing fin-like structures that improved its aquatic locomotion (a big oversimplification!). At the level of the organism, morphogenesis is the process by which cells collectively build those same functional structures: a whale’s fins, eyes, lungs, and so on.</p>
 
 <p>The emergence of structure purely from local interactions between cells is one of nature’s greatest shows, and it plays out right before our eyes. Much work has gone into understanding it. Alan Turing made the first attempt to model morphogenesis in his 1952 paper, <i>The Chemical Basis of Morphogenesis</i>. The patterns his model describes, now known as Turing patterns, help explain the designs of some of the coolest-looking fish (see <i>Synchiropus splendidus</i>).</p>
@@ -62,7 +58,11 @@
 
 <p>Despite their usefulness, RNNs are computationally expensive to train because they rely on backpropagation through time. Reservoir computing (RC) was developed in response. In RC, a large, fixed, randomly connected RNN (the reservoir) provides rich nonlinear dynamics, and only the readout layer is trained. However, conventional RC relies on brute force: reservoirs are randomly initialized one after another until one with the right dynamics turns up. This raises a compelling question: <b>why not orchestrate the growth of our own, tuned reservoirs?</b></p>
 
-<p>This is also the function we have been looking for: <b>computation</b>. And not just any computation. Reservoir computers are much closer to how nature computes than the classical von Neumann architecture. Models like Echo State Networks (ESNs) and Liquid State Machines (LSMs) mimic how cortical microcircuits in the brain handle spatiotemporal information. DGCA-grown reservoirs therefore draw on nature along three axes: <b>evolution</b>, <b>morphogenesis</b>, and <b>computation</b>. Each of these ideas has inspired plenty of work on its own, but seeing all three combined in a single system is not something you come across every day. Together, they bring us closer to systems that grow and compute the way living things do.</p>
+<div class="fig-row">
+<img src="esn.png"/>
+</div>
+
+<p>There it is, the function we have been looking for: <b>computation</b>! And not just any computation. Reservoir computers are much closer to how nature computes than the classical von Neumann architecture. Models like Echo State Networks (ESNs) and Liquid State Machines (LSMs) mimic how cortical microcircuits in the brain handle spatiotemporal information. DGCA-grown reservoirs therefore draw on nature along three axes: <b>evolution</b>, <b>morphogenesis</b>, and <b>computation</b>. Each of these ideas has inspired plenty of work on its own, but seeing all three combined in a single system is not something you come across every day. Together, they bring us closer to systems that grow and compute the way living things do.</p>
 
 <p>If this intrigues you, read the <a href="https://arxiv.org/abs/2508.08091">paper</a>. You’ll find that many of the grown reservoirs have sparse, “life-like” structures rather than small-world ones. This suggests that form may play a deeper role in computation within dynamical systems than previously thought.</p>
 
